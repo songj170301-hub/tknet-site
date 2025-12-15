@@ -1,235 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TK Net — Independent Global Advisory</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TK Net — Independent Global Advisory</title>
 
-  <style>
-    * { box-sizing: border-box; }
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background: #f5f7fa;
+  color: #0d1a2b;
+}
 
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      color: #0d1a2b;
-      background: #f5f7fa;
-    }
+/* NAV */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 72px;
+  background: rgba(13,26,43,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 1000;
+}
 
-    /* ---------- NAV ---------- */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 72px;
-      background: rgba(13,26,43,0.95);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 40px;
-      z-index: 1000;
-    }
+.logo { color: #fff; font-size: 18px; font-weight: 600; }
+.menu-btn { color: #fff; font-size: 22px; cursor: pointer; }
 
-    .logo {
-      color: #ffffff;
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-    }
+.menu {
+  display: none;
+  position: absolute;
+  top: 72px;
+  right: 40px;
+  background: #fff;
+  padding: 24px 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
 
-    .menu-btn {
-      color: #ffffff;
-      font-size: 22px;
-      cursor: pointer;
-    }
+.menu a {
+  display: block;
+  color: #0d1a2b;
+  text-decoration: none;
+  margin-bottom: 14px;
+}
 
-    .menu {
-      display: none;
-      position: absolute;
-      top: 72px;
-      right: 40px;
-      background: #ffffff;
-      padding: 24px 32px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      min-width: 260px;
-    }
+/* HERO */
+.hero {
+  background: linear-gradient(135deg,#0057B8,#0A2A66);
+  color: #fff;
+  padding: 160px 40px 180px;
+}
 
-    .menu a {
-      display: block;
-      text-decoration: none;
-      color: #0d1a2b;
-      font-size: 15px;
-      margin-bottom: 16px;
-    }
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    .menu a:last-child {
-      margin-bottom: 0;
-    }
+.hero h1 {
+  font-size: 44px;
+  line-height: 1.25;
+  max-width: 720px;
+}
 
-    /* ---------- HERO ---------- */
-    .hero {
-      background: linear-gradient(135deg, #0057B8 0%, #0A2A66 100%);
-      color: #ffffff;
-      padding: 160px 40px 180px;
-    }
+.hero p {
+  font-size: 18px;
+  max-width: 560px;
+  line-height: 1.6;
+}
 
-    .hero-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+/* SECTION */
+.section {
+  padding: 100px 40px;
+}
 
-    .hero h1 {
-      font-size: 44px;
-      line-height: 1.25;
-      max-width: 720px;
-      margin-bottom: 24px;
-    }
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    .hero p {
-      font-size: 18px;
-      line-height: 1.6;
-      max-width: 560px;
-      opacity: 0.95;
-    }
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 40px;
+}
 
-    /* ---------- SECTIONS ---------- */
-    .section {
-      padding: 100px 40px;
-    }
+.col img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
 
-    .section-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+footer {
+  background: #0d1a2b;
+  color: #fff;
+  padding: 60px 40px;
+}
+</style>
 
-    h2 {
-      font-size: 32px;
-      margin-bottom: 48px;
-    }
-
-    .columns {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-    }
-
-    .col img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 16px;
-    }
-
-    .col h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .col p {
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      background: #0d1a2b;
-      color: #ffffff;
-      padding: 60px 40px;
-    }
-
-    footer .inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-  </style>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu-panel");
-      menu.style.display = (menu.style.display === "block") ? "none" : "block";
-    }
-  </script>
+<script>
+function toggleMenu() {
+  const m = document.getElementById("menu");
+  m.style.display = m.style.display === "block" ? "none" : "block";
+}
+</script>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <header>
-    <div class="logo">TK Net</div>
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+<header>
+  <div class="logo">TK Net</div>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="individual.html">Individual Service Pages</a>
+    <a href="engagements.html">Selected Engagements</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
 
-    <div class="menu" id="menu-panel">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="individual.html">Individual Service Pages</a>
-      <a href="engagements.html">Selected Engagements</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </header>
+<!-- spacer -->
+<div style="height:72px"></div>
 
-  <!-- SPACER FOR FIXED NAV -->
-  <div style="height:72px;"></div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>
+      Global Strategy.<br>
+      Rigorous Capital Allocation.<br>
+      Transformative Places.
+    </h1>
+    <p>
+      Independent advisory to boards, investment committees, and public-sector leaders
+      on strategy, transactions, and innovation districts across Asia, Europe, and
+      North America.
+    </p>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <h1>
-        Global Strategy.<br>
-        Rigorous Capital Allocation.<br>
-        Transformative Places.
-      </h1>
-      <p>
-        Independent advisory to boards, investment committees, and public-sector leaders
-        on strategy, transactions, and innovation districts across Asia, Europe, and
-        North America.
-      </p>
-    </div>
-  </section>
-
-  <!-- WHAT WE DO -->
-  <section class="section">
-    <div class="section-inner">
-      <h2>What We Do</h2>
-
-      <div class="columns">
-        <div class="col">
-          <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1200&q=80">
-          <h3>Strategy & Market Expansion</h3>
-          <p>
-            Corporate strategy, growth sequencing, competitive positioning,
-            and execution in developed and emerging markets.
-          </p>
-        </div>
-
-        <div class="col">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80">
-          <h3>Investment & Transaction Advisory</h3>
-          <p>
-            Commercial due diligence, valuation, transaction structuring,
-            and investment committee support.
-          </p>
-        </div>
-
-        <div class="col">
-          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80">
-          <h3>Innovation & Place-Making</h3>
-          <p>
-            AI and technology strategy · Innovation ecosystems ·
-            Urban regeneration · Cross-border programs.
-          </p>
-        </div>
+<!-- WHAT WE DO -->
+<section class="section">
+  <div class="section-inner">
+    <h2>What We Do</h2>
+    <div class="columns">
+      <div class="col">
+        <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1200&q=80">
+        <h3>Strategy & Market Expansion</h3>
+        <p>Corporate strategy and execution.</p>
+      </div>
+      <div class="col">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80">
+        <h3>Investment & Transaction Advisory</h3>
+        <p>Due diligence and structuring.</p>
+      </div>
+      <div class="col">
+        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80">
+        <h3>Innovation & Place-Making</h3>
+        <p>AI, ecosystems, urban regeneration.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="inner">
-      <strong>TK Net</strong><br>
-      Global Advisory in Strategy, Investment, and Innovation
-    </div>
-  </footer>
+<footer>
+  <strong>TK Net</strong><br>
+  Global Advisory in Strategy, Investment, and Innovation
+</footer>
 
 </body>
 </html>
