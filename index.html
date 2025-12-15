@@ -8,19 +8,76 @@
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0d1a2b;
+  background: #f5f7fa;
 }
 
 header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   background: #0d1a2b;
   color: white;
-  padding: 20px;
+  padding: 18px 40px;
+  z-index: 1000;
 }
 
 .hero {
-  padding: 120px 60px;
+  padding: 160px 80px 120px;
   background: linear-gradient(135deg, #0057B8, #0A2A66);
   color: white;
+}
+
+.section {
+  padding: 80px;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.col img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.pillar {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.engagements {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.eng {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+footer {
+  background: #0d1a2b;
+  color: white;
+  padding: 60px 80px;
 }
 </style>
 </head>
@@ -28,13 +85,80 @@ header {
 <body>
 
 <header>
-  TK Net — Navigation Bar
+  TK Net
 </header>
 
 <section class="hero">
-  <h1>Hero Section Works</h1>
-  <p>If you can see this, GitHub Pages is working.</p>
+  <h1>
+    Global Strategy.<br>
+    Rigorous Capital Allocation.<br>
+    Transformative Places.
+  </h1>
+  <p style="max-width:520px;">
+    Independent advisory to boards, investment committees, and public-sector leaders on
+    strategy, transactions, and innovation districts across Asia, Europe, and North America.
+  </p>
 </section>
+
+<section class="section">
+  <h2>What We Do</h2>
+
+  <div class="columns">
+    <div class="col">
+      <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1200&q=80">
+      <h3>Strategy & Market Expansion</h3>
+      <p>Corporate strategy, growth sequencing, competitive positioning, and execution.</p>
+    </div>
+
+    <div class="col">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80">
+      <h3>Investment & Transaction Advisory</h3>
+      <p>Commercial due diligence, valuation, transaction structuring, and IC support.</p>
+    </div>
+
+    <div class="col">
+      <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80">
+      <h3>Innovation & Place-Making</h3>
+      <p>
+        AI and technology strategy · Innovation ecosystems · Urban regeneration ·
+        Cross-border programs
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Why TK Net</h2>
+
+  <div class="pillars">
+    <div class="pillar"><strong>True Independence</strong><br>No audit, lending, or product conflicts.</div>
+    <div class="pillar"><strong>Asia Depth + Global Standards</strong><br>Active across three continents since 2007.</div>
+    <div class="pillar"><strong>End-to-End Delivery</strong><br>From boardroom strategy to built districts.</div>
+    <div class="pillar"><strong>Trusted by Leaders</strong><br>Multinationals, sovereign investors, city governments.</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Selected Engagements</h2>
+
+  <div class="engagements">
+    <div class="eng"><strong>Hyundai Group</strong><br>AI unicorn investment</div>
+    <div class="eng"><strong>CKT Group</strong><br>Incheon AI Tower ecosystem</div>
+    <div class="eng"><strong>ABL Life & Tongyang Life</strong><br>M&A strategy</div>
+    <div class="eng"><strong>Suzhou Design Town</strong><br>Masterplan and operator model</div>
+    <div class="eng"><strong>European Luxury House</strong><br>Greater China entry</div>
+    <div class="eng"><strong>Global Sovereign Fund</strong><br>AI infrastructure strategy</div>
+    <div class="eng"><strong>Asian City Government</strong><br>Innovation district planning</div>
+    <div class="eng"><strong>US Technology Platform</strong><br>Market entry strategy</div>
+    <div class="eng"><strong>Global PE Firm</strong><br>Commercial due diligence</div>
+    <div class="eng"><strong>Luxury Real Estate Developer</strong><br>Capital structure & placemaking</div>
+  </div>
+</section>
+
+<footer>
+  <strong>TK Net</strong><br>
+  Global Advisory in Strategy, Investment, and Innovation
+</footer>
 
 </body>
 </html>
