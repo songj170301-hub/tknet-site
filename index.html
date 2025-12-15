@@ -1,8 +1,10 @@
+<!-- NAVIGATION -->
 <header style="
   position:fixed;
   top:0;
   left:0;
   width:100%;
+  height:72px;
   background:#0d1a2b;
   z-index:9999;
 ">
@@ -16,7 +18,6 @@
     padding:0 24px;
     box-sizing:border-box;
   ">
-
     <!-- LOGO -->
     <div style="
       color:#ffffff;
@@ -27,22 +28,53 @@
       TK Net
     </div>
 
-    <!-- NAV -->
-    <nav style="
-      display:flex;
-      gap:20px;
-      flex-wrap:nowrap;
-    ">
-      <a href="index.html" style="color:#ffffff; text-decoration:none; font-size:14px;">Home</a>
-      <a href="about.html" style="color:#ffffff; text-decoration:none; font-size:14px;">About</a>
-      <a href="services.html" style="color:#ffffff; text-decoration:none; font-size:14px;">Services</a>
-      <a href="individual.html" style="color:#ffffff; text-decoration:none; font-size:14px;">Individual Services</a>
-      <a href="engagements.html" style="color:#ffffff; text-decoration:none; font-size:14px;">Engagements</a>
-      <a href="contact.html" style="color:#ffffff; text-decoration:none; font-size:14px;">Contact</a>
-    </nav>
-
+    <!-- MENU BUTTON -->
+    <div
+      onclick="toggleMenu()"
+      style="
+        color:#ffffff;
+        font-size:22px;
+        cursor:pointer;
+        user-select:none;
+      ">
+      ☰
+    </div>
   </div>
 </header>
 
-<!-- 占位，防止内容被压住 -->
+<!-- SLIDE MENU -->
+<div id="menuPanel" style="
+  position:fixed;
+  top:0;
+  right:-320px;
+  width:320px;
+  height:100vh;
+  background:#ffffff;
+  padding:40px 32px;
+  box-sizing:border-box;
+  transition:right 0.35s ease;
+  z-index:9998;
+">
+
+  <a href="index.html" style="display:block; margin-bottom:20px; color:#0d1a2b; text-decoration:none; font-size:18px;">Home</a>
+  <a href="about.html" style="display:block; margin-bottom:20px; color:#0d1a2b; text-decoration:none; font-size:18px;">About</a>
+  <a href="services.html" style="display:block; margin-bottom:20px; color:#0d1a2b; text-decoration:none; font-size:18px;">Services</a>
+  <a href="individual.html" style="display:block; margin-bottom:20px; color:#0d1a2b; text-decoration:none; font-size:18px;">Individual Service Pages</a>
+  <a href="engagements.html" style="display:block; margin-bottom:20px; color:#0d1a2b; text-decoration:none; font-size:18px;">Selected Engagements</a>
+  <a href="contact.html" style="display:block; color:#0d1a2b; text-decoration:none; font-size:18px;">Contact</a>
+</div>
+
+<!-- PAGE OFFSET -->
 <div style="height:72px;"></div>
+
+<!-- SCRIPT -->
+<script>
+  function toggleMenu() {
+    var panel = document.getElementById("menuPanel");
+    if (panel.style.right === "0px") {
+      panel.style.right = "-320px";
+    } else {
+      panel.style.right = "0px";
+    }
+  }
+</script>
