@@ -20,9 +20,9 @@ nav a.active { border-bottom:2px solid #00aaff; padding-bottom:2px; }
 /* Hero */
 .hero {
   position:relative; display:flex; justify-content:center; align-items:center; height:80vh; min-height:400px; text-align:center; color:#fff; overflow:hidden;
-}
-.hero img {
-  position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0;
+  background-image: url('https://via.placeholder.com/1600x900'); /* 网络图片确保显示 */
+  background-size: cover;
+  background-position: center;
 }
 .hero .overlay {
   position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1;
@@ -78,7 +78,6 @@ footer { background:#111; color:#fff; text-align:center; padding:2rem 1rem; font
 </nav>
 
 <section class="hero">
-  <img id="hero-img" alt="Hero Background">
   <div class="overlay"></div>
   <div class="hero-content">
     <h1>Since 2007 | Independent Strategic Advisory</h1>
@@ -128,19 +127,6 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
 }, { threshold:0.2 });
 cards.forEach(card => observer.observe(card));
-
-// Hero 图片加载：优先本地，失败用网络 fallback
-const heroImg = document.getElementById('hero-img');
-const localPath = 'images/what-we-do-2.jpg'; // 请确保本地路径正确
-const fallbackPath = 'https://via.placeholder.com/1600x900';
-
-function setHeroImage() {
-  const img = new Image();
-  img.src = localPath;
-  img.onload = () => { heroImg.src = localPath; };
-  img.onerror = () => { heroImg.src = fallbackPath; };
-}
-setHeroImage();
 </script>
 
 </body>
