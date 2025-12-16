@@ -14,13 +14,8 @@
       line-height: 1.6;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ---------- NAV ---------- */
-    .nav {
+    /* NAV */
+    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -28,17 +23,21 @@
       border-bottom: 1px solid #e5e5e5;
     }
 
-    .nav ul {
+    nav ul {
+      list-style: none;
       display: flex;
       gap: 28px;
-      list-style: none;
-      padding: 0;
       margin: 0;
+      padding: 0;
       font-size: 14px;
-      letter-spacing: 0.02em;
     }
 
-    /* ---------- HERO ---------- */
+    nav a {
+      text-decoration: none;
+      color: #111;
+    }
+
+    /* HERO */
     .hero {
       position: relative;
       width: 100%;
@@ -57,8 +56,8 @@
       position: absolute;
       left: 60px;
       bottom: 80px;
-      color: #fff;
-      max-width: 600px;
+      color: #ffffff;
+      max-width: 620px;
     }
 
     .hero-text h1 {
@@ -72,18 +71,18 @@
       opacity: 0.95;
     }
 
-    /* ---------- CONTENT ---------- */
-    .content {
+    /* CONTENT */
+    main {
       max-width: 1100px;
-      padding: 80px 40px;
       margin: 0 auto;
+      padding: 80px 40px;
     }
 
-    .section {
+    section {
       margin-bottom: 80px;
     }
 
-    .section h2 {
+    h2 {
       font-size: 28px;
       font-weight: 500;
       margin-bottom: 24px;
@@ -94,21 +93,15 @@
       color: #333;
     }
 
-    .capabilities span {
-      display: inline-block;
-      margin-right: 10px;
-      white-space: nowrap;
-    }
-
-    .engagements ul {
+    ul {
       padding-left: 20px;
     }
 
-    .engagements li {
+    li {
       margin-bottom: 10px;
     }
 
-    /* ---------- FOOTER ---------- */
+    /* FOOTER */
     footer {
       border-top: 1px solid #e5e5e5;
       padding: 40px;
@@ -120,9 +113,8 @@
 
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <div><strong>TK Net</strong></div>
+  <nav>
+    <strong>TK Net</strong>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
@@ -131,11 +123,11 @@
     </ul>
   </nav>
 
-  <!-- HERO (GLOBAL NIGHT CITY – GUARANTEED IMAGE) -->
+  <!-- HERO : GLOBAL NIGHT CITY -->
   <section class="hero">
     <img
-      src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1600&q=80"
-      alt="Global City Night View"
+      src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=1600&q=80"
+      alt="Global City at Night"
     />
     <div class="hero-text">
       <h1>Strategy & Market Expansion</h1>
@@ -146,21 +138,17 @@
     </div>
   </section>
 
-  <!-- CONTENT -->
-  <main class="content">
-
-    <section class="section">
+  <main>
+    <section>
       <h2>Capabilities</h2>
       <div class="capabilities">
-        <span>Corporate & portfolio strategy</span> |
-        <span>Market sequencing & attractiveness</span> |
-        <span>Competitive scenario planning</span> |
-        <span>Go-to-market & localization</span> |
-        <span>Regulatory & partnership strategy</span>
+        Corporate & portfolio strategy ｜ Market sequencing & attractiveness ｜ 
+        Competitive scenario planning ｜ Go-to-market & localization ｜ 
+        Regulatory & partnership strategy
       </div>
     </section>
 
-    <section class="section engagements">
+    <section>
       <h2>Selected Engagements</h2>
       <ul>
         <li>Global strategy for a leading Korean beauty conglomerate</li>
@@ -168,10 +156,8 @@
         <li>Pan-Asia growth strategy for a Singapore-listed REIT</li>
       </ul>
     </section>
-
   </main>
 
-  <!-- FOOTER -->
   <footer>
     TK Net<br />
     Global Advisory in Strategy, Investment, and Innovation
