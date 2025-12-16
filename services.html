@@ -20,9 +20,9 @@ nav a.active { border-bottom:2px solid #00aaff; padding-bottom:2px; }
 /* Hero */
 .hero {
   position:relative; display:flex; justify-content:center; align-items:center; height:70vh; min-height:400px; text-align:center; color:#fff; overflow:hidden;
-  background-image: url('https://images.unsplash.com/photo-1581093588401-70b02a10b4bb?auto=format&fit=crop&w=1600&q=80');
-  background-size: cover;
-  background-position: center;
+}
+.hero img {
+  position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0;
 }
 .hero .overlay {
   position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1;
@@ -68,6 +68,7 @@ footer { background:#111; color:#fff; text-align:center; padding:2rem 1rem; font
 </nav>
 
 <section class="hero">
+  <img id="hero-img" alt="Hero Background">
   <div class="overlay"></div>
   <div class="hero-content">
     <h1>Advisory for High-Stakes Decisions</h1>
@@ -95,10 +96,22 @@ footer { background:#111; color:#fff; text-align:center; padding:2rem 1rem; font
 </footer>
 
 <script>
-// Hero 动画
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('.hero-content').style.opacity = 1;
-});
+// Hero 图片加载：优先本地，失败用网络 fallback
+const heroImg = document.getElementById('hero-img');
+const localPath = 'images/services-hero.jpg'; // 可替换为本地图片路径
+const fallbackPath = 'https://images.unsplash.com/photo-1581093588401-70b02a10b4bb?auto=format&fit=crop&w=1600&q=80';
+
+const img = new Image();
+img.onload = () => { heroImg.src = localPath; };
+img.onerror = () => { heroImg.src = fallbackPath; };
+img.src = localPath;
+
+// Services 卡片动画
+const cards = document.querySelectorAll('.service-card');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
+}, { threshold:0.2 });
+cards.forEach(card => observer.observe(card));
 </script>
 
 </body>
