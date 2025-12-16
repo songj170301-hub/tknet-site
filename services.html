@@ -13,18 +13,21 @@ nav ul { list-style:none; display:flex; gap:30px; }
 nav a { text-decoration:none; color:#222; font-weight:bold; transition: color 0.3s; }
 nav a:hover { color:#0077cc; }
 
-.hero-container { position:relative; width:100%; height:400px; background-color:#0077cc; display:flex; align-items:center; justify-content:center; text-align:center; }
-.hero-text { color:#fff; max-width:800px; padding:0 20px; }
-.hero-text h1 { font-size:2.5rem; margin-bottom:20px; }
+.hero-container { position:relative; width:100%; height:500px; background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center; }
+.hero-text { color:#fff; text-align:center; background: rgba(0,0,0,0.4); padding:20px; border-radius:10px; }
+.hero-text h1 { font-size:3rem; margin-bottom:20px; }
 .hero-text p { font-size:1.2rem; }
 
 section { padding:80px 40px; max-width:1200px; margin:0 auto; }
 section h2 { font-size:2rem; margin-bottom:40px; color:#0077cc; text-align:center; }
 
 .services-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:40px; }
-.service-card { background:#ccc; border-radius:10px; height:200px; display:flex; align-items:center; justify-content:center; text-align:center; transition: transform 0.3s, box-shadow 0.3s; }
-.service-card h3 { padding:20px; font-size:1.2rem; color:#fff; }
-.service-card:hover { transform:translateY(-5px); box-shadow:0 6px 15px rgba(0,0,0,0.15); }
+
+.service-card { position:relative; overflow:hidden; border-radius:10px; height:250px; transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; }
+.service-card img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s; }
+.service-card .overlay { position:absolute; bottom:0; left:0; width:100%; height:50%; background: rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.2rem; text-align:center; padding:10px; }
+.service-card:hover img { transform: scale(1.1); }
+.service-card:hover { box-shadow:0 6px 15px rgba(0,0,0,0.25); }
 
 footer { text-align:center; padding:40px; background:#f5f5f5; font-weight:bold; }
 
@@ -49,7 +52,7 @@ footer { text-align:center; padding:40px; background:#f5f5f5; font-weight:bold; 
 </nav>
 
 <!-- Hero -->
-<div class="hero-container">
+<div class="hero-container" style="background-image: url('https://via.placeholder.com/1600x500/0077cc/ffffff?text=Hero+Image');">
   <div class="hero-text">
     <h1>Advisory for High-Stakes Decisions</h1>
     <p>We deliver unconflicted, evidence-based advice across strategy, capital allocation, transactions, technology, and place-making.</p>
@@ -61,22 +64,28 @@ footer { text-align:center; padding:40px; background:#f5f5f5; font-weight:bold; 
   <h2>Our Services</h2>
   <div class="services-grid">
     <div class="service-card">
-      <h3>Strategy & Market Expansion</h3>
+      <img src="https://via.placeholder.com/400x250/ff7f50/ffffff?text=Strategy+%26+Market+Expansion" alt="Strategy & Market Expansion">
+      <div class="overlay">Strategy & Market Expansion</div>
     </div>
     <div class="service-card">
-      <h3>Investment & Transaction Advisory</h3>
+      <img src="https://via.placeholder.com/400x250/6a5acd/ffffff?text=Investment+%26+Transaction+Advisory" alt="Investment & Transaction Advisory">
+      <div class="overlay">Investment & Transaction Advisory</div>
     </div>
     <div class="service-card">
-      <h3>M&A and Deal Structuring</h3>
+      <img src="https://via.placeholder.com/400x250/20b2aa/ffffff?text=M%26A+and+Deal+Structuring" alt="M&A and Deal Structuring">
+      <div class="overlay">M&A and Deal Structuring</div>
     </div>
     <div class="service-card">
-      <h3>AI & Technology Strategy</h3>
+      <img src="https://via.placeholder.com/400x250/f08080/ffffff?text=AI+%26+Technology+Strategy" alt="AI & Technology Strategy">
+      <div class="overlay">AI & Technology Strategy</div>
     </div>
     <div class="service-card">
-      <h3>Urban & Innovation Development</h3>
+      <img src="https://via.placeholder.com/400x250/ffa500/ffffff?text=Urban+%26+Innovation+Development" alt="Urban & Innovation Development">
+      <div class="overlay">Urban & Innovation Development</div>
     </div>
     <div class="service-card">
-      <h3>Cross-Border Programs</h3>
+      <img src="https://via.placeholder.com/400x250/8a2be2/ffffff?text=Cross-Border+Programs" alt="Cross-Border Programs">
+      <div class="overlay">Cross-Border Programs</div>
     </div>
   </div>
 </section>
