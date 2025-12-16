@@ -1,122 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TK Net | Services</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    body { color: #222; line-height: 1.6; background-color: #fff; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TK Net | Services</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+body { background:#fff; color:#222; line-height:1.6; }
 
-    /* Navbar */
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
-    nav ul { list-style: none; display: flex; gap: 30px; }
-    nav a { text-decoration: none; color: #222; font-weight: bold; transition: color 0.3s; }
-    nav a:hover { color: #0077cc; }
+nav { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; background:#fff; box-shadow:0 2px 4px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100; }
+nav ul { list-style:none; display:flex; gap:30px; }
+nav a { text-decoration:none; color:#222; font-weight:bold; transition: color 0.3s; }
+nav a:hover { color:#0077cc; }
 
-    /* Hero */
-    .hero {
-      width: 100%;
-      height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      background-image: url('images/services-hero.jpg');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top:0; left:0; right:0; bottom:0;
-      background-color: rgba(0,0,0,0.5);
-    }
-    .hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 20px; }
-    .hero-content h1 { font-size: 3rem; margin-bottom: 20px; }
-    .hero-content p { font-size: 1.2rem; }
+.hero-container { position:relative; width:100%; max-height:80vh; overflow:hidden; }
+.hero-container img { width:100%; display:block; filter: brightness(50%); max-height:80vh; object-fit:cover; }
+.hero-text { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; color:#fff; }
+.hero-text h1 { font-size:3rem; margin-bottom:20px; }
+.hero-text p { font-size:1.2rem; }
 
-    /* Sections */
-    section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
-    section h2 { font-size: 2rem; margin-bottom: 40px; color: #0077cc; text-align: center; }
+section { padding:80px 40px; max-width:1200px; margin:0 auto; }
+section h2 { font-size:2rem; margin-bottom:40px; color:#0077cc; text-align:center; }
 
-    /* Service Cards */
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-    .service-card { background: #f9f9f9; border-radius: 10px; overflow: hidden; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
-    .service-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
-    .service-card h3 { padding: 20px; font-size: 1.2rem; color: #0077cc; }
-    .service-card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
+.services-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:40px; }
+.service-card { background:#f9f9f9; border-radius:10px; overflow:hidden; text-align:center; transition: transform 0.3s, box-shadow 0.3s; }
+.service-card img { width:100%; height:200px; object-fit:cover; display:block; }
+.service-card h3 { padding:20px; font-size:1.2rem; color:#0077cc; }
+.service-card:hover { transform:translateY(-5px); box-shadow:0 6px 15px rgba(0,0,0,0.15); }
 
-    /* Footer */
-    footer { text-align: center; padding: 40px; background: #f5f5f5; color: #222; font-weight: bold; }
+footer { text-align:center; padding:40px; background:#f5f5f5; font-weight:bold; }
 
-    @media (max-width: 768px) {
-      .hero-content h1 { font-size: 2rem; }
-      .hero-content p { font-size: 1rem; }
-    }
-  </style>
+@media(max-width:768px){ .hero-text h1{ font-size:2rem; } .hero-text p{ font-size:1rem; } }
+</style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <div class="logo"><a href="index.html">TK Net</a></div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="individual-services.html">Individual Service Pages</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<!-- Navbar -->
+<nav>
+  <div class="logo"><a href="index.html">TK Net</a></div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="individual-services.html">Individual Service Pages</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- Hero -->
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Advisory for High-Stakes Decisions</h1>
-      <p>We deliver unconflicted, evidence-based advice across strategy, capital allocation, transactions, technology, and place-making.</p>
+<!-- Hero -->
+<div class="hero-container">
+  <img src="images/services-hero.jpg" alt="Services Hero Image">
+  <div class="hero-text">
+    <h1>Advisory for High-Stakes Decisions</h1>
+    <p>We deliver unconflicted, evidence-based advice across strategy, capital allocation, transactions, technology, and place-making.</p>
+  </div>
+</div>
+
+<!-- Services Cards -->
+<section>
+  <h2>Our Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <img src="images/service1.jpg" alt="Strategy & Market Expansion">
+      <h3>Strategy & Market Expansion</h3>
+    </div>
+    <div class="service-card">
+      <img src="images/service2.jpg" alt="Investment & Transaction Advisory">
+      <h3>Investment & Transaction Advisory</h3>
+    </div>
+    <div class="service-card">
+      <img src="images/service3.jpg" alt="M&A and Deal Structuring">
+      <h3>M&A and Deal Structuring</h3>
+    </div>
+    <div class="service-card">
+      <img src="images/service4.jpg" alt="AI & Technology Strategy">
+      <h3>AI & Technology Strategy</h3>
+    </div>
+    <div class="service-card">
+      <img src="images/service5.jpg" alt="Urban & Innovation Development">
+      <h3>Urban & Innovation Development</h3>
+    </div>
+    <div class="service-card">
+      <img src="images/service6.jpg" alt="Cross-Border Programs">
+      <h3>Cross-Border Programs</h3>
     </div>
   </div>
+</section>
 
-  <!-- Services Cards -->
-  <section>
-    <h2>Our Services</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <img src="images/service1.jpg" alt="Strategy & Market Expansion">
-        <h3>Strategy & Market Expansion</h3>
-      </div>
-      <div class="service-card">
-        <img src="images/service2.jpg" alt="Investment & Transaction Advisory">
-        <h3>Investment & Transaction Advisory</h3>
-      </div>
-      <div class="service-card">
-        <img src="images/service3.jpg" alt="M&A and Deal Structuring">
-        <h3>M&A and Deal Structuring</h3>
-      </div>
-      <div class="service-card">
-        <img src="images/service4.jpg" alt="AI & Technology Strategy">
-        <h3>AI & Technology Strategy</h3>
-      </div>
-      <div class="service-card">
-        <img src="images/service5.jpg" alt="Urban & Innovation Development">
-        <h3>Urban & Innovation Development</h3>
-      </div>
-      <div class="service-card">
-        <img src="images/service6.jpg" alt="Cross-Border Programs">
-        <h3>Cross-Border Programs</h3>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    TK Net <br>
-    Global Advisory in Strategy, Investment, and Innovation
-  </footer>
+<!-- Footer -->
+<footer>
+  TK Net <br>
+  Global Advisory in Strategy, Investment, and Innovation
+</footer>
 
 </body>
 </html>
