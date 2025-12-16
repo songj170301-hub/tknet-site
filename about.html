@@ -6,9 +6,7 @@
 <title>About - TK Net</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-body {
-  margin:0; font-family: 'Inter', sans-serif; color:#111; line-height:1.6; background:#fff;
-}
+body { margin:0; font-family:'Inter',sans-serif; color:#111; line-height:1.6; background:#fff; }
 a { text-decoration:none; color:inherit; }
 ul { list-style:none; padding:0; margin:0; }
 
@@ -19,6 +17,7 @@ nav ul { display:flex; gap:2rem; }
 nav a { color:#fff; font-weight:600; text-transform:uppercase; font-size:0.9rem; }
 nav a.active { border-bottom:2px solid #00aaff; padding-bottom:2px; }
 
+/* Hero */
 .hero {
   position:relative; display:flex; justify-content:center; align-items:center; height:80vh; min-height:400px; text-align:center; color:#fff; overflow:hidden;
 }
@@ -34,9 +33,7 @@ nav a.active { border-bottom:2px solid #00aaff; padding-bottom:2px; }
 .hero h1 { font-size:3rem; margin-bottom:1rem; text-shadow:2px 2px 6px rgba(0,0,0,0.7); }
 .hero p { font-size:1.2rem; letter-spacing:1px; text-shadow:1px 1px 4px rgba(0,0,0,0.7); }
 
-@keyframes fadeInUp {
-  to { opacity:1; transform:translateY(0); }
-}
+@keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
 
 main { max-width:1000px; margin:auto; padding:4rem 2rem; }
 section { margin-bottom:4rem; }
@@ -81,8 +78,8 @@ footer { background:#111; color:#fff; text-align:center; padding:2rem 1rem; font
 </nav>
 
 <section class="hero">
-  <!-- Hero 背景图：本地图片存在时替换 src，否则自动用网络图片 -->
-  <img id="hero-img" src="images/hero-bg.jpg" alt="Hero Background">
+  <!-- Hero 背景图，使用 What We Do 第二张图片路径 -->
+  <img id="hero-img" src="images/what-we-do-2.jpg" alt="Hero Background">
   <div class="overlay"></div>
   <div class="hero-content">
     <h1>Since 2007 | Independent Strategic Advisory</h1>
@@ -129,13 +126,11 @@ footer { background:#111; color:#fff; text-align:center; padding:2rem 1rem; font
 // Principles 卡片滚动动画
 const cards = document.querySelectorAll('.principle-card');
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) entry.target.classList.add('active');
-  });
+  entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
 }, { threshold:0.2 });
 cards.forEach(card => observer.observe(card));
 
-// Hero 图片 fallback
+// Hero 图片 fallback，如果本地 what-we-do-2.jpg 不存在，用网络占位图
 const heroImg = document.getElementById('hero-img');
 heroImg.onerror = () => { heroImg.src = 'https://via.placeholder.com/1600x900'; };
 </script>
