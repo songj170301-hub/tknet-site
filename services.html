@@ -43,9 +43,12 @@ h2 { font-size:2rem; margin-bottom:2rem; color:#222; text-align:center; }
 }
 .service-card {
   background:#f7f7f7; padding:2rem; border-radius:8px; text-align:center; transition:transform 0.2s, box-shadow 0.3s;
+  display:flex; flex-direction:column; align-items:center; gap:1rem;
 }
 .service-card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
-.service-card p { margin:0; font-weight:600; font-size:1rem; color:#00aaff; }
+.service-card img { width:50px; height:50px; object-fit:contain; }
+.service-card h3 { margin:0; font-size:1.1rem; color:#00aaff; }
+.service-card p { margin:0; font-size:0.95rem; color:#333; }
 
 footer { background:#111; color:#fff; text-align:center; padding:2rem 1rem; font-size:0.9rem; }
 
@@ -80,12 +83,36 @@ footer { background:#111; color:#fff; text-align:center; padding:2rem 1rem; font
   <section id="services">
     <h2>Our Services</h2>
     <div class="services-grid">
-      <div class="service-card"><p>Strategy & Market Expansion</p></div>
-      <div class="service-card"><p>Investment & Transaction Advisory</p></div>
-      <div class="service-card"><p>M&A and Deal Structuring</p></div>
-      <div class="service-card"><p>AI & Technology Strategy</p></div>
-      <div class="service-card"><p>Urban & Innovation Development</p></div>
-      <div class="service-card"><p>Cross-Border Programs</p></div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/50/00aaff/strategy.png" alt="Strategy Icon">
+        <h3>Strategy & Market Expansion</h3>
+        <p>Evidence-based approaches to grow and scale businesses globally.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/50/00aaff/investment.png" alt="Investment Icon">
+        <h3>Investment & Transaction Advisory</h3>
+        <p>Independent guidance on capital allocation and transactions.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/50/00aaff/deal.png" alt="M&A Icon">
+        <h3>M&A and Deal Structuring</h3>
+        <p>Structuring complex deals for optimal strategic outcomes.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/50/00aaff/artificial-intelligence.png" alt="AI Icon">
+        <h3>AI & Technology Strategy</h3>
+        <p>Leveraging technology and AI to drive competitive advantage.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/50/00aaff/city.png" alt="Urban Icon">
+        <h3>Urban & Innovation Development</h3>
+        <p>Planning and implementing innovation-driven urban projects.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/50/00aaff/global.png" alt="Cross-Border Icon">
+        <h3>Cross-Border Programs</h3>
+        <p>Managing complex international programs across borders.</p>
+      </div>
     </div>
   </section>
 </main>
@@ -106,7 +133,7 @@ img.onload = () => { heroImg.src = localPath; };
 img.onerror = () => { heroImg.src = fallbackPath; };
 img.src = localPath;
 
-// Services 卡片动画
+// Services 卡片滚动动画
 const cards = document.querySelectorAll('.service-card');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
