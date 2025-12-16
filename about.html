@@ -42,28 +42,22 @@
       color: #fff;
       overflow: hidden;
       background-color: #333;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      z-index: 1;
+      transition: background-image 0.3s ease-in-out;
     }
-    .hero::after {
-      content: '';
+    /* 蒙版 */
+    .hero .overlay {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top:0; left:0;
+      width:100%; height:100%;
       background: rgba(0,0,0,0.5);
-      z-index: 2;
+      z-index: 1;
     }
     .hero-content {
       position: relative;
-      z-index: 3;
+      z-index: 2;
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 1.5s forwards;
@@ -139,7 +133,8 @@
     </ul>
   </nav>
 
-  <section class="hero">
+  <section class="hero" id="hero">
+    <div class="overlay"></div>
     <div class="hero-content">
       <h1>Since 2007 | Independent Strategic Advisory</h1>
       <p>Seoul Singapore Tokyo Beijing</p>
@@ -194,21 +189,11 @@
     cards.forEach(card => observer.observe(card));
 
     // Hero 背景图本地检测 + fallback
-    const heroBefore = document.querySelector('.hero::before'); // pseudo无法直接选，用JS替代
-    const heroElement = document.querySelector('.hero');
+    const hero = document.getElementById('hero');
     const localImg = new Image();
     localImg.src = 'images/hero-bg.jpg'; // 本地图片路径
-    localImg.onload = () => {
-      heroElement.style.setProperty('--hero-bg', `url('images/hero-bg.jpg')`);
-    };
-    localImg.onerror = () => {
-      heroElement.style.setProperty('--hero-bg', `url('https://via.placeholder.com/1600x900')`);
-    };
-    // 使用 CSS 变量设置背景
-    heroElement.style.setProperty('background-size', 'cover');
-    heroElement.style.setProperty('background-position', 'center');
-    heroElement.style.setProperty('background-repeat', 'no-repeat');
-    heroElement.style.backgroundImage = `var(--hero-bg)`;
+    localImg.onload = () => { hero.style.backgroundImage = "url('images/hero-bg.jpg')"; };
+    localImg.onerror = () => { hero.style.backgroundImage = "url('https://via.placeholder.com/1600x900')"; };
   </script>
 
 </body>
