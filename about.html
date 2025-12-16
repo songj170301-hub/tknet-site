@@ -34,7 +34,6 @@
     /* Hero 区 */
     .hero {
       position: relative;
-      background: url('images/hero-bg.jpg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -44,18 +43,33 @@
       text-align: center;
       color: #fff;
       overflow: hidden;
+      background-color: #333; /* 如果图片加载失败显示背景色 */
     }
+    /* Hero 图片 */
     .hero::before {
       content: '';
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
+      background-image: url('images/hero-bg.jpg'); /* 本地路径，可修改 */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #333; /* fallback */
       z-index: 1;
+    }
+    /* 蒙版 */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 2;
     }
     .hero-content {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 1.5s forwards;
@@ -258,6 +272,7 @@
 
   <!-- Principles 卡片滚动动画 -->
   <script>
+    // Principles 卡片淡入动画
     const cards = document.querySelectorAll('.principle-card');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
