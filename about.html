@@ -38,11 +38,12 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       height: 80vh;
       min-height: 400px;
       text-align: center;
-      padding: 0 2rem;
       color: #fff;
+      overflow: hidden;
     }
     /* 蒙版层 */
     .hero::before {
@@ -50,12 +51,15 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5); /* 半透明黑色蒙版，可调整透明度 */
+      background: rgba(0,0,0,0.5);
       z-index: 1;
     }
     .hero-content {
       position: relative;
       z-index: 2;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1.5s forwards;
     }
     .hero h1 {
       font-size: 3rem;
@@ -66,6 +70,14 @@
       font-size: 1.2rem; 
       letter-spacing: 1px; 
       text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+
+    /* Hero 文本动画 */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* 主体内容 */
