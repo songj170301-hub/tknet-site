@@ -13,8 +13,9 @@ nav ul { list-style:none; display:flex; gap:30px; }
 nav a { text-decoration:none; color:#222; font-weight:bold; transition: color 0.3s; }
 nav a:hover { color:#0077cc; }
 
-.hero-container { position:relative; width:100%; height:500px; background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center; }
-.hero-text { color:#fff; text-align:center; background: rgba(0,0,0,0.4); padding:20px; border-radius:10px; }
+.hero-container { position:relative; width:100%; height:500px; overflow:hidden; }
+.hero-container img { width:100%; height:100%; object-fit:cover; display:block; }
+.hero-text { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#fff; text-align:center; background: rgba(0,0,0,0.4); padding:20px; border-radius:10px; }
 .hero-text h1 { font-size:3rem; margin-bottom:20px; }
 .hero-text p { font-size:1.2rem; }
 
@@ -22,9 +23,8 @@ section { padding:80px 40px; max-width:1200px; margin:0 auto; }
 section h2 { font-size:2rem; margin-bottom:40px; color:#0077cc; text-align:center; }
 
 .services-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:40px; }
-
 .service-card { position:relative; overflow:hidden; border-radius:10px; height:250px; transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; }
-.service-card img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s; }
+.service-card img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s; display:block; }
 .service-card .overlay { position:absolute; bottom:0; left:0; width:100%; height:50%; background: rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.2rem; text-align:center; padding:10px; }
 .service-card:hover img { transform: scale(1.1); }
 .service-card:hover { box-shadow:0 6px 15px rgba(0,0,0,0.25); }
@@ -52,7 +52,8 @@ footer { text-align:center; padding:40px; background:#f5f5f5; font-weight:bold; 
 </nav>
 
 <!-- Hero -->
-<div class="hero-container" style="background-image: url('https://via.placeholder.com/1600x500/0077cc/ffffff?text=Hero+Image');">
+<div class="hero-container">
+  <img src="https://via.placeholder.com/1600x500/0077cc/ffffff?text=Hero+Image" alt="Hero Image">
   <div class="hero-text">
     <h1>Advisory for High-Stakes Decisions</h1>
     <p>We deliver unconflicted, evidence-based advice across strategy, capital allocation, transactions, technology, and place-making.</p>
