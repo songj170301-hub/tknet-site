@@ -6,7 +6,6 @@
   <title>About - TK Net</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* 全局样式 */
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -17,7 +16,6 @@
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; padding: 0; margin: 0; }
 
-    /* 导航栏 */
     nav {
       display: flex;
       justify-content: center;
@@ -43,21 +41,18 @@
       text-align: center;
       color: #fff;
       overflow: hidden;
-      background-color: #333; /* fallback背景色 */
+      background-color: #333;
     }
-    /* Hero 图片 + 网络 fallback */
     .hero::before {
       content: '';
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-image: url('images/hero-bg.jpg'), url('https://via.placeholder.com/1600x900');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       z-index: 1;
     }
-    /* 蒙版 */
     .hero::after {
       content: '';
       position: absolute;
@@ -85,61 +80,24 @@
     }
 
     @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* 主体内容 */
     main {
       max-width: 1000px;
       margin: auto;
       padding: 4rem 2rem;
     }
     section { margin-bottom: 4rem; }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #222;
-    }
-
+    h2 { font-size: 2rem; margin-bottom: 1rem; color: #222; }
     p { margin-bottom: 1rem; font-size: 1.05rem; }
 
-    /* Evolution 时间轴 */
-    .timeline {
-      position: relative;
-      margin: 2rem 0 2rem 0;
-      padding-left: 2rem;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 10px;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: #00aaff;
-    }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 2rem;
-      padding-left: 2rem;
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -8px;
-      top: 0.3rem;
-      width: 16px;
-      height: 16px;
-      background: #00aaff;
-      border-radius: 50%;
-    }
+    .timeline { position: relative; margin: 2rem 0 2rem 0; padding-left: 2rem; }
+    .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 4px; background: #00aaff; }
+    .timeline-item { position: relative; margin-bottom: 2rem; padding-left: 2rem; }
+    .timeline-item::before { content: ''; position: absolute; left: -8px; top: 0.3rem; width: 16px; height: 16px; background: #00aaff; border-radius: 50%; }
     .timeline-item strong { display: block; margin-bottom: 0.3rem; }
 
-    /* Principles 样式 + 动画 */
     .principles {
       display: flex;
       flex-wrap: wrap;
@@ -156,21 +114,11 @@
       opacity: 0;
       transform: translateY(20px);
     }
-    .principle-card.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .principle-card.active { opacity: 1; transform: translateY(0); }
     .principle-card:hover { transform: translateY(-5px); }
     .principle-card h3 { margin-bottom: 0.5rem; color: #00aaff; }
 
-    /* Footer */
-    footer {
-      background: #111;
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-    }
+    footer { background: #111; color: #fff; text-align: center; padding: 2rem 1rem; font-size: 0.9rem; }
 
     @media(max-width: 768px) {
       .hero h1 { font-size: 2.2rem; }
@@ -180,7 +128,6 @@
 </head>
 <body>
 
-  <!-- 导航栏 -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -192,7 +139,6 @@
     </ul>
   </nav>
 
-  <!-- Hero 区 -->
   <section class="hero">
     <div class="hero-content">
       <h1>Since 2007 | Independent Strategic Advisory</h1>
@@ -201,75 +147,40 @@
   </section>
 
   <main>
-    <!-- Who We Are -->
     <section id="who-we-are">
       <h2>Who We Are</h2>
       <p>TK Net is an independent advisory firm distinguished by global-standard analytical rigor, deep Asia expertise, and the rare ability to deliver large-scale innovation districts from strategy through activation.</p>
       <p>We advise chief executives, boards, investment committees, and public-sector leaders on decisions involving material capital, cross-border complexity, and long-term competitive consequence.</p>
     </section>
 
-    <!-- Evolution 时间轴 -->
     <section id="evolution">
       <h2>Evolution</h2>
       <div class="timeline">
-        <div class="timeline-item">
-          <strong>2007</strong>
-          Founded as China Studies & Company, one of the first consulting firms in China with close ties to Tsinghua University, Tsinghua Holdings Co., Ltd., and leading global financial institutions.
-        </div>
-        <div class="timeline-item">
-          <strong>2008–2009</strong>
-          Separated from Tsinghua Holdings to establish full operational and ownership independence. Began international expansion with presence in Singapore and Japan.
-        </div>
-        <div class="timeline-item">
-          <strong>2009–2014</strong>
-          Presence established in Singapore together with IMC Group, Japan’s Mitsui, Korea’s CKT Group.
-        </div>
-        <div class="timeline-item">
-          <strong>2010</strong>
-          Formed strategic cooperation with CKT Group.
-        </div>
-        <div class="timeline-item">
-          <strong>2014</strong>
-          Rebranded as TK Net to reflect broadened global scope across strategy, investment, and large-scale innovation development.
-        </div>
-        <div class="timeline-item">
-          <strong>Today</strong>
-          Independent strategic advisory partner to multinational corporations, investors, and governments across Asia, Europe, and North America.
-        </div>
+        <div class="timeline-item"><strong>2007</strong> Founded as China Studies & Company...</div>
+        <div class="timeline-item"><strong>2008–2009</strong> Separated from Tsinghua Holdings...</div>
+        <div class="timeline-item"><strong>2009–2014</strong> Presence established in Singapore...</div>
+        <div class="timeline-item"><strong>2010</strong> Formed strategic cooperation with CKT Group.</div>
+        <div class="timeline-item"><strong>2014</strong> Rebranded as TK Net...</div>
+        <div class="timeline-item"><strong>Today</strong> Independent strategic advisory partner...</div>
       </div>
     </section>
 
-    <!-- Principles -->
     <section id="principles">
       <h2>Principles</h2>
       <div class="principles">
-        <div class="principle-card">
-          <h3>Independence</h3>
-          <p>We maintain complete operational and advisory independence.</p>
-        </div>
-        <div class="principle-card">
-          <h3>Analytical Rigor</h3>
-          <p>Our insights are grounded in deep, globally-standard analysis.</p>
-        </div>
-        <div class="principle-card">
-          <h3>Practical Execution</h3>
-          <p>We turn strategy into actionable, measurable outcomes.</p>
-        </div>
-        <div class="principle-card">
-          <h3>Absolute Discretion</h3>
-          <p>Confidentiality is paramount in all our engagements.</p>
-        </div>
+        <div class="principle-card"><h3>Independence</h3><p>We maintain complete operational and advisory independence.</p></div>
+        <div class="principle-card"><h3>Analytical Rigor</h3><p>Our insights are grounded in deep, globally-standard analysis.</p></div>
+        <div class="principle-card"><h3>Practical Execution</h3><p>We turn strategy into actionable, measurable outcomes.</p></div>
+        <div class="principle-card"><h3>Absolute Discretion</h3><p>Confidentiality is paramount in all our engagements.</p></div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>© 2025 TK Net</p>
     <p>Global Advisory in Strategy, Investment, and Innovation</p>
   </footer>
 
-  <!-- Principles 卡片滚动动画 -->
   <script>
     // Principles 卡片淡入动画
     const cards = document.querySelectorAll('.principle-card');
@@ -281,6 +192,23 @@
       });
     }, { threshold: 0.2 });
     cards.forEach(card => observer.observe(card));
+
+    // Hero 背景图本地检测 + fallback
+    const heroBefore = document.querySelector('.hero::before'); // pseudo无法直接选，用JS替代
+    const heroElement = document.querySelector('.hero');
+    const localImg = new Image();
+    localImg.src = 'images/hero-bg.jpg'; // 本地图片路径
+    localImg.onload = () => {
+      heroElement.style.setProperty('--hero-bg', `url('images/hero-bg.jpg')`);
+    };
+    localImg.onerror = () => {
+      heroElement.style.setProperty('--hero-bg', `url('https://via.placeholder.com/1600x900')`);
+    };
+    // 使用 CSS 变量设置背景
+    heroElement.style.setProperty('background-size', 'cover');
+    heroElement.style.setProperty('background-position', 'center');
+    heroElement.style.setProperty('background-repeat', 'no-repeat');
+    heroElement.style.backgroundImage = `var(--hero-bg)`;
   </script>
 
 </body>
