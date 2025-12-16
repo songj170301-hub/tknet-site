@@ -25,7 +25,7 @@
 
     h1 {
       font-size: 44px;
-      margin: 0 0 20px;
+      margin: 0;
     }
 
     h2 {
@@ -38,14 +38,6 @@
       max-width: 760px;
     }
 
-    ul {
-      padding-left: 18px;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -53,46 +45,59 @@
     }
 
     /* =========================
+       Navigation (example)
+       ========================= */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      z-index: 1000;
+    }
+
+    nav .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
        Hero
        ========================= */
     .hero {
-      position: relative;
+      margin-top: 64px; /* offset for fixed nav */
       min-height: 72vh;
       display: flex;
       align-items: center;
       color: #fff;
       background-image:
         linear-gradient(
-          rgba(0,0,0,0.7),
-          rgba(0,0,0,0.7)
+          rgba(0,0,0,0.75),
+          rgba(0,0,0,0.75)
         ),
         url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1800&q=80");
       background-size: cover;
       background-position: center;
     }
 
-    .hero-content {
-      max-width: 760px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: #e0e0e0;
-    }
-
     /* =========================
-       Intro
-       ========================= */
-    .intro {
-      margin: 140px 0;
-      font-size: 18px;
-    }
-
-    /* =========================
-       Individual services
+       Sections
        ========================= */
     .service {
-      margin-bottom: 160px;
+      margin: 160px 0;
     }
 
     .subtitle {
@@ -101,19 +106,9 @@
       color: #222;
     }
 
-    .capabilities {
-      font-size: 15px;
-      color: #444;
-      margin-bottom: 36px;
-    }
-
-    .capabilities strong {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 500;
-      color: #111;
-    }
-
+    /* =========================
+       Footer
+       ========================= */
     footer {
       padding: 80px 0;
       border-top: 1px solid #eee;
@@ -125,55 +120,40 @@
 
 <body>
 
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="services.html">SERVICES</a>
+      <a href="individual-services.html">INDIVIDUAL SERVICE PAGES</a>
+    </div>
+  </nav>
+
   <!-- Hero -->
   <section class="hero">
-    <div class="container hero-content">
-      <h1>Partner-Led Advisory Engagements</h1>
-      <p>
-        Deep, focused advisory support for critical strategic,
-        investment, and transformation decisions.
-      </p>
+    <div class="container">
+      <h1>INDIVIDUAL SERVICE PAGES</h1>
     </div>
   </section>
 
-  <!-- Intro -->
-  <section class="intro container">
-    <p>
-      Each engagement is designed and led by senior partners, with
-      direct accountability for analytical rigor, strategic judgment,
-      and execution relevance.
-    </p>
-  </section>
-
-  <!-- Strategy -->
+  <!-- Individual Services -->
   <section class="service container">
     <h2>Strategy & Market Expansion</h2>
     <p class="subtitle">
       Focused strategic advisory supporting decisive market-entry,
       portfolio, and growth decisions.
     </p>
-
-    <div class="capabilities">
-      <strong>Typical Engagement Scope</strong>
-      Corporate and portfolio strategy ｜ Market entry sequencing ｜ Competitive scenario assessment ｜ Go-to-market design ｜ Regulatory and partnership strategy
-    </div>
   </section>
 
-  <!-- Investment -->
   <section class="service container">
     <h2>Investment & Transaction Advisory</h2>
     <p class="subtitle">
-      Independent commercial diligence and valuation for investment
-      committees and corporate development teams.
+      Independent commercial diligence and valuation support for
+      investment committees and corporate development teams.
     </p>
-
-    <div class="capabilities">
-      <strong>Typical Engagement Scope</strong>
-      Commercial due diligence ｜ Market and technology assessment ｜ Valuation modelling ｜ Downside and sensitivity analysis ｜ IC materials
-    </div>
   </section>
 
-  <!-- M&A -->
   <section class="service container">
     <h2>M&amp;A and Deal Structuring</h2>
     <p class="subtitle">
@@ -182,7 +162,6 @@
     </p>
   </section>
 
-  <!-- AI -->
   <section class="service container">
     <h2>AI & Technology Strategy</h2>
     <p class="subtitle">
@@ -191,7 +170,6 @@
     </p>
   </section>
 
-  <!-- Urban -->
   <section class="service container">
     <h2>Urban & Innovation Development</h2>
     <p class="subtitle">
@@ -200,7 +178,6 @@
     </p>
   </section>
 
-  <!-- Cross-border -->
   <section class="service container">
     <h2>Cross-Border Programs</h2>
     <p class="subtitle">
