@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>TK Net | Services</title>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
@@ -22,24 +22,19 @@ nav a:hover { color:#0077cc; }
 section { padding:80px 40px; max-width:1200px; margin:0 auto; }
 section h2 { font-size:2rem; margin-bottom:40px; color:#0077cc; text-align:center; }
 
-.services-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:40px; }
-.service-card { position:relative; overflow:hidden; border-radius:10px; height:250px; transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; }
+.services-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(270px, 1fr)); gap:40px; }
+.service-card { position:relative; overflow:hidden; border-radius:10px; height:280px; transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; }
 .service-card img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s; display:block; }
-.service-card .overlay { position:absolute; bottom:0; left:0; width:100%; height:50%; background: rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.2rem; text-align:center; padding:10px; }
+.service-card .overlay { position:absolute; bottom:0; left:0; width:100%; height:50%; background: rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.1rem; text-align:center; padding:10px; }
 .service-card:hover img { transform: scale(1.1); }
 .service-card:hover { box-shadow:0 6px 15px rgba(0,0,0,0.25); }
 
 footer { text-align:center; padding:40px; background:#f5f5f5; font-weight:bold; }
-
-@media(max-width:768px){ 
-  .hero-text h1{ font-size:2rem; } 
-  .hero-text p{ font-size:1rem; } 
-}
+@media(max-width:768px){ .hero-text h1{ font-size:2rem; } .hero-text p{ font-size:1rem; } }
 </style>
 </head>
 <body>
 
-<!-- Navbar -->
 <nav>
   <div class="logo"><a href="index.html">TK Net</a></div>
   <ul>
@@ -53,45 +48,55 @@ footer { text-align:center; padding:40px; background:#f5f5f5; font-weight:bold; 
 
 <!-- Hero -->
 <div class="hero-container">
-  <img src="https://picsum.photos/1600/500?random=1" alt="Hero Image">
+  <img src="https://images.unsplash.com/photo-1508385082359-f1f9b62ba6a8?auto=format&fit=crop&w=1600&q=80"
+       alt="Strategic Advisory and Global Consulting">
   <div class="hero-text">
-    <h1>Advisory for High-Stakes Decisions</h1>
-    <p>We deliver unconflicted, evidence-based advice across strategy, capital allocation, transactions, technology, and place-making.</p>
+    <h1>Advisory for High‑Stakes Decisions</h1>
+    <p>Unconflicted, evidence‑based counsel shaping business strategy, investment, and innovation.</p>
   </div>
 </div>
 
-<!-- Services Cards -->
 <section>
   <h2>Our Services</h2>
   <div class="services-grid">
     <div class="service-card">
-      <img src="https://picsum.photos/400/250?random=2" alt="Strategy & Market Expansion">
+      <img src="https://images.unsplash.com/photo-1569847844277-f762de6b5d61?auto=format&fit=crop&w=800&q=70"
+           alt="Strategy & Market Expansion">
       <div class="overlay">Strategy & Market Expansion</div>
     </div>
+
     <div class="service-card">
-      <img src="https://picsum.photos/400/250?random=3" alt="Investment & Transaction Advisory">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=70"
+           alt="Investment & Transaction Advisory">
       <div class="overlay">Investment & Transaction Advisory</div>
     </div>
+
     <div class="service-card">
-      <img src="https://picsum.photos/400/250?random=4" alt="M&A and Deal Structuring">
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=70"
+           alt="M&A and Deal Structuring">
       <div class="overlay">M&A and Deal Structuring</div>
     </div>
+
     <div class="service-card">
-      <img src="https://picsum.photos/400/250?random=5" alt="AI & Technology Strategy">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=70"
+           alt="AI & Technology Strategy">
       <div class="overlay">AI & Technology Strategy</div>
     </div>
+
     <div class="service-card">
-      <img src="https://picsum.photos/400/250?random=6" alt="Urban & Innovation Development">
+      <img src="https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?auto=format&fit=crop&w=800&q=70"
+           alt="Urban & Innovation Development">
       <div class="overlay">Urban & Innovation Development</div>
     </div>
+
     <div class="service-card">
-      <img src="https://picsum.photos/400/250?random=7" alt="Cross-Border Programs">
-      <div class="overlay">Cross-Border Programs</div>
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=70"
+           alt="Cross-Border Programs">
+      <div class="overlay">Cross‑Border Programs</div>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
   TK Net <br>
   Global Advisory in Strategy, Investment, and Innovation
