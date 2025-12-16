@@ -84,32 +84,32 @@ footer { background:#111; color:#fff; text-align:center; padding:2rem 1rem; font
     <h2>Our Services</h2>
     <div class="services-grid">
       <div class="service-card">
-        <img src="https://img.icons8.com/ios-filled/50/00aaff/strategy.png" alt="Strategy Icon">
+        <img class="service-icon" data-local="images/strategy.png" data-fallback="https://img.icons8.com/ios-filled/50/00aaff/strategy.png" alt="Strategy Icon">
         <h3>Strategy & Market Expansion</h3>
         <p>Evidence-based approaches to grow and scale businesses globally.</p>
       </div>
       <div class="service-card">
-        <img src="https://img.icons8.com/ios-filled/50/00aaff/investment.png" alt="Investment Icon">
+        <img class="service-icon" data-local="images/investment.png" data-fallback="https://img.icons8.com/ios-filled/50/00aaff/investment.png" alt="Investment Icon">
         <h3>Investment & Transaction Advisory</h3>
         <p>Independent guidance on capital allocation and transactions.</p>
       </div>
       <div class="service-card">
-        <img src="https://img.icons8.com/ios-filled/50/00aaff/deal.png" alt="M&A Icon">
+        <img class="service-icon" data-local="images/deal.png" data-fallback="https://img.icons8.com/ios-filled/50/00aaff/deal.png" alt="M&A Icon">
         <h3>M&A and Deal Structuring</h3>
         <p>Structuring complex deals for optimal strategic outcomes.</p>
       </div>
       <div class="service-card">
-        <img src="https://img.icons8.com/ios-filled/50/00aaff/artificial-intelligence.png" alt="AI Icon">
+        <img class="service-icon" data-local="images/ai.png" data-fallback="https://img.icons8.com/ios-filled/50/00aaff/artificial-intelligence.png" alt="AI Icon">
         <h3>AI & Technology Strategy</h3>
         <p>Leveraging technology and AI to drive competitive advantage.</p>
       </div>
       <div class="service-card">
-        <img src="https://img.icons8.com/ios-filled/50/00aaff/city.png" alt="Urban Icon">
+        <img class="service-icon" data-local="images/urban.png" data-fallback="https://img.icons8.com/ios-filled/50/00aaff/city.png" alt="Urban Icon">
         <h3>Urban & Innovation Development</h3>
         <p>Planning and implementing innovation-driven urban projects.</p>
       </div>
       <div class="service-card">
-        <img src="https://img.icons8.com/ios-filled/50/00aaff/global.png" alt="Cross-Border Icon">
+        <img class="service-icon" data-local="images/crossborder.png" data-fallback="https://img.icons8.com/ios-filled/50/00aaff/global.png" alt="Cross-Border Icon">
         <h3>Cross-Border Programs</h3>
         <p>Managing complex international programs across borders.</p>
       </div>
@@ -123,15 +123,24 @@ footer { background:#111; color:#fff; text-align:center; padding:2rem 1rem; font
 </footer>
 
 <script>
-// Hero 图片加载：优先本地，失败用网络 fallback
+// Hero 图片加载
 const heroImg = document.getElementById('hero-img');
-const localPath = 'images/services-hero.jpg'; // 可替换为本地图片路径
-const fallbackPath = 'https://images.unsplash.com/photo-1581093588401-70b02a10b4bb?auto=format&fit=crop&w=1600&q=80';
+const heroLocal = 'images/services-hero.jpg';
+const heroFallback = 'https://images.unsplash.com/photo-1581093588401-70b02a10b4bb?auto=format&fit=crop&w=1600&q=80';
+const heroLoader = new Image();
+heroLoader.onload = () => { heroImg.src = heroLocal; };
+heroLoader.onerror = () => { heroImg.src = heroFallback; };
+heroLoader.src = heroLocal;
 
-const img = new Image();
-img.onload = () => { heroImg.src = localPath; };
-img.onerror = () => { heroImg.src = fallbackPath; };
-img.src = localPath;
+// 服务卡片图标加载
+document.querySelectorAll('.service-icon').forEach(img => {
+  const local = img.dataset.local;
+  const fallback = img.dataset.fallback;
+  const loader = new Image();
+  loader.onload = () => { img.src = local; };
+  loader.onerror = () => { img.src = fallback; };
+  loader.src = local;
+});
 
 // Services 卡片滚动动画
 const cards = document.querySelectorAll('.service-card');
