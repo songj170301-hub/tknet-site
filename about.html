@@ -78,8 +78,7 @@ footer { background:#111; color:#fff; text-align:center; padding:2rem 1rem; font
 </nav>
 
 <section class="hero">
-  <!-- Hero 背景图，使用 What We Do 第二张图片路径 -->
-  <img id="hero-img" src="images/what-we-do-2.jpg" alt="Hero Background">
+  <img id="hero-img" alt="Hero Background">
   <div class="overlay"></div>
   <div class="hero-content">
     <h1>Since 2007 | Independent Strategic Advisory</h1>
@@ -130,9 +129,18 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold:0.2 });
 cards.forEach(card => observer.observe(card));
 
-// Hero 图片 fallback，如果本地 what-we-do-2.jpg 不存在，用网络占位图
+// Hero 图片加载：优先本地，失败用网络 fallback
 const heroImg = document.getElementById('hero-img');
-heroImg.onerror = () => { heroImg.src = 'https://via.placeholder.com/1600x900'; };
+const localPath = 'images/what-we-do-2.jpg'; // 请确保本地路径正确
+const fallbackPath = 'https://via.placeholder.com/1600x900';
+
+function setHeroImage() {
+  const img = new Image();
+  img.src = localPath;
+  img.onload = () => { heroImg.src = localPath; };
+  img.onerror = () => { heroImg.src = fallbackPath; };
+}
+setHeroImage();
 </script>
 
 </body>
