@@ -11,16 +11,23 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, "Helvetica Neue", Arial, sans-serif;
       color: #111;
-      line-height: 1.6;
+      line-height: 1.65;
+      background: #fff;
     }
 
-    /* NAV */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ---------- NAV ---------- */
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
       border-bottom: 1px solid #e5e5e5;
+      font-size: 14px;
     }
 
     nav ul {
@@ -29,20 +36,15 @@
       gap: 28px;
       margin: 0;
       padding: 0;
-      font-size: 14px;
     }
 
-    nav a {
-      text-decoration: none;
-      color: #111;
-    }
-
-    /* HERO */
+    /* ---------- HERO ---------- */
     .hero {
       position: relative;
       width: 100%;
-      height: 70vh;
+      height: 72vh;
       overflow: hidden;
+      background: #000;
     }
 
     .hero img {
@@ -50,20 +52,22 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      filter: brightness(0.75);
     }
 
     .hero-text {
       position: absolute;
       left: 60px;
-      bottom: 80px;
+      bottom: 90px;
       color: #ffffff;
-      max-width: 620px;
+      max-width: 680px;
     }
 
     .hero-text h1 {
       font-size: 48px;
       font-weight: 500;
-      margin: 0 0 16px 0;
+      margin: 0 0 18px 0;
+      letter-spacing: -0.01em;
     }
 
     .hero-text p {
@@ -71,37 +75,50 @@
       opacity: 0.95;
     }
 
-    /* CONTENT */
+    /* ---------- CONTENT ---------- */
     main {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 80px 40px;
+      padding: 90px 40px;
     }
 
     section {
-      margin-bottom: 80px;
+      margin-bottom: 90px;
     }
 
     h2 {
       font-size: 28px;
       font-weight: 500;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
+      letter-spacing: -0.01em;
+    }
+
+    .intro {
+      font-size: 18px;
+      max-width: 760px;
+      color: #222;
     }
 
     .capabilities {
       font-size: 16px;
       color: #333;
+      line-height: 1.8;
+    }
+
+    .capabilities span {
+      white-space: nowrap;
     }
 
     ul {
       padding-left: 20px;
+      margin-top: 20px;
     }
 
     li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
-    /* FOOTER */
+    /* ---------- FOOTER ---------- */
     footer {
       border-top: 1px solid #e5e5e5;
       padding: 40px;
@@ -113,6 +130,7 @@
 
 <body>
 
+  <!-- NAV -->
   <nav>
     <strong>TK Net</strong>
     <ul>
@@ -123,28 +141,41 @@
     </ul>
   </nav>
 
-  <!-- HERO : GLOBAL NIGHT CITY -->
+  <!-- HERO : DARK GLOBAL NIGHT -->
   <section class="hero">
     <img
-      src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=1600&q=80"
+      src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=80"
       alt="Global City at Night"
     />
     <div class="hero-text">
       <h1>Strategy & Market Expansion</h1>
       <p>
         Clear corporate strategy, disciplined market-entry sequencing, and
-        execution frameworks for complex geographies.
+        execution frameworks that secure lasting advantage in complex
+        geographies.
       </p>
     </div>
   </section>
 
+  <!-- CONTENT -->
   <main>
+
+    <section>
+      <div class="intro">
+        We support chief executives and boards in defining long-term direction,
+        making critical market-entry decisions, and executing growth strategies
+        across complex and highly regulated environments.
+      </div>
+    </section>
+
     <section>
       <h2>Capabilities</h2>
       <div class="capabilities">
-        Corporate & portfolio strategy ｜ Market sequencing & attractiveness ｜ 
-        Competitive scenario planning ｜ Go-to-market & localization ｜ 
-        Regulatory & partnership strategy
+        <span>Corporate and portfolio strategy</span> ｜ 
+        <span>Market sequencing and attractiveness</span> ｜ 
+        <span>Competitive scenario planning</span> ｜ 
+        <span>Go-to-market and localization</span> ｜ 
+        <span>Regulatory and partnership strategy</span>
       </div>
     </section>
 
@@ -156,8 +187,10 @@
         <li>Pan-Asia growth strategy for a Singapore-listed REIT</li>
       </ul>
     </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer>
     TK Net<br />
     Global Advisory in Strategy, Investment, and Innovation
