@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TK Net | About</title>
+  <title>TK Net | Services</title>
   <style>
-    /* Reset & basic styling */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
     body { color: #222; line-height: 1.6; background-color: #fff; }
 
@@ -25,7 +24,7 @@
       align-items: center;
       text-align: center;
       color: #fff;
-      background-image: url('images/about-hero.jpg'); /* 确保图片在 /images/ 文件夹下 */
+      background-image: url('images/services-hero.jpg'); /* 确保图片在 images 文件夹 */
       background-size: cover;
       background-position: center;
       position: relative;
@@ -34,40 +33,22 @@
       content: "";
       position: absolute;
       top:0; left:0; right:0; bottom:0;
-      background-color: rgba(0,0,0,0.5); /* 黑色遮罩增加文字可读性 */
+      background-color: rgba(0,0,0,0.5);
     }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      padding: 0 20px;
-    }
+    .hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 20px; }
     .hero-content h1 { font-size: 3rem; margin-bottom: 20px; }
     .hero-content p { font-size: 1.2rem; }
 
     /* Sections */
     section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
-    section h2 { font-size: 2rem; margin-bottom: 20px; color: #0077cc; }
+    section h2 { font-size: 2rem; margin-bottom: 40px; color: #0077cc; text-align: center; }
 
-    /* Evolution Timeline */
-    .timeline { display: flex; flex-direction: column; gap: 20px; }
-    .timeline-item { border-left: 3px solid #0077cc; padding-left: 20px; position: relative; }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -8px;
-      top: 0;
-      width: 15px;
-      height: 15px;
-      background-color: #0077cc;
-      border-radius: 50%;
-    }
-    .timeline-item span { font-weight: bold; }
-
-    /* Principles */
-    .principles { display: flex; gap: 40px; flex-wrap: wrap; }
-    .principle { flex: 1 1 200px; padding: 20px; border: 1px solid #ddd; border-radius: 10px; text-align: center; transition: transform 0.3s; }
-    .principle:hover { transform: translateY(-5px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    /* Service Cards */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+    .service-card { background: #f9f9f9; border-radius: 10px; overflow: hidden; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+    .service-card img { width: 100%; height: 200px; object-fit: cover; }
+    .service-card h3 { padding: 20px; font-size: 1.2rem; color: #0077cc; }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
 
     /* Footer */
     footer { text-align: center; padding: 40px; background: #f5f5f5; color: #222; font-weight: bold; }
@@ -76,7 +57,6 @@
     @media (max-width: 768px) {
       .hero-content h1 { font-size: 2rem; }
       .hero-content p { font-size: 1rem; }
-      .principles { flex-direction: column; }
     }
   </style>
 </head>
@@ -89,6 +69,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
+      <li><a href="individual-services.html">Individual Service Pages</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -96,39 +77,39 @@
   <!-- Hero -->
   <div class="hero">
     <div class="hero-content">
-      <h1>Since 2007 | Independent Strategic Advisory</h1>
-      <p>Seoul | Singapore | Tokyo | Beijing</p>
+      <h1>Advisory for High-Stakes Decisions</h1>
+      <p>We deliver unconflicted, evidence-based advice across strategy, capital allocation, transactions, technology, and place-making.</p>
     </div>
   </div>
 
-  <!-- Who We Are -->
+  <!-- Services Cards -->
   <section>
-    <h2>Who We Are</h2>
-    <p>TK Net is an independent advisory firm distinguished by global-standard analytical rigor, deep Asia expertise, and the rare ability to deliver large-scale innovation districts from strategy through activation.</p>
-    <p>We advise chief executives, boards, investment committees, and public-sector leaders on decisions involving material capital, cross-border complexity, and long-term competitive consequence.</p>
-  </section>
-
-  <!-- Evolution -->
-  <section>
-    <h2>Evolution</h2>
-    <div class="timeline">
-      <div class="timeline-item"><span>2007:</span> Founded as China Studies & Company, one of the first consulting firms in China with close ties to Tsinghua University, Tsinghua Holdings Co., Ltd., and leading global financial institutions.</div>
-      <div class="timeline-item"><span>2008–2009:</span> Separated from Tsinghua Holdings to establish full operational and ownership independence. Began international expansion with presence in Singapore and Japan.</div>
-      <div class="timeline-item"><span>2009–2014:</span> Presence established in Singapore together with IMC Group, Japan’s Mitsui, Korea’s CKT Group.</div>
-      <div class="timeline-item"><span>2010:</span> Formed strategic cooperation with CKT Group.</div>
-      <div class="timeline-item"><span>2014:</span> Rebranded as TK Net to reflect broadened global scope across strategy, investment, and large-scale innovation development.</div>
-      <div class="timeline-item"><span>Today:</span> Independent strategic advisory partner to multinational corporations, investors, and governments across Asia, Europe, and North America.</div>
-    </div>
-  </section>
-
-  <!-- Principles -->
-  <section>
-    <h2>Principles</h2>
-    <div class="principles">
-      <div class="principle">Independence</div>
-      <div class="principle">Analytical Rigor</div>
-      <div class="principle">Practical Execution</div>
-      <div class="principle">Absolute Discretion</div>
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="images/service1.jpg" alt="Strategy & Market Expansion">
+        <h3>Strategy & Market Expansion</h3>
+      </div>
+      <div class="service-card">
+        <img src="images/service2.jpg" alt="Investment & Transaction Advisory">
+        <h3>Investment & Transaction Advisory</h3>
+      </div>
+      <div class="service-card">
+        <img src="images/service3.jpg" alt="M&A and Deal Structuring">
+        <h3>M&A and Deal Structuring</h3>
+      </div>
+      <div class="service-card">
+        <img src="images/service4.jpg" alt="AI & Technology Strategy">
+        <h3>AI & Technology Strategy</h3>
+      </div>
+      <div class="service-card">
+        <img src="images/service5.jpg" alt="Urban & Innovation Development">
+        <h3>Urban & Innovation Development</h3>
+      </div>
+      <div class="service-card">
+        <img src="images/service6.jpg" alt="Cross-Border Programs">
+        <h3>Cross-Border Programs</h3>
+      </div>
     </div>
   </section>
 
