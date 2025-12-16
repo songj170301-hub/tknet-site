@@ -24,7 +24,7 @@
       align-items: center;
       text-align: center;
       color: #fff;
-      background-image: url('images/services-hero.jpg'); /* 确保图片在 images 文件夹 */
+      background-image: url('images/services-hero.jpg');
       background-size: cover;
       background-position: center;
       position: relative;
@@ -46,14 +46,13 @@
     /* Service Cards */
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
     .service-card { background: #f9f9f9; border-radius: 10px; overflow: hidden; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
-    .service-card img { width: 100%; height: 200px; object-fit: cover; }
+    .service-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
     .service-card h3 { padding: 20px; font-size: 1.2rem; color: #0077cc; }
     .service-card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
 
     /* Footer */
     footer { text-align: center; padding: 40px; background: #f5f5f5; color: #222; font-weight: bold; }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .hero-content h1 { font-size: 2rem; }
       .hero-content p { font-size: 1rem; }
