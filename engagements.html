@@ -2,49 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hero Image Test</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Render Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; }
-    .hero { position: relative; height: 300px; margin-bottom: 40px; overflow: hidden; }
-    .hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .overlay { position:absolute; inset:0; background: rgba(0,0,0,0.55); z-index:1; }
-    .hero-text { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index:2; color:#fff; text-align:center; }
-    .hero-text h2 { font-size:24px; margin-bottom:8px; }
-    .hero-text p { font-size:16px; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+    }
+
+    .hero {
+      height: 400px;
+      width: 100%;
+      background-image: url("data:image/svg+xml;utf8,
+        <svg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'>
+          <defs>
+            <linearGradient id='g' x1='0' y1='0' x2='0' y2='1'>
+              <stop offset='0%' stop-color='%23000000'/>
+              <stop offset='100%' stop-color='%23222222'/>
+            </linearGradient>
+          </defs>
+          <rect width='100%' height='100%' fill='url(%23g)'/>
+          <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle'
+                fill='white' font-size='64' font-family='Arial'>
+            HERO TEST IMAGE
+          </text>
+        </svg>");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero h1 {
+      color: white;
+      font-size: 48px;
+      background: rgba(0,0,0,0.4);
+      padding: 16px 32px;
+    }
   </style>
 </head>
 <body>
 
-  <h1 style="text-align:center; margin:24px 0;">Hero Image Test Page</h1>
-
-  <!-- 1. 本地图片 -->
   <section class="hero">
-    <img src="assets/images/hero.jpg" alt="Local Hero Image">
-    <div class="overlay"></div>
-    <div class="hero-text">
-      <h2>Local Image</h2>
-      <p>Should display hero.jpg from assets/images folder.</p>
-    </div>
-  </section>
-
-  <!-- 2. Base64 内嵌图片 -->
-  <section class="hero">
-    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..." alt="Base64 Hero Image">
-    <div class="overlay"></div>
-    <div class="hero-text">
-      <h2>Base64 Image</h2>
-      <p>Should display hero image embedded directly in HTML.</p>
-    </div>
-  </section>
-
-  <!-- 3. CSS background-image -->
-  <section class="hero" style="background-image:url('assets/images/hero.jpg'); background-size:cover; background-position:center;">
-    <div class="overlay"></div>
-    <div class="hero-text">
-      <h2>Background Image</h2>
-      <p>Should display hero.jpg using CSS background-image.</p>
-    </div>
+    <h1>If you see this, hero renders</h1>
   </section>
 
 </body>
