@@ -2,120 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Selected Engagements | TK Net</title>
+  <title>Hero Image Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      color: #111;
-      line-height: 1.65;
-      background: #fff;
-      opacity: 0;
-      animation: fadeIn 0.6s ease-out forwards;
-    }
-    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
-    nav {
-      position: fixed; top:0; width:100%; background:#fff; border-bottom:1px solid #eee; z-index:1000;
-    }
-    nav .nav-inner {
-      max-width:1100px; margin:0 auto; padding:16px 24px;
-      display:flex; gap:28px; font-size:14px;
-    }
-    nav a { text-decoration:none; color:#111; }
-    nav a:hover { text-decoration:underline; }
-
-    main { padding-top:72px; }
-    .section { max-width:1100px; margin:0 auto; padding:64px 24px; }
-    .section h2 { font-size:28px; font-weight:500; margin-bottom:24px; }
-    .case { border-bottom:1px solid #eee; padding-bottom:32px; margin-bottom:32px; }
-    .case h3 { font-size:20px; font-weight:500; margin-bottom:12px; color:#111; }
-    .meta { font-size:14px; color:#666; margin-bottom:8px; }
-    .case p { font-size:16px; margin-bottom:8px; color:#222; }
-    .case ul { margin-left:20px; margin-bottom:12px; }
-    .case ul li { margin-bottom:4px; }
-
-    footer { border-top:1px solid #eee; padding:48px 24px; font-size:14px; color:#555; }
-    footer .footer-inner { max-width:1100px; margin:0 auto; }
+    body { font-family: Arial, sans-serif; margin:0; padding:0; }
+    .hero { position: relative; height: 300px; margin-bottom: 40px; overflow: hidden; }
+    .hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .overlay { position:absolute; inset:0; background: rgba(0,0,0,0.55); z-index:1; }
+    .hero-text { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index:2; color:#fff; text-align:center; }
+    .hero-text h2 { font-size:24px; margin-bottom:8px; }
+    .hero-text p { font-size:16px; }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-inner">
-      <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT</a>
-      <a href="services.html">SERVICES</a>
-      <a href="individual.html">INDIVIDUAL SERVICE PAGES</a>
-      <a href="selected-engagements.html">SELECTED ENGAGEMENTS</a>
-      <a href="individual.html#contact">CONTACT</a>
+  <h1 style="text-align:center; margin:24px 0;">Hero Image Test Page</h1>
+
+  <!-- 1. 本地图片 -->
+  <section class="hero">
+    <img src="assets/images/hero.jpg" alt="Local Hero Image">
+    <div class="overlay"></div>
+    <div class="hero-text">
+      <h2>Local Image</h2>
+      <p>Should display hero.jpg from assets/images folder.</p>
     </div>
-  </nav>
+  </section>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero" style="position: relative; height:42vh; min-height:340px; overflow:hidden;">
-      <!-- 本地图片确保显示 -->
-      <img src="assets/images/hero.jpg" alt="Global strategy" style="width:100%; height:100%; object-fit:cover; display:block;">
-      <div style="position:absolute; inset:0; background: rgba(0,0,0,0.55); z-index:1;"></div>
-      <div style="position:absolute; z-index:2; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center; color:#fff; max-width:1100px; padding:0 24px;">
-        <h1 style="font-size:44px; font-weight:500; margin-bottom:16px;">Selected Engagements</h1>
-        <p style="font-size:16px; opacity:0.9;">Independent advice that has shaped strategies, multi-billion-dollar transactions, and innovation-led cities.</p>
-      </div>
-    </section>
-
-    <!-- Engagements Section -->
-    <section class="section">
-      <h2>All 17 Case Studies</h2>
-      <p>Complete list of formal consulting-style case studies, structured with entity references, scope, approach, and impact.</p>
-
-      <!-- Case 1 -->
-      <div class="case">
-        <h3>1. Hyundai Group — AI Unicorn Investment Advisory</h3>
-        <p class="meta">Category: Investment Advisory | Region: Korea / Global</p>
-        <p><strong>Summary:</strong> Advised Hyundai Group on evaluating a high-growth AI company through commercial, market, and technical due diligence.</p>
-        <p><strong>Client Challenge:</strong> Hyundai required clarity on market potential, competitive positioning, and valuation.</p>
-        <p><strong>Our Approach:</strong></p>
-        <ul>
-          <li>Negotiation</li>
-          <li>Technology & product due diligence</li>
-          <li>TAM/SAM/SOM modeling</li>
-          <li>Competitor benchmarking</li>
-          <li>Financial modeling & valuation</li>
-          <li>Investment recommendation</li>
-        </ul>
-        <p><strong>Impact:</strong> Enabled informed investment decision-making with clear risk–return scenarios.</p>
-      </div>
-
-      <!-- Case 2 -->
-      <div class="case">
-        <h3>2. Suzhou Design Town — Development Strategy</h3>
-        <p class="meta">Category: Urban Development | Region: Suzhou, China</p>
-        <p><strong>Summary:</strong> Created the strategic, cultural, and commercial development framework for Suzhou’s flagship creative district.</p>
-        <p><strong>Client Challenge:</strong> Develop a globally competitive creative cluster with sustainable economics.</p>
-        <p><strong>Our Approach:</strong></p>
-        <ul>
-          <li>Global benchmark analysis</li>
-          <li>Cultural district positioning</li>
-          <li>Tenant and industry strategy</li>
-          <li>Financial & feasibility modeling</li>
-        </ul>
-        <p><strong>Impact:</strong> Delivered a complete development and operator roadmap.</p>
-      </div>
-
-      <!-- Cases 3-17 -->
-      <!-- 使用相同结构继续添加剩余案例 -->
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      TK Net<br>
-      Global Advisory in Strategy, Investment, and Innovation
+  <!-- 2. Base64 内嵌图片 -->
+  <section class="hero">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..." alt="Base64 Hero Image">
+    <div class="overlay"></div>
+    <div class="hero-text">
+      <h2>Base64 Image</h2>
+      <p>Should display hero image embedded directly in HTML.</p>
     </div>
-  </footer>
+  </section>
+
+  <!-- 3. CSS background-image -->
+  <section class="hero" style="background-image:url('assets/images/hero.jpg'); background-size:cover; background-position:center;">
+    <div class="overlay"></div>
+    <div class="hero-text">
+      <h2>Background Image</h2>
+      <p>Should display hero.jpg using CSS background-image.</p>
+    </div>
+  </section>
 
 </body>
 </html>
