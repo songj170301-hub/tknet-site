@@ -37,19 +37,15 @@
       min-height: 340px;
       overflow: hidden;
     }
-    .hero img {
-      position: absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-    .hero::after {
-      content: "";
+    .hero-bg {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.55);
+      background-image: url('https://images.unsplash.com/photo-1508873699372-7ae4a0f4751f?auto=format&fit=crop&w=1800&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: brightness(0.55);
+      z-index: 1;
     }
     .hero-content {
       position: relative;
@@ -106,8 +102,7 @@
   <main>
     <!-- Hero -->
     <section class="hero">
-      <img src="https://images.unsplash.com/photo-1508873699372-7ae4a0f4751f?auto=format&fit=crop&w=1800&q=80"
-           alt="Global strategy, investment, and innovation advisory" />
+      <div class="hero-bg"></div>
       <div class="hero-content">
         <h1>Selected Engagements</h1>
         <p>Independent advice that has shaped strategies, multi-billion-dollar transactions, and innovation-led cities.</p>
@@ -119,7 +114,7 @@
       <h2>All 17 Case Studies</h2>
       <p>Complete list of formal consulting-style case studies, structured with entity references, scope, approach, and impact.</p>
 
-      <!-- Case 1 -->
+      <!-- Example: Case 1 -->
       <div class="case">
         <h3>1. Hyundai Group — AI Unicorn Investment Advisory</h3>
         <p class="meta">Category: Investment Advisory | Region: Korea / Global</p>
@@ -137,9 +132,9 @@
         <p><strong>Impact:</strong> Enabled informed investment decision-making with clear risk–return scenarios.</p>
       </div>
 
-      <!-- Cases 2–17 (按相同结构继续) -->
-      <!-- 请在此处依次添加剩余案例2-17，每个案例使用 div.case + 标题 + meta + Summary + Challenge + Approach + Impact -->
-      
+      <!-- 其余案例2-17 -->
+      <!-- 请依照 div.case 结构继续添加，每个案例保留 Summary / Challenge / Approach / Impact -->
+
     </section>
   </main>
 
