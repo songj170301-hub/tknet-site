@@ -32,6 +32,7 @@
       display: flex;
       gap: 28px;
       font-size: 14px;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -83,7 +84,11 @@
     .service h2 {
       font-size: 26px;
       font-weight: 500;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
+    }
+
+    .service p {
+      max-width: 820px;
     }
 
     .label {
@@ -92,7 +97,7 @@
       text-transform: uppercase;
       color: #666;
       margin-top: 24px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     ul {
@@ -102,6 +107,12 @@
 
     li {
       margin-bottom: 6px;
+    }
+
+    /* CONTACT */
+    .contact {
+      border-top: 1px solid #eee;
+      padding-top: 72px;
     }
   </style>
 </head>
@@ -115,7 +126,7 @@
       <a href="about.html">ABOUT</a>
       <a href="services.html">SERVICES</a>
       <a href="individual-services.html">INDIVIDUAL SERVICE PAGES</a>
-      <a href="#engagements">SELECTED ENGAGEMENTS</a>
+      <a href="#contact">CONTACT</a>
     </div>
   </nav>
 
@@ -127,7 +138,7 @@
   </section>
 
   <!-- CONTENT -->
-  <section class="content" id="engagements">
+  <section class="content">
 
     <div class="service">
       <h2>Strategy & Market Expansion</h2>
@@ -153,6 +164,10 @@
 
     <div class="service">
       <h2>Investment & Transaction Advisory</h2>
+      <p>
+        Independent commercial due diligence, valuation, and risk analysis for private equity,
+        corporate development, and investment committees.
+      </p>
 
       <div class="label">Capabilities</div>
       <p>
@@ -170,7 +185,68 @@
       </ul>
     </div>
 
-    <!-- 其余服务可按同一结构继续追加 -->
+    <div class="service">
+      <h2>M&A and Deal Structuring</h2>
+      <p>
+        Target identification, synergy quantification, transaction structuring,
+        and post-merger integration planning.
+      </p>
+
+      <div class="label">Selected Engagements</div>
+      <ul>
+        <li>Acquisition strategy – Pantech</li>
+        <li>M&A strategy – ABL Life Insurance and Tongyang Life Insurance</li>
+        <li>Cross-border restructuring – Korean chaebol subsidiary</li>
+      </ul>
+    </div>
+
+    <div class="service">
+      <h2>AI & Technology Strategy</h2>
+      <p>
+        Enterprise AI strategy, use-case prioritisation, technology feasibility,
+        and innovation programme design.
+      </p>
+
+      <div class="label">Selected Engagements</div>
+      <ul>
+        <li>Group-wide AI strategy – Fortune 500 conglomerate</li>
+        <li>Incheon AI Tower ecosystem – CKT Group</li>
+        <li>Generative AI roadmap – listed financial institution</li>
+      </ul>
+    </div>
+
+    <div class="service">
+      <h2>Urban & Innovation Development</h2>
+      <p>
+        Master planning, economic modelling, and operator strategies for innovation districts,
+        science parks, and cultural destinations.
+      </p>
+
+      <div class="label">Selected Engagements</div>
+      <ul>
+        <li>Suzhou Design Town</li>
+        <li>Incheon AI Tower</li>
+        <li>Beijing Tongzhou Tech Transfer Park</li>
+        <li>Zhengzhou Agriculture & Science Park</li>
+      </ul>
+    </div>
+
+    <div class="service">
+      <h2>Cross-Border Programs</h2>
+      <p>
+        Design and execution of cross-border customer journeys,
+        institutional partnerships, and regional initiatives.
+      </p>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact" id="contact">
+      <h2>Contact</h2>
+      <p>
+        For confidential discussions regarding strategic, investment,
+        or transformation initiatives, please contact TK Net directly.
+      </p>
+    </div>
 
   </section>
 
