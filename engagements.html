@@ -16,3 +16,29 @@
   >
 
 </section>
+
+/* === FORCE UNLOCK PAGE === */
+html, body {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  height: auto !important;
+  min-height: 100vh !important;
+  overflow: visible !important;
+  background: #fff !important;
+}
+
+* {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* kill any full-screen overlays */
+.overlay,
+.loading,
+.loader,
+.mask,
+.modal,
+.backdrop {
+  display: none !important;
+}
