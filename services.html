@@ -1,167 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>TK Net | Services</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{color:#111;background:#fff}
+  <meta charset="UTF-8" />
+  <title>Services | TK Net</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 40px;
-  border-bottom:1px solid #e5e5e5;
-}
-nav a{
-  text-decoration:none;
-  color:#111;
-  font-weight:600;
-  margin-left:28px;
-}
+  <style>
+    /* ========= Reset ========= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.hero{
-  max-width:100%;
-}
-.hero img{
-  width:100%;
-  height:520px;
-  object-fit:cover;
-  display:block;
-}
-.hero-text{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  color:#fff;
-  text-align:center;
-  max-width:900px;
-}
-.hero-wrap{
-  position:relative;
-}
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Helvetica, Arial, sans-serif;
+      color: #111;
+      line-height: 1.65;
+      background: #fff;
 
-.hero-text h1{
-  font-size:3rem;
-  margin-bottom:20px;
-}
-.hero-text p{
-  font-size:1.2rem;
-}
+      /* Smooth page transition */
+      opacity: 0;
+      animation: fadeIn 0.6s ease-out forwards;
+    }
 
-section{
-  max-width:1200px;
-  margin:100px auto;
-  padding:0 40px;
-}
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:40px;
-}
+    /* ========= Navigation ========= */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      z-index: 1000;
+    }
 
-.card{
-  position:relative;
-  overflow:hidden;
-}
-.card img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  transition:transform .6s ease;
-  display:block;
-}
-.card:hover img{
-  transform:scale(1.08);
-}
-.card span{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  padding:18px 20px;
-  background:rgba(0,0,0,.55);
-  color:#fff;
-  font-size:1.05rem;
-}
+    nav .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+    }
 
-footer{
-  background:#f6f6f6;
-  padding:40px;
-  text-align:center;
-  font-weight:600;
-}
-</style>
+    nav a {
+      text-decoration: none;
+      color: #111;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding-top: 72px;
+    }
+
+    /* ========= Hero (Smaller) ========= */
+    .hero {
+      position: relative;
+      height: 42vh;
+      min-height: 340px;
+      overflow: hidden;
+    }
+
+    .hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 24px 0;
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      max-width: 640px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    /* ========= Sections ========= */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 96px 24px;
+    }
+
+    .section + .section {
+      border-top: 1px solid #eee;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .section p {
+      max-width: 760px;
+      font-size: 16px;
+      margin-bottom: 16px;
+      color: #222;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* ========= Footer ========= */
+    footer {
+      border-top: 1px solid #eee;
+      padding: 48px 24px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    footer .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 
 <body>
 
-<nav>
-  <strong>TK Net</strong>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="#">Individual Service Pages</a>
-    <a href="#">Contact</a>
-  </div>
-</nav>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="services.html">SERVICES</a>
+      <a href="individual.html">INDIVIDUAL SERVICE PAGES</a>
+      <a href="individual.html#engagements">SELECTED ENGAGEMENTS</a>
+      <a href="individual.html#contact">CONTACT</a>
+    </div>
+  </nav>
 
-<!-- HERO -->
-<div class="hero-wrap">
-  <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80" alt="Advisory for High-Stakes Decisions">
-  <div class="hero-text">
-    <h1>Advisory for High-Stakes Decisions</h1>
-    <p>
-      We deliver unconflicted, evidence-based advice across strategy,
-      capital allocation, transactions, technology, and place-making.
-    </p>
-  </div>
-</div>
+  <main>
 
-<section>
-<div class="grid">
+    <!-- Hero -->
+    <section class="hero">
+      <img
+        src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1800&q=80"
+        alt="Global advisory services"
+      />
+      <div class="hero-content">
+        <h1>Services</h1>
+        <p>
+          Advisory support for high-stakes strategic, investment, and
+          transformation decisions.
+        </p>
+      </div>
+    </section>
 
-<div class="card">
-  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Strategy">
-  <span>Strategy & Market Expansion</span>
-</div>
+    <!-- Overview -->
+    <section class="section">
+      <h2>What We Do</h2>
+      <p>
+        TK Net provides unconflicted, evidence-based advisory services across
+        corporate strategy, capital allocation, transactions, technology, and
+        large-scale innovation development.
+      </p>
+    </section>
 
-<div class="card">
-  <img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=80" alt="Investment Advisory">
-  <span>Investment & Transaction Advisory</span>
-</div>
+    <!-- Service Areas -->
+    <section class="section">
+      <h2>Core Service Areas</h2>
 
-<div class="card">
-  <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="M&A">
-  <span>M&A and Deal Structuring</span>
-</div>
+      <p><strong>Strategy & Market Expansion</strong></p>
+      <p class="meta">
+        Corporate strategy · Market entry · Competitive positioning ·
+        Go-to-market execution
+      </p>
 
-<div class="card">
-  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="AI Strategy">
-  <span>AI & Technology Strategy</span>
-</div>
+      <p><strong>Investment & Transaction Advisory</strong></p>
+      <p class="meta">
+        Commercial due diligence · Valuation · Financial modelling ·
+        Investment committee support
+      </p>
 
-<div class="card">
-  <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80" alt="Urban Development">
-  <span>Urban & Innovation Development</span>
-</div>
+      <p><strong>M&A and Deal Structuring</strong></p>
+      <p class="meta">
+        Target identification · Synergy analysis · Transaction structuring ·
+        Post-merger integration
+      </p>
 
-<div class="card">
-  <img src="https://images.unsplash.com/photo-1523952578875-e6bb18b26645?auto=format&fit=crop&w=1200&q=80" alt="Cross-border">
-  <span>Cross-Border Programs</span>
-</div>
+      <p><strong>AI & Technology Strategy</strong></p>
+      <p class="meta">
+        Enterprise AI strategy · Use-case prioritisation · Technology feasibility ·
+        Innovation programmes
+      </p>
 
-</div>
-</section>
+      <p><strong>Urban & Innovation Development</strong></p>
+      <p class="meta">
+        Innovation districts · Science parks · Economic modelling ·
+        Operator strategy
+      </p>
 
-<footer>
-TK Net<br>
-Global Advisory in Strategy, Investment, and Innovation
-</footer>
+      <p><strong>Cross-Border Programs</strong></p>
+      <p class="meta">
+        Regional growth initiatives · Institutional partnerships ·
+        Cross-border execution
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      TK Net<br />
+      Global Advisory in Strategy, Investment, and Innovation
+    </div>
+  </footer>
 
 </body>
 </html>
