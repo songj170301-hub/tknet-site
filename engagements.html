@@ -1,40 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Render Test</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Selected Engagements – Hero Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #fff;
+      color: #111;
+    }
+
+    /* ===== HERO TEST ===== */
+    .hero {
+      width: 100%;
+      height: 70vh;
+      min-height: 420px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #000000;
-    }
-
-    .test-block {
-      min-height: 100vh;
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 36px;
-      background: #e6f7ff;
+      text-align: center;
+    }
+
+    .hero-content {
+      color: #fff;
+      max-width: 900px;
+      padding: 0 24px;
+    }
+
+    .hero-content h1 {
+      font-size: 44px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      line-height: 1.6;
+      opacity: 0.95;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="test-block">
-    IF YOU SEE THIS, HTML IS RENDERING
-  </div>
+  <!-- ===== HERO SECTION (IMAGE TEST) ===== -->
+  <section class="hero">
+    <!-- 这是稳定的 Unsplash 全球夜景图片 -->
+    <img
+      src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=80"
+      alt="Global night city"
+    />
+
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>SELECTED ENGAGEMENTS</h1>
+        <p>
+          Independent advisory work shaping strategies, capital decisions,
+          and innovation-led development across global markets.
+        </p>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
