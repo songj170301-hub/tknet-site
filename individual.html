@@ -6,20 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
-    /* =====================
-       Global
-    ====================== */
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
         Helvetica, Arial, sans-serif;
       color: #111;
-      padding-top: 64px; /* 防止 fixed nav 遮挡 */
+      padding-top: 64px;
+      line-height: 1.6;
     }
 
-    /* =====================
-       Navigation
-    ====================== */
+    /* NAV */
     nav {
       position: fixed;
       top: 0;
@@ -47,15 +43,13 @@
       text-decoration: underline;
     }
 
-    /* =====================
-       Hero
-    ====================== */
+    /* HERO */
     .hero {
       min-height: 72vh;
       display: flex;
       align-items: center;
       background:
-        linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)),
+        linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
         url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1800&q=80");
       background-size: cover;
       background-position: center;
@@ -71,45 +65,113 @@
     .hero h1 {
       font-size: 44px;
       font-weight: 500;
-      letter-spacing: -0.02em;
       margin: 0;
+      letter-spacing: -0.02em;
     }
 
-    /* =====================
-       Placeholder Section
-    ====================== */
+    /* CONTENT */
     .content {
       max-width: 1100px;
       margin: 0 auto;
       padding: 96px 24px;
-      font-size: 16px;
-      line-height: 1.6;
+    }
+
+    .service {
+      margin-bottom: 96px;
+    }
+
+    .service h2 {
+      font-size: 26px;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .label {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #666;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    li {
+      margin-bottom: 6px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Navigation -->
+  <!-- NAV -->
   <nav>
     <div class="nav-inner">
       <a href="index.html">HOME</a>
       <a href="about.html">ABOUT</a>
       <a href="services.html">SERVICES</a>
       <a href="individual-services.html">INDIVIDUAL SERVICE PAGES</a>
+      <a href="#engagements">SELECTED ENGAGEMENTS</a>
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="hero">
     <div class="container">
       <h1>INDIVIDUAL SERVICE PAGES</h1>
     </div>
   </section>
 
-  <!-- Content Placeholder -->
-  <section class="content">
-    <!-- 后续 Individual Services 内容在这里继续接 -->
+  <!-- CONTENT -->
+  <section class="content" id="engagements">
+
+    <div class="service">
+      <h2>Strategy & Market Expansion</h2>
+      <p>
+        Clear corporate strategy, disciplined market-entry sequencing, and execution frameworks
+        that secure lasting advantage in complex geographies.
+      </p>
+
+      <div class="label">Capabilities</div>
+      <p>
+        Corporate and portfolio strategy | Market sequencing and attractiveness |
+        Competitive scenario planning | Go-to-market and localization |
+        Regulatory and partnership strategy
+      </p>
+
+      <div class="label">Selected Engagements</div>
+      <ul>
+        <li>Global strategy for a leading Korean beauty conglomerate</li>
+        <li>Greater China entry for a European luxury maison</li>
+        <li>Pan-Asia growth strategy for a Singapore-listed REIT</li>
+      </ul>
+    </div>
+
+    <div class="service">
+      <h2>Investment & Transaction Advisory</h2>
+
+      <div class="label">Capabilities</div>
+      <p>
+        Commercial due diligence | Market and technology assessment |
+        DCF, multiples, and LBO modelling |
+        Downside and sensitivity analysis |
+        Investment committee materials
+      </p>
+
+      <div class="label">Selected Engagements</div>
+      <ul>
+        <li>Buy-side diligence – Hyundai’s investment in an Asian AI unicorn</li>
+        <li>Valuation and risk assessment – $1.2 bn education platform</li>
+        <li>Strategic buyer advisory – two of Korea’s largest life insurers</li>
+      </ul>
+    </div>
+
+    <!-- 其余服务可按同一结构继续追加 -->
+
   </section>
 
 </body>
