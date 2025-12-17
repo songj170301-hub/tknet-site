@@ -16,7 +16,6 @@
     }
     @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
-    /* Navigation */
     nav {
       position: fixed; top:0; width:100%; background:#fff; border-bottom:1px solid #eee; z-index:1000;
     }
@@ -28,22 +27,14 @@
     nav a:hover { text-decoration:underline; }
 
     main { padding-top:72px; }
-
-    /* Sections */
     .section { max-width:1100px; margin:0 auto; padding:64px 24px; }
     .section h2 { font-size:28px; font-weight:500; margin-bottom:24px; }
-    .case {
-      border-bottom:1px solid #eee;
-      padding-bottom:32px;
-      margin-bottom:32px;
-    }
+    .case { border-bottom:1px solid #eee; padding-bottom:32px; margin-bottom:32px; }
     .case h3 { font-size:20px; font-weight:500; margin-bottom:12px; color:#111; }
     .meta { font-size:14px; color:#666; margin-bottom:8px; }
     .case p { font-size:16px; margin-bottom:8px; color:#222; }
     .case ul { margin-left:20px; margin-bottom:12px; }
     .case ul li { margin-bottom:4px; }
-
-    /* Footer */
     footer { border-top:1px solid #eee; padding:48px 24px; font-size:14px; color:#555; }
     footer .footer-inner { max-width:1100px; margin:0 auto; }
   </style>
@@ -64,18 +55,18 @@
 
   <main>
     <!-- Hero -->
-    <section class="hero" style="position: relative; height: 42vh; min-height: 340px; overflow: hidden;">
-      <img src="assets/images/hero.jpg"
+    <section class="hero" style="position: relative; height:42vh; min-height:340px; overflow:hidden;">
+      <!-- Base64 图片 -->
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/..." 
            alt="Global strategy, investment, and innovation advisory"
            style="width:100%; height:100%; object-fit:cover; display:block;">
-      <div style="position: absolute; inset:0; background: rgba(0,0,0,0.55); z-index:1;"></div>
-      <div style="position: absolute; z-index:2; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center; color:#fff; max-width:1100px; padding:0 24px;">
+      <div style="position:absolute; inset:0; background: rgba(0,0,0,0.55); z-index:1;"></div>
+      <div style="position:absolute; z-index:2; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center; color:#fff; max-width:1100px; padding:0 24px;">
         <h1 style="font-size:44px; font-weight:500; margin-bottom:16px;">Selected Engagements</h1>
         <p style="font-size:16px; opacity:0.9;">Independent advice that has shaped strategies, multi-billion-dollar transactions, and innovation-led cities.</p>
       </div>
     </section>
 
-    <!-- Engagements -->
     <section class="section">
       <h2>All 17 Case Studies</h2>
       <p>Complete list of formal consulting-style case studies, structured with entity references, scope, approach, and impact.</p>
@@ -115,7 +106,7 @@
       </div>
 
       <!-- Cases 3-17 -->
-      <!-- 请依照 div.case 结构继续添加其余案例 -->
+      <!-- 按照同样结构添加剩余案例 -->
     </section>
   </main>
 
