@@ -50,7 +50,7 @@ nav a:hover { text-decoration: underline; }
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45); /* 👈 降低遮罩黑度 */
+  background: rgba(0,0,0,0.45);
 }
 .hero-content {
   position: absolute;
@@ -79,7 +79,7 @@ nav a:hover { text-decoration: underline; }
 
 /* ===== Content ===== */
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 80px auto;
   padding: 0 24px;
 }
@@ -87,40 +87,48 @@ nav a:hover { text-decoration: underline; }
   max-width: 820px;
   font-size: 17px;
   line-height: 1.7;
-  margin-bottom: 64px;
+  margin-bottom: 56px;
 }
 
-/* ===== Case Cards ===== */
+/* ===== Grid ===== */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+@media (max-width: 1100px) {
+  .case-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .case-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== Case Card ===== */
 .case-card {
   border: 1px solid #e6e6e6;
   border-radius: 6px;
-  padding: 28px 32px;
-  margin-bottom: 28px;
+  padding: 24px 26px;
   transition: box-shadow 0.3s ease;
 }
 .case-card:hover {
   box-shadow: 0 8px 24px rgba(0,0,0,0.04);
 }
-
 .case-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 24px;
   cursor: pointer;
 }
 .case-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
+  margin-bottom: 6px;
 }
 .case-meta {
-  font-size: 13px;
+  font-size: 12px;
   color: #666;
-  margin-top: 6px;
 }
 .case-toggle {
-  font-size: 13px;
+  margin-top: 14px;
+  font-size: 12px;
   color: #555;
-  white-space: nowrap;
 }
 .case-toggle::after {
   content: " +";
@@ -134,7 +142,7 @@ nav a:hover { text-decoration: underline; }
   transition: max-height 0.5s ease, opacity 0.35s ease;
 }
 .case-card.active .case-content {
-  max-height: 2200px;
+  max-height: 2600px;
   opacity: 1;
 }
 .case-card.active .case-toggle::after {
@@ -142,22 +150,19 @@ nav a:hover { text-decoration: underline; }
 }
 
 .case-body {
-  padding-top: 24px;
-  max-width: 860px;
+  padding-top: 18px;
 }
 .case-body p {
-  font-size: 15px;
-  line-height: 1.75;
-  margin-bottom: 14px;
-}
-.case-body ul {
-  margin: 8px 0 18px 20px;
   font-size: 14px;
   line-height: 1.7;
+  margin-bottom: 12px;
 }
-.label {
-  font-weight: 500;
+.case-body ul {
+  margin: 6px 0 16px 18px;
+  font-size: 13px;
+  line-height: 1.6;
 }
+.label { font-weight: 500; }
 </style>
 </head>
 
@@ -190,47 +195,40 @@ nav a:hover { text-decoration: underline; }
 <div class="container">
 <p class="intro">
 A representative selection of advisory engagements delivered for multinational corporations,
-institutional investors, and public-sector entities. Each engagement is led by senior partners
-and tailored to high-stakes decision-making.
+institutional investors, and public-sector entities.
 </p>
 
-<!-- ===== CASE 1 ===== -->
+<div class="case-grid">
+
+<!-- ========== CASE 1 ========= -->
 <div class="case-card">
   <div class="case-header">
-    <div>
-      <div class="case-title">Hyundai Group — AI Unicorn Investment Advisory</div>
-      <div class="case-meta">Investment Advisory ｜ Korea / Global</div>
-    </div>
+    <div class="case-title">Hyundai Group — AI Unicorn Investment Advisory</div>
+    <div class="case-meta">Investment Advisory ｜ Korea / Global</div>
     <div class="case-toggle">View details</div>
   </div>
-
   <div class="case-content">
     <div class="case-body">
-      <p><span class="label">Summary:</span><br>
-      Advised Hyundai Group on evaluating a high-growth AI company through comprehensive
-      commercial, market, and technical due diligence.</p>
-
-      <p><span class="label">Client Challenge:</span><br>
-      Required clarity on market potential, competitive positioning, valuation range,
-      and downside risk exposure.</p>
-
+      <p><span class="label">Summary:</span> Advised Hyundai Group on evaluating a high-growth AI company through comprehensive commercial, market, and technical due diligence.</p>
+      <p><span class="label">Client Challenge:</span> Required clarity on market potential, competitive positioning, valuation range, and downside risk exposure.</p>
       <p><span class="label">Our Approach:</span></p>
       <ul>
         <li>Technology and product due diligence</li>
-        <li>TAM / SAM / SOM market modeling</li>
+        <li>TAM / SAM / SOM modeling</li>
         <li>Competitive benchmarking</li>
-        <li>Financial modeling and valuation analysis</li>
+        <li>Financial modeling & valuation</li>
         <li>Investment recommendation</li>
       </ul>
-
-      <p><span class="label">Impact:</span><br>
-      Enabled informed investment decision-making with clear risk–return scenarios.</p>
+      <p><span class="label">Impact:</span> Enabled informed investment decision-making with clear risk–return scenarios.</p>
     </div>
   </div>
 </div>
 
-<!-- 👉 CASE 2–17：完全复制此卡片结构 -->
+<!-- ===== CASE 2–17 ===== -->
+<!-- 以下 16 个案例：结构完全一致，仅替换文案 -->
+<!-- 为避免信息丢失，你可以将你已确认的 2–17 文案逐条粘贴进来 -->
 
+</div>
 </div>
 
 <script>
