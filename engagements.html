@@ -1,182 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Selected Engagements</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<title>Selected Engagements</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    /* ---------- Reset ---------- */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+/* ===== Base ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Helvetica, Arial, sans-serif;
+  color: #111;
+  background: #fff;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn .5s ease forwards;
+}
+@keyframes fadeIn { to { opacity: 1; } }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Helvetica, Arial, sans-serif;
-      color: #111;
-      background: #fff;
-      line-height: 1.6;
-      opacity: 0;
-      animation: fadeIn 0.6s ease forwards;
-    }
+/* ===== Navigation ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+}
+nav a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 500;
+}
+nav a:hover { text-decoration: underline; }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
+/* ===== Hero (恢复已成功版本) ===== */
+.hero {
+  margin-top: 72px;
+  height: 420px;
+  background-image:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2000&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  color: #fff;
+}
+.hero h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.hero p {
+  max-width: 760px;
+  font-size: 18px;
+  opacity: .95;
+}
 
-    /* ---------- Navigation ---------- */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #fff;
-      border-bottom: 1px solid #eee;
-      z-index: 1000;
-    }
+/* ===== Content ===== */
+main {
+  max-width: 1200px;
+  margin: 96px auto;
+  padding: 0 24px;
+}
+.section-intro {
+  max-width: 760px;
+  margin-bottom: 48px;
+  color: #444;
+}
 
-    nav .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px 24px;
-      display: flex;
-      gap: 28px;
-      font-size: 14px;
-    }
+/* ===== Engagement Grid ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+.case {
+  border: 1px solid #e6e6e6;
+  padding: 24px;
+  cursor: pointer;
+  transition: border .2s ease;
+}
+.case:hover { border-color: #111; }
 
-    nav a {
-      text-decoration: none;
-      color: #111;
-      font-weight: 500;
-    }
+.case h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.case-meta {
+  font-size: 13px;
+  color: #666;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+/* ===== Expand ===== */
+.case-detail {
+  display: none;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
+}
+.case.open .case-detail { display: block; }
 
-    /* ---------- Hero ---------- */
-    .hero {
-      margin-top: 72px;
-      height: 420px;
-      background:
-        linear-gradient(
-          rgba(0,0,0,0.55),
-          rgba(0,0,0,0.55)
-        ),
-        url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2000&q=80");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      color: #fff;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-
-    .hero p {
-      max-width: 720px;
-      font-size: 18px;
-      opacity: 0.95;
-    }
-
-    /* ---------- Content ---------- */
-    main {
-      max-width: 1200px;
-      margin: 80px auto;
-      padding: 0 24px;
-    }
-
-    section + section {
-      margin-top: 96px;
-    }
-
-    h2 {
-      font-size: 28px;
-      margin-bottom: 16px;
-      font-weight: 600;
-    }
-
-    .section-intro {
-      max-width: 760px;
-      color: #444;
-      font-size: 16px;
-      margin-bottom: 48px;
-    }
-
-    /* ---------- Footer ---------- */
-    footer {
-      border-top: 1px solid #eee;
-      padding: 48px 24px;
-      color: #666;
-      font-size: 13px;
-    }
-
-    footer .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-  </style>
+/* ===== Footer ===== */
+footer {
+  border-top: 1px solid #eee;
+  padding: 48px 24px;
+  font-size: 13px;
+  color: #666;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- ===== Navigation ===== -->
-  <nav>
-    <div class="nav-inner">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="individual.html">INDIVIDUAL SERVICE PAGES</a>
-      <a href="selected-engagements.html">Selected Engagements</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
+<!-- ===== Nav ===== -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="individual.html">INDIVIDUAL SERVICE PAGES</a>
+    <a href="selected-engagements.html">Selected Engagements</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
 
-  <!-- ===== Hero ===== -->
-  <header class="hero">
-    <div class="hero-inner">
-      <h1>Selected Engagements</h1>
+<!-- ===== Hero ===== -->
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Selected Engagements</h1>
+    <p>
+      Independent advice shaping strategies, transactions,
+      and innovation-led cities across Asia and globally.
+    </p>
+  </div>
+</header>
+
+<!-- ===== Main ===== -->
+<main>
+  <p class="section-intro">
+    Each engagement is partner-led and designed for complex strategic,
+    investment, and institutional decisions.
+    Click to view full case details.
+  </p>
+
+  <div class="grid" id="cases"></div>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="footer-inner">
+    TK Net — Global Advisory in Strategy, Investment, and Innovation
+  </div>
+</footer>
+
+<script>
+const data = [
+  ["Hyundai Group — AI Unicorn Investment Advisory","Investment Advisory | Korea / Global"],
+  ["Suzhou Design Town — Development Strategy","Urban Development | China"],
+  ["Qingdao Koreatown — Feasibility Study","Urban / Cross-Border | China"],
+  ["SJ International Education Group — Investment Feasibility","Investment | China"],
+  ["Incheon AI Tower — Ecosystem Strategy","AI & Urban | Korea"],
+  ["Global Beauty Business — Corporate Strategy","Strategy | Global"],
+  ["New York Institute of Finance — Investment Advisory","Investment | U.S."],
+  ["Group-Level AI Business Strategy","AI Strategy | Global"],
+  ["ABL & Tongyang Life — Acquisition Strategy","M&A | Korea"],
+  ["Pantech — M&A Strategy","M&A | Korea"],
+  ["Yangcheng Lake Peninsula — Tourism Strategy","Urban | China"],
+  ["Beijing Tongzhou Tech Transfer Park","Innovation | China"],
+  ["Singapore IMC Group — Real Estate Strategy","Strategy | Singapore"],
+  ["Zhucheng Industry–University Park","Innovation | China"],
+  ["Zhengzhou Agriculture Science Park","Agri-Tech | China"],
+  ["China Urban Development Model","Policy | China"],
+  ["China Maritime Industry Strategy","Industrial Strategy | China"]
+];
+
+const container = document.getElementById("cases");
+
+data.forEach(d => {
+  const el = document.createElement("div");
+  el.className = "case";
+  el.innerHTML = `
+    <h3>${d[0]}</h3>
+    <div class="case-meta">${d[1]}</div>
+    <div class="case-detail">
       <p>
-        Independent advice shaping corporate strategy, multi-billion-dollar
-        transactions, and innovation-led cities across Asia and globally.
+        Full advisory scope covering strategy definition,
+        analytical assessment, and decision support.
       </p>
     </div>
-  </header>
-
-  <!-- ===== Main Content ===== -->
-  <main>
-    <section>
-      <h2>Our Work</h2>
-      <p class="section-intro">
-        Each engagement is partner-led and tailored to the client’s strategic,
-        financial, and institutional context. Below is a representative
-        selection of our advisory work across strategy, investment, M&A,
-        technology, and urban development.
-      </p>
-
-      <!-- 这里放你的 17 个案例模块（你现在已经做好的那套） -->
-
-    </section>
-  </main>
-
-  <!-- ===== Footer ===== -->
-  <footer>
-    <div class="footer-inner">
-      © Advisory Firm. All rights reserved.
-    </div>
-  </footer>
+  `;
+  el.onclick = () => {
+    document.querySelectorAll(".case").forEach(c => c.classList.remove("open"));
+    el.classList.add("open");
+  };
+  container.appendChild(el);
+});
+</script>
 
 </body>
 </html>
