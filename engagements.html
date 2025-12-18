@@ -43,7 +43,7 @@ nav a {
 }
 nav a:hover { text-decoration: underline; }
 
-/* ===== Hero (公路图片恢复版) ===== */
+/* ===== Hero ===== */
 .hero {
   margin-top: 72px;
   height: 420px;
@@ -84,7 +84,7 @@ main {
   color: #444;
 }
 
-/* ===== Engagement Grid ===== */
+/* ===== Grid ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -107,6 +107,16 @@ main {
 .case-meta {
   font-size: 13px;
   color: #666;
+  margin-bottom: 10px;
+}
+.case-teaser {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 12px;
+}
+.case-hint {
+  font-size: 12px;
+  color: #888;
 }
 
 /* ===== Expand ===== */
@@ -146,7 +156,6 @@ footer {
 
 <body>
 
-<!-- ===== Nav ===== -->
 <nav>
   <div class="nav-inner">
     <a href="index.html">Home</a>
@@ -158,28 +167,26 @@ footer {
   </div>
 </nav>
 
-<!-- ===== Hero ===== -->
 <header class="hero">
   <div class="hero-inner">
     <h1>Selected Engagements</h1>
     <p>
-      Independent, partner-led advisory engagements shaping
-      strategy, investment decisions, and innovation-led development globally.
+      Partner-led advisory engagements shaping strategy,
+      investment decisions, and innovation-led development worldwide.
     </p>
   </div>
 </header>
 
-<!-- ===== Main ===== -->
 <main>
   <p class="section-intro">
-    Each engagement is designed and led by senior partners.
-    Click an engagement to view full details.
+    A selection of representative engagements across strategy,
+    investment advisory, M&A, AI, and innovation-led urban development.
+    Click each engagement to view full details.
   </p>
 
   <div class="grid" id="cases"></div>
 </main>
 
-<!-- ===== Footer ===== -->
 <footer>
   <div class="footer-inner">
     TK Net — Global Advisory in Strategy, Investment, and Innovation
@@ -188,23 +195,91 @@ footer {
 
 <script>
 const cases = [
-  ["Hyundai Group — AI Unicorn Investment Advisory","Investment Advisory | Korea / Global"],
-  ["Suzhou Design Town — Development Strategy","Urban Development | China"],
-  ["Qingdao Koreatown — Feasibility Study","Urban / Cross-Border | China"],
-  ["SJ International Education Group — Investment Feasibility","Investment Advisory | China"],
-  ["Incheon AI Tower — Feasibility & Ecosystem Strategy","AI & Urban Development | Korea"],
-  ["Global Beauty Business — Corporate Strategy","Strategy | Global"],
-  ["New York Institute of Finance — Investment Advisory","Investment | U.S."],
-  ["Group-Level AI Business Strategy","AI & Technology Strategy | Global"],
-  ["ABL & Tongyang Life — Acquisition Strategy","M&A Strategy | Korea"],
-  ["Pantech — M&A Strategy","M&A Strategy | Korea"],
-  ["Yangcheng Lake Peninsula — Tourism Strategy","Tourism & Urban | China"],
-  ["Beijing Tongzhou Tech Transfer Park","Innovation & Urban | China"],
-  ["Singapore IMC Group — Real Estate Strategy","Strategy | Singapore"],
-  ["Zhucheng Industry–University–Science Park","Innovation District | China"],
-  ["Zhengzhou Agriculture & Science Park","Agri-Tech & Innovation | China"],
-  ["China Urban Development Model","Government & Policy | China"],
-  ["China Maritime Industry Strategy","Industrial Strategy | China"]
+  {
+    title: "Hyundai Group — AI Unicorn Investment Advisory",
+    meta: "Investment Advisory | Korea / Global",
+    teaser: "Advised Hyundai Group on a strategic minority investment into a high-growth AI company, covering commercial, market, and technical diligence."
+  },
+  {
+    title: "Suzhou Design Town — Development Strategy",
+    meta: "Urban Development | China",
+    teaser: "Defined the strategic, cultural, and commercial framework for a flagship creative and innovation district in Suzhou."
+  },
+  {
+    title: "Qingdao Koreatown — Feasibility Study",
+    meta: "Urban / Cross-Border | China",
+    teaser: "Developed an integrated cultural and commercial feasibility study for a major Koreatown redevelopment initiative."
+  },
+  {
+    title: "SJ International Education Group — Investment Feasibility",
+    meta: "Investment Advisory | China",
+    teaser: "Provided independent assessment of growth, regulatory exposure, and valuation for a leading vocational education platform."
+  },
+  {
+    title: "Incheon AI Tower — Feasibility & Ecosystem Strategy",
+    meta: "AI & Urban Development | Korea",
+    teaser: "Designed positioning, tenant strategy, and financial feasibility for a landmark AI innovation tower."
+  },
+  {
+    title: "Global Beauty Business — Corporate Strategy",
+    meta: "Strategy | Global",
+    teaser: "Developed market entry and expansion strategy for a global beauty group across China and other key markets."
+  },
+  {
+    title: "New York Institute of Finance — Investment Advisory",
+    meta: "Investment Advisory | U.S.",
+    teaser: "Advised on commercial viability, brand positioning, and long-term sustainability of a global finance education institution."
+  },
+  {
+    title: "Group-Level AI Business Strategy",
+    meta: "AI & Technology Strategy | Global",
+    teaser: "Created a multi-year AI business roadmap for a diversified corporate group."
+  },
+  {
+    title: "ABL & Tongyang Life — Acquisition Strategy",
+    meta: "M&A Strategy | Korea",
+    teaser: "Supported acquisition strategy and valuation analysis for two leading Korean life insurance companies."
+  },
+  {
+    title: "Pantech — M&A Strategy",
+    meta: "M&A Strategy | Korea",
+    teaser: "Advised investors on acquisition feasibility, turnaround potential, and integration risks."
+  },
+  {
+    title: "Yangcheng Lake Peninsula — Tourism Strategy",
+    meta: "Tourism & Urban Development | China",
+    teaser: "Developed tourism positioning, demand modeling, and investment strategy for a major resort destination."
+  },
+  {
+    title: "Beijing Tongzhou Tech Transfer Park",
+    meta: "Innovation & Urban Development | China",
+    teaser: "Designed an innovation ecosystem and technology transfer strategy for a large-scale development zone."
+  },
+  {
+    title: "Singapore IMC Group — Real Estate Strategy",
+    meta: "Strategy | Singapore",
+    teaser: "Advised on portfolio optimization and long-term real estate strategy across Southeast Asia."
+  },
+  {
+    title: "Zhucheng Industry–University–Science Park",
+    meta: "Innovation District | China",
+    teaser: "Evaluated feasibility and development logic for an integrated education–industry innovation park."
+  },
+  {
+    title: "Zhengzhou Agriculture & Science Park",
+    meta: "Agri-Tech & Innovation | China",
+    teaser: "Developed a strategic roadmap for an agriculture-focused science and innovation park."
+  },
+  {
+    title: "China Urban Development Model",
+    meta: "Government & Policy | China",
+    teaser: "Prepared a national-level policy study on China’s evolving urbanization and development model."
+  },
+  {
+    title: "China Maritime Industry Strategy",
+    meta: "Industrial Strategy | China",
+    teaser: "Developed a comprehensive strategy covering maritime logistics, ports, and shipbuilding industries."
+  }
 ];
 
 const container = document.getElementById("cases");
@@ -213,24 +288,21 @@ cases.forEach(c => {
   const el = document.createElement("div");
   el.className = "case";
   el.innerHTML = `
-    <h3>${c[0]}</h3>
-    <div class="case-meta">${c[1]}</div>
+    <h3>${c.title}</h3>
+    <div class="case-meta">${c.meta}</div>
+    <div class="case-teaser">${c.teaser}</div>
+    <div class="case-hint">Click to view details →</div>
     <div class="case-detail">
       <h4>Summary</h4>
-      <p>Provided independent advisory support covering strategy definition,
-      analytical assessment, and decision-making.</p>
-
+      <p>Provided independent advisory support covering strategy definition, analytical assessment, and decision-making.</p>
       <h4>Client Challenge</h4>
-      <p>Complex strategic, financial, and institutional considerations
-      requiring independent judgment.</p>
-
+      <p>Complex strategic, financial, and institutional considerations requiring independent judgment.</p>
       <h4>Our Approach</h4>
       <ul>
         <li>Market and competitive analysis</li>
         <li>Financial and feasibility modeling</li>
         <li>Scenario-based strategic evaluation</li>
       </ul>
-
       <h4>Impact</h4>
       <p>Enabled informed decision-making with clear risk–return visibility.</p>
     </div>
