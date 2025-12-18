@@ -112,6 +112,11 @@ main {
 .case-teaser {
   font-size: 14px;
   color: #333;
+  margin-bottom: 10px;
+}
+.case-subteaser {
+  font-size: 13px;
+  color: #555;
   margin-bottom: 12px;
 }
 .case-hint {
@@ -156,6 +161,7 @@ footer {
 
 <body>
 
+<!-- ===== Nav ===== -->
 <nav>
   <div class="nav-inner">
     <a href="index.html">Home</a>
@@ -167,19 +173,21 @@ footer {
   </div>
 </nav>
 
+<!-- ===== Hero ===== -->
 <header class="hero">
   <div class="hero-inner">
     <h1>Selected Engagements</h1>
     <p>
-      Partner-led advisory engagements shaping strategy,
-      investment decisions, and innovation-led development worldwide.
+      Partner-led advisory engagements supporting complex strategic,
+      investment, and innovation-led decisions globally.
     </p>
   </div>
 </header>
 
+<!-- ===== Main ===== -->
 <main>
   <p class="section-intro">
-    A selection of representative engagements across strategy,
+    A representative selection of engagements across strategy,
     investment advisory, M&A, AI, and innovation-led urban development.
     Click each engagement to view full details.
   </p>
@@ -187,6 +195,7 @@ footer {
   <div class="grid" id="cases"></div>
 </main>
 
+<!-- ===== Footer ===== -->
 <footer>
   <div class="footer-inner">
     TK Net — Global Advisory in Strategy, Investment, and Innovation
@@ -198,87 +207,104 @@ const cases = [
   {
     title: "Hyundai Group — AI Unicorn Investment Advisory",
     meta: "Investment Advisory | Korea / Global",
-    teaser: "Advised Hyundai Group on a strategic minority investment into a high-growth AI company, covering commercial, market, and technical diligence."
+    teaser: "Advised Hyundai Group on a strategic minority investment into a high-growth AI company.",
+    sub: "Scope included full commercial, market, and technical due diligence to support investment committee decision-making."
   },
   {
     title: "Suzhou Design Town — Development Strategy",
     meta: "Urban Development | China",
-    teaser: "Defined the strategic, cultural, and commercial framework for a flagship creative and innovation district in Suzhou."
+    teaser: "Created the strategic, cultural, and commercial framework for Suzhou’s flagship creative district.",
+    sub: "Covered positioning, tenant logic, development phasing, and long-term economic sustainability."
   },
   {
     title: "Qingdao Koreatown — Feasibility Study",
     meta: "Urban / Cross-Border | China",
-    teaser: "Developed an integrated cultural and commercial feasibility study for a major Koreatown redevelopment initiative."
+    teaser: "Developed a comprehensive feasibility study for a large-scale Koreatown redevelopment.",
+    sub: "Integrated cultural positioning, commercial planning, and cross-border visitor dynamics."
   },
   {
     title: "SJ International Education Group — Investment Feasibility",
     meta: "Investment Advisory | China",
-    teaser: "Provided independent assessment of growth, regulatory exposure, and valuation for a leading vocational education platform."
+    teaser: "Provided independent investment assessment for one of China’s leading vocational education groups.",
+    sub: "Evaluated growth potential, regulatory exposure, operational scalability, and valuation."
   },
   {
     title: "Incheon AI Tower — Feasibility & Ecosystem Strategy",
     meta: "AI & Urban Development | Korea",
-    teaser: "Designed positioning, tenant strategy, and financial feasibility for a landmark AI innovation tower."
+    teaser: "Defined positioning, ecosystem logic, and financial feasibility for a landmark AI innovation tower.",
+    sub: "Focused on tenant demand, global benchmarks, and operator model design."
   },
   {
     title: "Global Beauty Business — Corporate Strategy",
     meta: "Strategy | Global",
-    teaser: "Developed market entry and expansion strategy for a global beauty group across China and other key markets."
+    teaser: "Developed global and China market strategy for a leading international beauty group.",
+    sub: "Addressed competitive positioning, channel strategy, and regulatory considerations."
   },
   {
     title: "New York Institute of Finance — Investment Advisory",
     meta: "Investment Advisory | U.S.",
-    teaser: "Advised on commercial viability, brand positioning, and long-term sustainability of a global finance education institution."
+    teaser: "Advised investors on the commercial viability of a globally recognized finance education brand.",
+    sub: "Assessed market demand, product economics, brand strength, and valuation benchmarks."
   },
   {
     title: "Group-Level AI Business Strategy",
     meta: "AI & Technology Strategy | Global",
-    teaser: "Created a multi-year AI business roadmap for a diversified corporate group."
+    teaser: "Created a multi-year AI business and capability roadmap for a diversified corporate group.",
+    sub: "Included use-case prioritization, organizational design, and investment sequencing."
   },
   {
     title: "ABL & Tongyang Life — Acquisition Strategy",
     meta: "M&A Strategy | Korea",
-    teaser: "Supported acquisition strategy and valuation analysis for two leading Korean life insurance companies."
+    teaser: "Developed acquisition strategy and valuation guidance for two major Korean life insurers.",
+    sub: "Focused on regulatory constraints, synergy potential, and scenario-based valuation."
   },
   {
     title: "Pantech — M&A Strategy",
     meta: "M&A Strategy | Korea",
-    teaser: "Advised investors on acquisition feasibility, turnaround potential, and integration risks."
+    teaser: "Advised investors on acquisition feasibility and turnaround potential of a telecom manufacturer.",
+    sub: "Covered commercial diligence, technology assessment, and integration risks."
   },
   {
     title: "Yangcheng Lake Peninsula — Tourism Strategy",
     meta: "Tourism & Urban Development | China",
-    teaser: "Developed tourism positioning, demand modeling, and investment strategy for a major resort destination."
+    teaser: "Developed tourism positioning and investment strategy for a major resort destination.",
+    sub: "Included demand modeling, destination branding, and commercial planning."
   },
   {
     title: "Beijing Tongzhou Tech Transfer Park",
     meta: "Innovation & Urban Development | China",
-    teaser: "Designed an innovation ecosystem and technology transfer strategy for a large-scale development zone."
+    teaser: "Designed development strategy for a large-scale technology transfer and innovation park.",
+    sub: "Focused on R&D ecosystem design, anchor tenant logic, and governance structure."
   },
   {
     title: "Singapore IMC Group — Real Estate Strategy",
     meta: "Strategy | Singapore",
-    teaser: "Advised on portfolio optimization and long-term real estate strategy across Southeast Asia."
+    teaser: "Advised on multi-asset real estate strategy and portfolio optimization across Southeast Asia.",
+    sub: "Provided long-term capital allocation and development phasing recommendations."
   },
   {
     title: "Zhucheng Industry–University–Science Park",
     meta: "Innovation District | China",
-    teaser: "Evaluated feasibility and development logic for an integrated education–industry innovation park."
+    teaser: "Evaluated feasibility of an integrated industry–university–science innovation town.",
+    sub: "Addressed cluster selection, spatial planning, and financial sustainability."
   },
   {
     title: "Zhengzhou Agriculture & Science Park",
     meta: "Agri-Tech & Innovation | China",
-    teaser: "Developed a strategic roadmap for an agriculture-focused science and innovation park."
+    teaser: "Developed strategic roadmap for an agriculture-focused science and innovation park.",
+    sub: "Focused on agri-tech trends, ecosystem partnerships, and investment logic."
   },
   {
     title: "China Urban Development Model",
     meta: "Government & Policy | China",
-    teaser: "Prepared a national-level policy study on China’s evolving urbanization and development model."
+    teaser: "Prepared a national-level policy study on China’s evolving urbanization model.",
+    sub: "Analyzed land, financial mechanisms, and sustainable development pathways."
   },
   {
     title: "China Maritime Industry Strategy",
     meta: "Industrial Strategy | China",
-    teaser: "Developed a comprehensive strategy covering maritime logistics, ports, and shipbuilding industries."
+    teaser: "Developed a comprehensive strategy for China’s maritime and port-related industries.",
+    sub: "Covered global competitiveness, industry value chains, and policy implications."
   }
 ];
 
@@ -291,6 +317,7 @@ cases.forEach(c => {
     <h3>${c.title}</h3>
     <div class="case-meta">${c.meta}</div>
     <div class="case-teaser">${c.teaser}</div>
+    <div class="case-subteaser">${c.sub}</div>
     <div class="case-hint">Click to view details →</div>
     <div class="case-detail">
       <h4>Summary</h4>
