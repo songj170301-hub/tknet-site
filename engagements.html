@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-/* ===== Base ===== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                Helvetica, Arial, sans-serif;
@@ -43,13 +43,13 @@ nav a {
 }
 nav a:hover { text-decoration: underline; }
 
-/* ===== Hero (恢复已成功版本) ===== */
+/* ===== Hero (公路图片恢复版) ===== */
 .hero {
   margin-top: 72px;
   height: 420px;
   background-image:
     linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-    url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2000&q=80");
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -90,6 +90,7 @@ main {
   grid-template-columns: repeat(4, 1fr);
   gap: 28px;
 }
+
 .case {
   border: 1px solid #e6e6e6;
   padding: 24px;
@@ -101,7 +102,7 @@ main {
 .case h3 {
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 .case-meta {
   font-size: 13px;
@@ -111,11 +112,23 @@ main {
 /* ===== Expand ===== */
 .case-detail {
   display: none;
-  margin-top: 20px;
+  margin-top: 18px;
   font-size: 14px;
   color: #333;
 }
 .case.open .case-detail { display: block; }
+
+.case-detail h4 {
+  font-size: 13px;
+  margin: 14px 0 6px;
+  font-weight: 600;
+}
+.case-detail ul {
+  padding-left: 18px;
+}
+.case-detail li {
+  margin-bottom: 4px;
+}
 
 /* ===== Footer ===== */
 footer {
@@ -139,7 +152,7 @@ footer {
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-    <a href="individual.html">INDIVIDUAL SERVICE PAGES</a>
+    <a href="individual.html">Individual Service</a>
     <a href="selected-engagements.html">Selected Engagements</a>
     <a href="contact.html">Contact</a>
   </div>
@@ -150,8 +163,8 @@ footer {
   <div class="hero-inner">
     <h1>Selected Engagements</h1>
     <p>
-      Independent advice shaping strategies, transactions,
-      and innovation-led cities across Asia and globally.
+      Independent, partner-led advisory engagements shaping
+      strategy, investment decisions, and innovation-led development globally.
     </p>
   </div>
 </header>
@@ -159,9 +172,8 @@ footer {
 <!-- ===== Main ===== -->
 <main>
   <p class="section-intro">
-    Each engagement is partner-led and designed for complex strategic,
-    investment, and institutional decisions.
-    Click to view full case details.
+    Each engagement is designed and led by senior partners.
+    Click an engagement to view full details.
   </p>
 
   <div class="grid" id="cases"></div>
@@ -175,43 +187,56 @@ footer {
 </footer>
 
 <script>
-const data = [
+const cases = [
   ["Hyundai Group — AI Unicorn Investment Advisory","Investment Advisory | Korea / Global"],
   ["Suzhou Design Town — Development Strategy","Urban Development | China"],
   ["Qingdao Koreatown — Feasibility Study","Urban / Cross-Border | China"],
-  ["SJ International Education Group — Investment Feasibility","Investment | China"],
-  ["Incheon AI Tower — Ecosystem Strategy","AI & Urban | Korea"],
+  ["SJ International Education Group — Investment Feasibility","Investment Advisory | China"],
+  ["Incheon AI Tower — Feasibility & Ecosystem Strategy","AI & Urban Development | Korea"],
   ["Global Beauty Business — Corporate Strategy","Strategy | Global"],
   ["New York Institute of Finance — Investment Advisory","Investment | U.S."],
-  ["Group-Level AI Business Strategy","AI Strategy | Global"],
-  ["ABL & Tongyang Life — Acquisition Strategy","M&A | Korea"],
-  ["Pantech — M&A Strategy","M&A | Korea"],
-  ["Yangcheng Lake Peninsula — Tourism Strategy","Urban | China"],
-  ["Beijing Tongzhou Tech Transfer Park","Innovation | China"],
+  ["Group-Level AI Business Strategy","AI & Technology Strategy | Global"],
+  ["ABL & Tongyang Life — Acquisition Strategy","M&A Strategy | Korea"],
+  ["Pantech — M&A Strategy","M&A Strategy | Korea"],
+  ["Yangcheng Lake Peninsula — Tourism Strategy","Tourism & Urban | China"],
+  ["Beijing Tongzhou Tech Transfer Park","Innovation & Urban | China"],
   ["Singapore IMC Group — Real Estate Strategy","Strategy | Singapore"],
-  ["Zhucheng Industry–University Park","Innovation | China"],
-  ["Zhengzhou Agriculture Science Park","Agri-Tech | China"],
-  ["China Urban Development Model","Policy | China"],
+  ["Zhucheng Industry–University–Science Park","Innovation District | China"],
+  ["Zhengzhou Agriculture & Science Park","Agri-Tech & Innovation | China"],
+  ["China Urban Development Model","Government & Policy | China"],
   ["China Maritime Industry Strategy","Industrial Strategy | China"]
 ];
 
 const container = document.getElementById("cases");
 
-data.forEach(d => {
+cases.forEach(c => {
   const el = document.createElement("div");
   el.className = "case";
   el.innerHTML = `
-    <h3>${d[0]}</h3>
-    <div class="case-meta">${d[1]}</div>
+    <h3>${c[0]}</h3>
+    <div class="case-meta">${c[1]}</div>
     <div class="case-detail">
-      <p>
-        Full advisory scope covering strategy definition,
-        analytical assessment, and decision support.
-      </p>
+      <h4>Summary</h4>
+      <p>Provided independent advisory support covering strategy definition,
+      analytical assessment, and decision-making.</p>
+
+      <h4>Client Challenge</h4>
+      <p>Complex strategic, financial, and institutional considerations
+      requiring independent judgment.</p>
+
+      <h4>Our Approach</h4>
+      <ul>
+        <li>Market and competitive analysis</li>
+        <li>Financial and feasibility modeling</li>
+        <li>Scenario-based strategic evaluation</li>
+      </ul>
+
+      <h4>Impact</h4>
+      <p>Enabled informed decision-making with clear risk–return visibility.</p>
     </div>
   `;
   el.onclick = () => {
-    document.querySelectorAll(".case").forEach(c => c.classList.remove("open"));
+    document.querySelectorAll(".case").forEach(x => x.classList.remove("open"));
     el.classList.add("open");
   };
   container.appendChild(el);
