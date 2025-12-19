@@ -1,142 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TK Net | About</title>
-  <style>
-    /* Reset & basic styling */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    body { color: #222; line-height: 1.6; background-color: #fff; }
+<meta charset="UTF-8">
+<title>About</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    /* Navbar */
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
-    nav ul { list-style: none; display: flex; gap: 30px; }
-    nav a { text-decoration: none; color: #222; font-weight: bold; transition: color 0.3s; }
-    nav a:hover { color: #0077cc; }
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* Hero */
-    .hero {
-      width: 100%;
-      height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      background-image: url('images/about-hero.jpg'); /* 确保图片在 /images/ 文件夹下 */
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top:0; left:0; right:0; bottom:0;
-      background-color: rgba(0,0,0,0.5); /* 黑色遮罩增加文字可读性 */
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      padding: 0 20px;
-    }
-    .hero-content h1 { font-size: 3rem; margin-bottom: 20px; }
-    .hero-content p { font-size: 1.2rem; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Helvetica, Arial, sans-serif;
+  color: #111;
+  background: #fff;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn .45s ease forwards;
+}
+@keyframes fadeIn { to { opacity: 1; } }
 
-    /* Sections */
-    section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
-    section h2 { font-size: 2rem; margin-bottom: 20px; color: #0077cc; }
+/* ===== Navigation ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+}
+nav a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 500;
+}
+nav a:hover { text-decoration: underline; }
 
-    /* Evolution Timeline */
-    .timeline { display: flex; flex-direction: column; gap: 20px; }
-    .timeline-item { border-left: 3px solid #0077cc; padding-left: 20px; position: relative; }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -8px;
-      top: 0;
-      width: 15px;
-      height: 15px;
-      background-color: #0077cc;
-      border-radius: 50%;
-    }
-    .timeline-item span { font-weight: bold; }
+/* ===== Hero ===== */
+.hero {
+  margin-top: 72px;
+  height: 380px;
+  background-image:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1500534314209-a26db0f5f8d8?auto=format&fit=crop&w=2000&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  color: #fff;
+}
+.hero h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.hero p {
+  font-size: 18px;
+  max-width: 760px;
+  opacity: .95;
+}
 
-    /* Principles */
-    .principles { display: flex; gap: 40px; flex-wrap: wrap; }
-    .principle { flex: 1 1 200px; padding: 20px; border: 1px solid #ddd; border-radius: 10px; text-align: center; transition: transform 0.3s; }
-    .principle:hover { transform: translateY(-5px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+/* ===== Content ===== */
+main {
+  max-width: 1200px;
+  margin: 96px auto;
+  padding: 0 24px;
+}
 
-    /* Footer */
-    footer { text-align: center; padding: 40px; background: #f5f5f5; color: #222; font-weight: bold; }
+.section {
+  margin-bottom: 96px;
+}
+.section h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.section p {
+  max-width: 760px;
+  margin-bottom: 18px;
+  color: #333;
+}
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero-content h1 { font-size: 2rem; }
-      .hero-content p { font-size: 1rem; }
-      .principles { flex-direction: column; }
-    }
-  </style>
+/* Timeline */
+.timeline-item {
+  margin-bottom: 28px;
+}
+.timeline-item strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+/* Principles */
+.principles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.principle {
+  border-top: 2px solid #111;
+  padding-top: 16px;
+}
+.principle h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.principle p {
+  font-size: 14px;
+  color: #444;
+}
+
+/* ===== Footer ===== */
+footer {
+  border-top: 1px solid #eee;
+  padding: 48px 24px;
+  font-size: 13px;
+  color: #666;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <div class="logo"><a href="index.html">TK Net</a></div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Hero -->
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Since 2007 | Independent Strategic Advisory</h1>
-      <p>Seoul | Singapore | Tokyo | Beijing</p>
-    </div>
+<!-- ===== Nav ===== -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="individual.html">Individual Service</a>
+    <a href="selected-engagements.html">Selected Engagements</a>
+    <a href="contact.html">Contact</a>
   </div>
+</nav>
 
-  <!-- Who We Are -->
-  <section>
+<!-- ===== Hero ===== -->
+<header class="hero">
+  <div class="hero-inner">
+    <h1>About TK Net</h1>
+    <p>
+      Since 2007 · Independent Strategic Advisory  
+      Seoul · Singapore · Tokyo · Beijing
+    </p>
+  </div>
+</header>
+
+<!-- ===== Main ===== -->
+<main>
+
+  <section class="section">
     <h2>Who We Are</h2>
-    <p>TK Net is an independent advisory firm distinguished by global-standard analytical rigor, deep Asia expertise, and the rare ability to deliver large-scale innovation districts from strategy through activation.</p>
-    <p>We advise chief executives, boards, investment committees, and public-sector leaders on decisions involving material capital, cross-border complexity, and long-term competitive consequence.</p>
+    <p>
+      TK Net is an independent advisory firm distinguished by global-standard
+      analytical rigor, deep Asia expertise, and the ability to deliver
+      large-scale innovation and investment initiatives from strategy through execution.
+    </p>
+    <p>
+      We advise chief executives, boards, investment committees, and public-sector
+      leaders on decisions involving material capital, cross-border complexity,
+      and long-term competitive consequence.
+    </p>
   </section>
 
-  <!-- Evolution -->
-  <section>
+  <section class="section">
     <h2>Evolution</h2>
-    <div class="timeline">
-      <div class="timeline-item"><span>2007:</span> Founded as China Studies & Company, one of the first consulting firms in China with close ties to Tsinghua University, Tsinghua Holdings Co., Ltd., and leading global financial institutions.</div>
-      <div class="timeline-item"><span>2008–2009:</span> Separated from Tsinghua Holdings to establish full operational and ownership independence. Began international expansion with presence in Singapore and Japan.</div>
-      <div class="timeline-item"><span>2009–2014:</span> Presence established in Singapore together with IMC Group, Japan’s Mitsui, Korea’s CKT Group.</div>
-      <div class="timeline-item"><span>2010:</span> Formed strategic cooperation with CKT Group.</div>
-      <div class="timeline-item"><span>2014:</span> Rebranded as TK Net to reflect broadened global scope across strategy, investment, and large-scale innovation development.</div>
-      <div class="timeline-item"><span>Today:</span> Independent strategic advisory partner to multinational corporations, investors, and governments across Asia, Europe, and North America.</div>
+
+    <div class="timeline-item">
+      <strong>2007</strong>
+      Founded as China Studies & Company, with close ties to Tsinghua University,
+      Tsinghua Holdings, and leading global financial institutions.
+    </div>
+
+    <div class="timeline-item">
+      <strong>2008–2009</strong>
+      Separated from Tsinghua Holdings to establish full operational and ownership
+      independence. Began international expansion with presence in Singapore and Japan.
+    </div>
+
+    <div class="timeline-item">
+      <strong>2009–2014</strong>
+      Established regional presence in Singapore together with IMC Group,
+      Japan’s Mitsui, and Korea’s CKT Group.
+    </div>
+
+    <div class="timeline-item">
+      <strong>2014</strong>
+      Rebranded as TK Net to reflect a broadened global scope across strategy,
+      investment, and innovation-led development.
+    </div>
+
+    <div class="timeline-item">
+      <strong>Today</strong>
+      Independent strategic advisory partner to multinational corporations,
+      investors, and governments across Asia, Europe, and North America.
     </div>
   </section>
 
-  <!-- Principles -->
-  <section>
+  <section class="section">
     <h2>Principles</h2>
+
     <div class="principles">
-      <div class="principle">Independence</div>
-      <div class="principle">Analytical Rigor</div>
-      <div class="principle">Practical Execution</div>
-      <div class="principle">Absolute Discretion</div>
+      <div class="principle">
+        <h3>Independence</h3>
+        <p>No conflicts. No product sales. Advice aligned solely with client interest.</p>
+      </div>
+
+      <div class="principle">
+        <h3>Analytical Rigor</h3>
+        <p>Evidence-based judgment supported by disciplined financial and strategic analysis.</p>
+      </div>
+
+      <div class="principle">
+        <h3>Practical Execution</h3>
+        <p>Strategies designed for implementation, not presentation.</p>
+      </div>
+
+      <div class="principle">
+        <h3>Absolute Discretion</h3>
+        <p>Partner-led engagements with strict confidentiality.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    TK Net <br>
-    Global Advisory in Strategy, Investment, and Innovation
-  </footer>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="footer-inner">
+    TK Net — Global Advisory in Strategy, Investment, and Innovation
+  </div>
+</footer>
 
 </body>
 </html>
