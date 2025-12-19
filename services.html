@@ -1,280 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Services | TK Net</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Services</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    /* ========= Reset ========= */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Helvetica, Arial, sans-serif;
-      color: #111;
-      line-height: 1.65;
-      background: #fff;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Helvetica, Arial, sans-serif;
+  color: #111;
+  background: #fff;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn .45s ease forwards;
+}
+@keyframes fadeIn { to { opacity: 1; } }
 
-      /* Smooth page transition */
-      opacity: 0;
-      animation: fadeIn 0.6s ease-out forwards;
-    }
+/* ===== Navigation ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+}
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+nav a:hover {
+  text-decoration: underline;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
+/* ===== Hero ===== */
+.hero {
+  margin-top: 72px;
+  height: 320px;
+  background-image:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2000&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  color: #fff;
+}
+.hero h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.hero p {
+  font-size: 18px;
+  max-width: 760px;
+  opacity: .95;
+}
 
-    /* ========= Navigation ========= */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #fff;
-      border-bottom: 1px solid #eee;
-      z-index: 1000;
-    }
+/* ===== Content ===== */
+main {
+  max-width: 1200px;
+  margin: 96px auto;
+  padding: 0 24px;
+}
 
-    nav .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 16px 24px;
-      display: flex;
-      gap: 28px;
-      font-size: 14px;
-    }
+.section {
+  margin-bottom: 96px;
+}
+.section h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.section p {
+  max-width: 760px;
+  margin-bottom: 16px;
+  color: #333;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #111;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      padding-top: 72px;
-    }
-
-    /* ========= Hero (Compact) ========= */
-    .hero {
-      position: relative;
-      height: 42vh;
-      min-height: 340px;
-      overflow: hidden;
-    }
-
-    .hero img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.55);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 100px 24px 0;
-      color: #fff;
-    }
-
-    .hero h1 {
-      font-size: 44px;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-    }
-
-    .hero p {
-      max-width: 720px;
-      font-size: 16px;
-      opacity: 0.9;
-    }
-
-    /* ========= Sections ========= */
-    .section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 96px 24px;
-    }
-
-    .section + .section {
-      border-top: 1px solid #eee;
-    }
-
-    .section h2 {
-      font-size: 28px;
-      font-weight: 500;
-      margin-bottom: 24px;
-      letter-spacing: -0.01em;
-    }
-
-    .section h3 {
-      font-size: 18px;
-      font-weight: 500;
-      margin: 40px 0 12px;
-    }
-
-    .section p {
-      max-width: 780px;
-      font-size: 16px;
-      margin-bottom: 14px;
-      color: #222;
-    }
-
-    .meta {
-      max-width: 780px;
-      font-size: 14px;
-      color: #666;
-    }
-
-    /* ========= Footer ========= */
-    footer {
-      border-top: 1px solid #eee;
-      padding: 48px 24px;
-      font-size: 14px;
-      color: #555;
-    }
-
-    footer .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-  </style>
+/* ===== Footer ===== */
+footer {
+  border-top: 1px solid #eee;
+  padding: 48px 24px;
+  font-size: 13px;
+  color: #666;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-inner">
-      <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT</a>
-      <a href="services.html">SERVICES</a>
-      <a href="individual.html">INDIVIDUAL SERVICE PAGES</a>
-      <a href="individual.html#engagements">SELECTED ENGAGEMENTS</a>
-      <a href="individual.html#contact">CONTACT</a>
-    </div>
-  </nav>
+<!-- ===== Navigation ===== -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="individual.html">Individual Service</a>
+    <a href="engagements.html">Selected Engagements</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
 
-  <main>
+<!-- ===== Hero ===== -->
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Services</h1>
+    <p>
+      Partner-led advisory across strategy, investment, transactions,
+      technology, and innovation-driven development.
+    </p>
+  </div>
+</header>
 
-    <!-- Hero -->
-    <section class="hero">
-      <img
-        src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1800&q=80"
-        alt="Global strategy and technology advisory"
-      />
-      <div class="hero-content">
-        <h1>Services</h1>
-        <p>
-          Independent, evidence-based advisory across strategy, capital,
-          transactions, technology, and large-scale innovation development.
-        </p>
-      </div>
-    </section>
+<!-- ===== Main Content ===== -->
+<main>
 
-    <!-- Positioning -->
-    <section class="section">
-      <h2>Advisory Scope</h2>
-      <p>
-        TK Net advises senior decision-makers on complex, high-stakes issues where
-        strategic clarity, capital discipline, and execution feasibility are critical.
-        Engagements are partner-led and tailored to each client’s institutional,
-        regulatory, and competitive context.
-      </p>
-    </section>
+  <section class="section">
+    <h2>Advisory Scope</h2>
+    <p>
+      We provide independent, senior-level advisory services supporting
+      high-impact strategic, financial, and transformation decisions.
+    </p>
+    <p>
+      Engagements are designed around client-specific challenges, combining
+      analytical rigor with execution relevance.
+    </p>
+  </section>
 
-    <!-- Services -->
-    <section class="section">
-      <h2>Service Domains</h2>
+</main>
 
-      <h3>Strategy & Market Expansion</h3>
-      <p>
-        Corporate and portfolio strategy, market-entry sequencing, and competitive
-        positioning in complex and regulated geographies.
-      </p>
-      <p class="meta">
-        Corporate strategy · Portfolio optimisation · Market attractiveness ·
-        Competitive scenario planning · Go-to-market design
-      </p>
-
-      <h3>Investment & Transaction Advisory</h3>
-      <p>
-        Independent commercial due diligence, valuation, and downside analysis
-        supporting investment committees, boards, and corporate development teams.
-      </p>
-      <p class="meta">
-        Commercial due diligence · Market and technology assessment ·
-        DCF / multiples modelling · Sensitivity and risk analysis
-      </p>
-
-      <h3>M&A and Deal Structuring</h3>
-      <p>
-        Target identification, synergy quantification, transaction structuring,
-        and post-merger integration planning.
-      </p>
-      <p class="meta">
-        Acquisition strategy · Synergy modelling · Deal structuring ·
-        Post-merger integration planning
-      </p>
-
-      <h3>AI & Technology Strategy</h3>
-      <p>
-        Enterprise AI strategy, use-case prioritisation, technology feasibility
-        assessment, and innovation programme design.
-      </p>
-      <p class="meta">
-        Enterprise AI roadmap · Use-case economics · Technology architecture ·
-        Innovation governance
-      </p>
-
-      <h3>Urban & Innovation Development</h3>
-      <p>
-        Strategy, economic modelling, and operator design for innovation districts,
-        science parks, and large-scale development programmes.
-      </p>
-      <p class="meta">
-        Master planning · Economic impact modelling · Operator strategy ·
-        Public–private partnership design
-      </p>
-
-      <h3>Cross-Border Programs</h3>
-      <p>
-        Design and execution of cross-border growth initiatives, institutional
-        partnerships, and regional programmes.
-      </p>
-      <p class="meta">
-        Cross-border market entry · Institutional partnerships ·
-        Regional operating models
-      </p>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      TK Net<br />
-      Global Advisory in Strategy, Investment, and Innovation
-    </div>
-  </footer>
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="footer-inner">
+    TK Net — Global Advisory in Strategy, Investment, and Innovation
+  </div>
+</footer>
 
 </body>
 </html>
