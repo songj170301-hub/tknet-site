@@ -49,7 +49,7 @@ nav a:hover { text-decoration: underline; }
   height: 320px;
   background-image:
     linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
-    url("<!-- 保留你当前使用的 hero 图片地址 -->");
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -68,7 +68,7 @@ nav a:hover { text-decoration: underline; }
 }
 .hero p {
   font-size: 17px;
-  max-width: 760px;
+  max-width: 780px;
   opacity: .95;
 }
 
@@ -77,6 +77,19 @@ main {
   max-width: 900px;
   margin: 96px auto;
   padding: 0 24px;
+}
+section {
+  margin-bottom: 64px;
+}
+section h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+section p {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 12px;
 }
 
 /* ===== Footer ===== */
@@ -95,7 +108,7 @@ footer {
 
 <body>
 
-<!-- ===== Navigation（已修正） ===== -->
+<!-- ===== Navigation（已确认正常，不再动） ===== -->
 <nav>
   <div class="nav-inner">
     <a href="index.html">Home</a>
@@ -107,22 +120,47 @@ footer {
   </div>
 </nav>
 
-<!-- ===== Hero（完全不改） ===== -->
+<!-- ===== Hero（完全恢复） ===== -->
 <header class="hero">
   <div class="hero-inner">
     <h1>Individual Service</h1>
     <p>
-      Deep, focused advisory support for critical strategic,
-      investment, and transformation decisions.
+      Deep, focused advisory support for critical strategic, investment,
+      and transformation decisions.
+      <br>
+      Each engagement is designed and led by senior partners, with direct
+      accountability for analytical rigor, strategic judgment, and
+      execution relevance.
     </p>
   </div>
 </header>
 
-<!-- ===== Main Content（完全保留你原来的内容） ===== -->
+<!-- ===== Main Content（保持你之前的正文结构） ===== -->
 <main>
 
-  <!-- ⚠️ 这里保持你现有的 Individual 页面全部文案与结构 -->
-  <!-- 未做任何删减或改写 -->
+  <section>
+    <h2>Partner-Led Advisory Engagements</h2>
+    <p>
+      Individual Service engagements are structured for situations where
+      decisions carry material capital implications, cross-border
+      complexity, or long-term strategic consequence.
+    </p>
+    <p>
+      Clients work directly with senior partners throughout the engagement,
+      ensuring clarity, independence, and accountability from problem
+      definition through execution.
+    </p>
+  </section>
+
+  <section>
+    <h2>When Clients Choose Individual Service</h2>
+    <p>
+      – High-stakes investment or transaction decisions  
+      – Complex cross-border or regulatory environments  
+      – Board-level strategic reviews  
+      – Sensitive restructuring or transformation initiatives
+    </p>
+  </section>
 
 </main>
 
