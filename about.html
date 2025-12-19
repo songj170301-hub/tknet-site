@@ -97,7 +97,7 @@ main {
   max-width: 520px;
 }
 
-/* Right */
+/* Right - Form */
 .contact-box {
   border: 1px solid #e6e6e6;
   padding: 32px;
@@ -105,20 +105,45 @@ main {
 .contact-box h3 {
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
-.contact-item {
+
+.form-group {
   margin-bottom: 18px;
 }
-.contact-item span {
+.form-group label {
   display: block;
   font-size: 12px;
   color: #777;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
-.contact-item strong {
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-family: inherit;
+}
+.form-group textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+button {
+  margin-top: 8px;
+  padding: 10px 22px;
   font-size: 14px;
   font-weight: 500;
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+}
+button:hover {
+  background: #000;
 }
 
 /* ===== Footer ===== */
@@ -167,42 +192,59 @@ footer {
     <div class="contact-intro">
       <h2>Engagement Context</h2>
       <p>
-        TK Net works with senior executives, investors, and public-sector leaders
-        on complex strategic, investment, and transformation decisions.
+        TK Net engages with senior executives, investors, and public-sector leaders
+        on high-stakes strategic, investment, and transformation decisions.
       </p>
       <p>
-        Engagements are selectively undertaken and are led directly by senior partners,
-        ensuring analytical rigor, strategic judgment, and execution relevance.
-      </p>
-      <p>
-        All discussions are treated with absolute discretion.
+        All engagements are led directly by senior partners and conducted
+        with absolute discretion.
       </p>
     </div>
 
     <div class="contact-box">
-      <h3>Contact Information</h3>
+      <h3>Inquiry Form</h3>
 
-      <div class="contact-item">
-        <span>Email</span>
-        <strong>contact@tknetadvisory.com</strong>
-      </div>
+      <form>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text">
+        </div>
 
-      <div class="contact-item">
-        <span>Engagement Type</span>
-        <strong>Partner-led advisory engagements</strong>
-      </div>
+        <div class="form-group">
+          <label>Organization</label>
+          <input type="text">
+        </div>
 
-      <div class="contact-item">
-        <span>Geographic Coverage</span>
-        <strong>Asia · North America · Europe</strong>
-      </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email">
+        </div>
 
-      <div class="contact-item">
-        <span>Confidentiality</span>
-        <strong>
-          Initial conversations are exploratory and confidential.
-        </strong>
-      </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel">
+        </div>
+
+        <div class="form-group">
+          <label>Project Type</label>
+          <select>
+            <option>Strategy Advisory</option>
+            <option>Investment & Transaction Advisory</option>
+            <option>M&A / Deal Structuring</option>
+            <option>AI & Technology Strategy</option>
+            <option>Urban & Innovation Development</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea></textarea>
+        </div>
+
+        <button type="submit">Submit Inquiry</button>
+      </form>
+
     </div>
 
   </div>
