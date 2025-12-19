@@ -1,277 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Individual Service Pages | TK Net</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    /* ========= Reset ========= */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Helvetica, Arial, sans-serif;
-      color: #111;
-      line-height: 1.65;
-      background: #fff;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Helvetica, Arial, sans-serif;
+  color: #111;
+  background: #fff;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn .5s ease forwards;
+}
+@keyframes fadeIn { to { opacity: 1; } }
 
-      /* Smooth page transition */
-      opacity: 0;
-      animation: fadeIn 0.6s ease-out forwards;
-    }
+/* ===== Navigation ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+}
+nav a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 500;
+}
+nav a:hover { text-decoration: underline; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
+/* ===== Hero ===== */
+.hero {
+  margin-top: 72px;
+  height: 360px;
+  background-image:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  color: #fff;
+}
+.hero h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.hero p {
+  max-width: 720px;
+  font-size: 18px;
+  opacity: .95;
+}
 
-    /* ========= Navigation ========= */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #fff;
-      border-bottom: 1px solid #eee;
-      z-index: 1000;
-    }
+/* ===== Content ===== */
+main {
+  max-width: 1200px;
+  margin: 96px auto;
+  padding: 0 24px;
+}
 
-    nav .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 16px 24px;
-      display: flex;
-      gap: 28px;
-      font-size: 14px;
-    }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #111;
-    }
+/* Left */
+.contact-intro h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.contact-intro p {
+  color: #444;
+  margin-bottom: 16px;
+  max-width: 520px;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+/* Right */
+.contact-box {
+  border: 1px solid #e6e6e6;
+  padding: 32px;
+}
+.contact-box h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.contact-item {
+  margin-bottom: 18px;
+}
+.contact-item span {
+  display: block;
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 4px;
+}
+.contact-item strong {
+  font-size: 14px;
+  font-weight: 500;
+}
 
-    main {
-      padding-top: 72px;
-    }
-
-    /* ========= Hero ========= */
-    .hero {
-      position: relative;
-      height: 70vh;
-      min-height: 520px;
-      overflow: hidden;
-    }
-
-    .hero img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.55);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 140px 24px 0;
-      color: #fff;
-    }
-
-    .hero h1 {
-      font-size: 56px;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      margin-bottom: 24px;
-    }
-
-    .hero p {
-      max-width: 640px;
-      font-size: 16px;
-      opacity: 0.9;
-    }
-
-    /* ========= Sections ========= */
-    .section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 96px 24px;
-    }
-
-    .section + .section {
-      border-top: 1px solid #eee;
-    }
-
-    .section h2 {
-      font-size: 28px;
-      font-weight: 500;
-      margin-bottom: 32px;
-      letter-spacing: -0.01em;
-    }
-
-    .section h3 {
-      font-size: 20px;
-      font-weight: 500;
-      margin: 48px 0 16px;
-    }
-
-    .section p {
-      max-width: 760px;
-      font-size: 16px;
-      margin-bottom: 16px;
-      color: #222;
-    }
-
-    .meta {
-      font-size: 14px;
-      color: #666;
-    }
-
-    /* ========= Footer ========= */
-    footer {
-      border-top: 1px solid #eee;
-      padding: 48px 24px;
-      font-size: 14px;
-      color: #555;
-    }
-
-    footer .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-  </style>
+/* ===== Footer ===== */
+footer {
+  border-top: 1px solid #eee;
+  padding: 48px 24px;
+  font-size: 13px;
+  color: #666;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-inner">
-      <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT</a>
-      <a href="services.html">SERVICES</a>
-      <a href="individual.html">INDIVIDUAL SERVICE PAGES</a>
-      <a href="#engagements">SELECTED ENGAGEMENTS</a>
-      <a href="#contact">CONTACT</a>
+<!-- ===== Nav ===== -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="individual.html">Individual Service</a>
+    <a href="selected-engagements.html">Selected Engagements</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Contact</h1>
+    <p>
+      Partner-led advisory engagements begin with focused conversations
+      around complex strategic, investment, and transformation decisions.
+    </p>
+  </div>
+</header>
+
+<!-- ===== Main ===== -->
+<main>
+  <div class="contact-grid">
+
+    <div class="contact-intro">
+      <h2>When to Reach Out</h2>
+      <p>
+        We typically engage with senior executives, investors, and public-sector
+        leaders facing high-stakes strategic or investment decisions.
+      </p>
+      <p>
+        Typical engagement topics include corporate strategy, M&A and investment
+        advisory, AI and technology strategy, and innovation-led urban development.
+      </p>
+      <p>
+        All engagements are led directly by senior partners, with a high level
+        of analytical rigor and confidentiality.
+      </p>
     </div>
-  </nav>
 
-  <main>
+    <div class="contact-box">
+      <h3>Contact Information</h3>
 
-    <!-- Hero -->
-    <section class="hero">
-      <img
-        src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1800&q=80"
-        alt="Global night skyline"
-      />
-      <div class="hero-content">
-        <h1>INDIVIDUAL SERVICE PAGES</h1>
-        <p>
-          Deep, focused advisory support for critical strategic, investment,
-          and transformation decisions — delivered with senior-level accountability
-          and global perspective.
-        </p>
+      <div class="contact-item">
+        <span>Email</span>
+        <strong>contact@tknetadvisory.com</strong>
       </div>
-    </section>
 
-    <!-- Strategy -->
-    <section class="section">
-      <h2>Strategy & Market Expansion</h2>
-      <p>
-        Clear corporate strategy, disciplined market-entry sequencing, and
-        execution frameworks that secure lasting advantage in complex geographies.
-      </p>
-      <p class="meta">
-        Corporate and portfolio strategy · Market sequencing · Competitive scenarios ·
-        Go-to-market · Regulatory and partnership strategy
-      </p>
-    </section>
+      <div class="contact-item">
+        <span>Engagement Type</span>
+        <strong>Partner-led advisory only</strong>
+      </div>
 
-    <!-- Investment -->
-    <section class="section">
-      <h2>Investment & Transaction Advisory</h2>
-      <p>
-        Independent commercial due diligence, valuation, and risk analysis for
-        private equity, corporate development, and investment committees.
-      </p>
-      <p class="meta">
-        Commercial due diligence · Valuation · Financial modelling · Downside analysis ·
-        Investment committee materials
-      </p>
-    </section>
+      <div class="contact-item">
+        <span>Geographic Coverage</span>
+        <strong>Asia · North America · Europe</strong>
+      </div>
 
-    <!-- M&A -->
-    <section class="section">
-      <h2>M&A and Deal Structuring</h2>
-      <p>
-        Target identification, synergy quantification, transaction structuring,
-        and post-merger integration planning.
-      </p>
-    </section>
-
-    <!-- AI -->
-    <section class="section">
-      <h2>AI & Technology Strategy</h2>
-      <p>
-        Enterprise AI strategy, use-case prioritisation, technology feasibility,
-        and innovation programme design.
-      </p>
-    </section>
-
-    <!-- Urban -->
-    <section class="section">
-      <h2>Urban & Innovation Development</h2>
-      <p>
-        Master planning, economic modelling, and operator strategies for innovation
-        districts, science parks, and cultural destinations.
-      </p>
-    </section>
-
-    <!-- Engagements -->
-    <section class="section" id="engagements">
-      <h2>Selected Engagements</h2>
-      <p>
-        Global strategy for a leading Korean beauty conglomerate<br />
-        Greater China entry for a European luxury maison<br />
-        Pan-Asia growth strategy for a Singapore-listed REIT<br />
-        Group-wide AI strategy for a Fortune 500 conglomerate
-      </p>
-    </section>
-
-    <!-- Contact -->
-    <section class="section" id="contact">
-      <h2>Contact</h2>
-      <p>
-        For confidential discussions regarding strategic, investment, or
-        transformation initiatives, please contact TK Net directly.
-      </p>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      TK Net<br />
-      Global Advisory in Strategy, Investment, and Innovation
+      <div class="contact-item">
+        <span>Note</span>
+        <strong>
+          Initial conversations are exploratory and confidential.
+        </strong>
+      </div>
     </div>
-  </footer>
+
+  </div>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="footer-inner">
+    TK Net — Global Advisory in Strategy, Investment, and Innovation
+  </div>
+</footer>
 
 </body>
 </html>
