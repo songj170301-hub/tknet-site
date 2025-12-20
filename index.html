@@ -15,7 +15,7 @@
       background: #fff;
     }
 
-    /* ========== NAV ========== */
+    /* NAV */
     nav {
       position: fixed;
       top: 0;
@@ -54,7 +54,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* ========== HERO ========== */
+    /* HERO —— 不做任何改动 */
     .hero {
       margin-top: 72px;
       height: 420px;
@@ -91,68 +91,72 @@
       opacity: 0.95;
     }
 
-    /* ========== SECTIONS ========== */
+    /* SECTIONS */
     section {
       max-width: 1200px;
       margin: 0 auto;
       padding: 80px 24px;
     }
 
-    .firm-positioning .lead {
+    .lead {
       font-size: 26px;
       font-weight: 500;
       max-width: 760px;
       margin-bottom: 24px;
     }
 
-    .firm-positioning .supporting {
+    .supporting {
       max-width: 760px;
       color: #444;
       font-size: 16px;
     }
 
-    .what-we-do h2,
-    .why-tknet h2,
-    .selected-engagements h2 {
+    h2 {
       font-size: 28px;
       margin-bottom: 48px;
     }
 
-    .service-boxes,
-    .pillars,
-    .engagement-grid {
+    .grid-3,
+    .grid-4 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 32px;
     }
 
-    .service-box,
-    .pillar {
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .box {
       border: 1px solid #eee;
       padding: 28px;
       background: #fff;
     }
 
-    .service-box h3,
-    .pillar h4 {
-      margin-bottom: 8px;
+    .box h3,
+    .box h4 {
+      margin-bottom: 10px;
       font-size: 18px;
     }
 
-    .tagline {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #777;
-      margin-bottom: 12px;
+    .box p {
+      font-size: 15px;
+      color: #555;
     }
 
-    /* ========== ENGAGEMENT CARDS ========== */
+    /* ENGAGEMENTS */
+    .engagement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+    }
+
     .engagement {
       border: 1px solid #eee;
       background: #fff;
-      display: flex;
-      flex-direction: column;
     }
 
     .engagement img {
@@ -162,11 +166,11 @@
     }
 
     .engagement-content {
-      padding: 20px 22px 24px;
+      padding: 18px 22px 22px;
     }
 
     .engagement-content h4 {
-      font-size: 17px;
+      font-size: 16px;
       margin-bottom: 6px;
     }
 
@@ -175,7 +179,6 @@
       color: #555;
     }
 
-    /* Footer */
     footer {
       border-top: 1px solid #eee;
       padding: 32px 24px;
@@ -188,103 +191,134 @@
 
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <div class="nav-left">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="individual.html">Individual Service</a>
-        <a href="engagements.html">Selected Engagements</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="brand">TK Net</div>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="individual.html">Individual Service</a>
+      <a href="engagements.html">Selected Engagements</a>
+      <a href="contact.html">Contact</a>
     </div>
-  </nav>
+    <div class="brand">TK Net</div>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-inner">
-      <h1>
-        Global Strategy. Rigorous Capital Allocation.
-        Transformative Places.
-      </h1>
-      <p>
-        Independent advisory to boards, investment committees, and public-sector
-        leaders on strategy, transactions, and innovation districts across Asia,
-        Europe, and North America.
-      </p>
-    </div>
-  </header>
-
-  <!-- FIRM POSITIONING -->
-  <section class="firm-positioning">
-    <p class="lead">
-      TK Net is an independent global advisory firm supporting leaders on
-      high-stakes strategy, investment, and development decisions.
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Global Strategy. Rigorous Capital Allocation. Transformative Places.</h1>
+    <p>
+      Independent advisory to boards, investment committees, and public-sector
+      leaders on strategy, transactions, and innovation districts across Asia,
+      Europe, and North America.
     </p>
-    <p class="supporting">
-      We advise boards, investment committees, and public-sector leaders where
-      capital allocation, competitive positioning, and long-term value creation
-      intersect — often across borders, regulatory regimes, and complex
-      stakeholder environments.
-    </p>
-  </section>
+  </div>
+</header>
 
-  <!-- SELECTED ENGAGEMENTS -->
-  <section class="selected-engagements">
-    <h2>Selected Engagements</h2>
+<section>
+  <p class="lead">
+    TK Net is an independent global advisory firm supporting leaders on
+    high-stakes strategy, investment, and development decisions.
+  </p>
+  <p class="supporting">
+    We advise boards, investment committees, and public-sector leaders where
+    capital allocation, competitive positioning, and long-term value creation
+    intersect across borders and sectors.
+  </p>
+</section>
 
-    <div class="engagement-grid">
+<section>
+  <h2>Selected Engagements</h2>
 
-      <div class="engagement">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80">
-        <div class="engagement-content">
-          <h4>Hyundai Group</h4>
-          <p>AI unicorn investment advisory</p>
-        </div>
+  <div class="engagement-grid">
+
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab">
+      <div class="engagement-content">
+        <h4>Hyundai Group</h4>
+        <p>AI unicorn investment advisory</p>
       </div>
-
-      <div class="engagement">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80">
-        <div class="engagement-content">
-          <h4>CKT Group</h4>
-          <p>Incheon AI Tower ecosystem</p>
-        </div>
-      </div>
-
-      <div class="engagement">
-        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80">
-        <div class="engagement-content">
-          <h4>ABL Life & Tongyang Life</h4>
-          <p>M&A strategy</p>
-        </div>
-      </div>
-
-      <div class="engagement">
-        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=1200&q=80">
-        <div class="engagement-content">
-          <h4>Suzhou Design Town</h4>
-          <p>Masterplan and operator model</p>
-        </div>
-      </div>
-
-      <div class="engagement">
-        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1200&q=80">
-        <div class="engagement-content">
-          <h4>European Luxury House</h4>
-          <p>Greater China market entry</p>
-        </div>
-      </div>
-
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    TK Net — Global Advisory in Strategy, Investment, and Innovation
-  </footer>
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c">
+      <div class="engagement-content">
+        <h4>CKT Group</h4>
+        <p>Incheon AI Tower ecosystem</p>
+      </div>
+    </div>
+
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a">
+      <div class="engagement-content">
+        <h4>ABL Life & Tongyang Life</h4>
+        <p>M&A strategy</p>
+      </div>
+    </div>
+
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+      <div class="engagement-content">
+        <h4>Suzhou Design Town</h4>
+        <p>Masterplan and operator model</p>
+      </div>
+    </div>
+
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d">
+      <div class="engagement-content">
+        <h4>European Luxury House</h4>
+        <p>Greater China entry strategy</p>
+      </div>
+    </div>
+
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+      <div class="engagement-content">
+        <h4>SJ International Education</h4>
+        <p>Investment feasibility advisory</p>
+      </div>
+    </div>
+
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+      <div class="engagement-content">
+        <h4>Incheon AI Tower</h4>
+        <p>AI ecosystem & feasibility strategy</p>
+      </div>
+    </div>
+
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c">
+      <div class="engagement-content">
+        <h4>New York Institute of Finance</h4>
+        <p>Investment & valuation advisory</p>
+      </div>
+    </div>
+
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1504386106331-3e4e71712b38">
+      <div class="engagement-content">
+        <h4>Beijing Tongzhou Tech Park</h4>
+        <p>Innovation district development strategy</p>
+      </div>
+    </div>
+
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429">
+      <div class="engagement-content">
+        <h4>China Maritime Industry</h4>
+        <p>National industrial strategy study</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  TK Net — Independent Global Advisory in Strategy, Investment, and Innovation
+</footer>
 
 </body>
 </html>
