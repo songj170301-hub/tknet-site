@@ -68,7 +68,6 @@ nav a:hover {
 }
 .hero h1 {
   font-size: 40px;
-  max-width: 760px;
 }
 .hero p {
   font-size: 18px;
@@ -83,7 +82,6 @@ section {
   padding: 88px 24px;
 }
 
-/* Intro */
 .services-intro {
   font-size: 20px;
   max-width: 880px;
@@ -91,27 +89,26 @@ section {
   color: #222;
 }
 
-/* Grid */
+/* GRID */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 44px;
 }
 
-/* Card */
+/* CARD (clickable) */
 .service-card {
   padding-top: 24px;
   border-top: 1px solid #e5e5e5;
-  transition: border-color .25s ease,
-              transform .25s ease;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color .25s ease, transform .25s ease;
 }
 
 .service-card h3 {
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 10px 0;
-  letter-spacing: .2px;
-  transition: color .25s ease;
 }
 
 .service-card p {
@@ -120,14 +117,10 @@ section {
   color: #333;
 }
 
-/* ⭐ McKinsey-style hover（极轻） */
+/* Hover */
 .service-card:hover {
   border-top-color: #111;
   transform: translateY(-2px);
-}
-
-.service-card:hover h3 {
-  color: #000;
 }
 
 /* FOOTER */
@@ -176,35 +169,35 @@ footer {
 
   <div class="services-grid">
 
-    <div class="service-card">
+    <a href="individual.html#strategy" class="service-card">
       <h3>Strategy & Market Expansion</h3>
       <p>Corporate strategy, growth sequencing, and competitive positioning across global markets.</p>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a href="individual.html#investment" class="service-card">
       <h3>Investment & Transaction Advisory</h3>
       <p>Commercial diligence, valuation, and investment committee–grade decision support.</p>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a href="individual.html#ma" class="service-card">
       <h3>M&A and Deal Structuring</h3>
       <p>Target identification, synergy logic, and transaction structuring for complex deals.</p>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a href="individual.html#ai" class="service-card">
       <h3>AI & Technology Strategy</h3>
       <p>Enterprise AI strategy, use-case prioritisation, and scalable innovation roadmaps.</p>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a href="individual.html#urban" class="service-card">
       <h3>Urban & Innovation Development</h3>
       <p>Master planning, economic modelling, and operator strategy for innovation districts.</p>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a href="individual.html#crossborder" class="service-card">
       <h3>Cross-Border Programs</h3>
       <p>Design and execution of cross-border market entry and institutional partnerships.</p>
-    </div>
+    </a>
 
   </div>
 
