@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Services | TK Net</title>
+<title>TK Net | Independent Strategic Advisory</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -33,28 +33,18 @@ nav .nav-inner {
   align-items: center;
   font-size: 14px;
 }
-nav .nav-left {
-  display: flex;
-  gap: 28px;
-}
-nav a {
-  text-decoration: none;
-  color: #111;
-}
-nav a:hover {
-  text-decoration: underline;
-}
-.brand {
-  font-weight: 600;
-}
+nav .nav-left { display: flex; gap: 28px; }
+nav a { text-decoration: none; color: #111; }
+nav a:hover { text-decoration: underline; }
+.brand { font-weight: 600; }
 
-/* HERO（保持不改） */
+/* HERO (unchanged) */
 .hero {
   margin-top: 72px;
-  height: 380px;
+  height: 420px;
   background-image:
-    linear-gradient(120deg, rgba(0,0,0,.45), rgba(0,0,0,.25)),
-    url("<!-- 保持你当前 services hero 图片 -->");
+    linear-gradient(120deg, rgba(0,60,140,.75), rgba(0,120,200,.65)),
+    url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=2000&q=80");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -66,64 +56,76 @@ nav a:hover {
   padding: 0 24px;
   color: #fff;
 }
-.hero h1 {
-  font-size: 40px;
-}
-.hero p {
-  font-size: 18px;
-  max-width: 760px;
-  opacity: .95;
-}
+.hero h1 { font-size: 42px; max-width: 760px; }
+.hero p { font-size: 18px; max-width: 760px; opacity: .95; }
 
-/* CONTENT */
+/* SECTIONS */
 section {
   max-width: 1200px;
   margin: auto;
-  padding: 88px 24px;
+  padding: 80px 24px;
 }
+h2 { font-size: 28px; margin-bottom: 40px; }
 
-.services-intro {
-  font-size: 20px;
-  max-width: 880px;
-  margin-bottom: 72px;
-  color: #222;
-}
-
-/* GRID */
-.services-grid {
+/* INFO BLOCKS */
+.info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 44px;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 40px;
 }
-
-/* CARD (clickable) */
-.service-card {
-  padding-top: 24px;
-  border-top: 1px solid #e5e5e5;
-  text-decoration: none;
-  color: inherit;
-  transition: border-color .25s ease, transform .25s ease;
+.info-box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
-
-.service-card h3 {
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0 0 10px 0;
-}
-
-.service-card p {
+.info-box p {
   font-size: 15px;
-  margin: 0;
-  color: #333;
+  color: #444;
 }
 
-/* Hover */
-.service-card:hover {
-  border-top-color: #111;
-  transform: translateY(-2px);
+/* WHY */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 32px;
+}
+.why-box {
+  border-left: 2px solid #0a3c8f;
+  padding-left: 16px;
+}
+.why-box strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 6px;
 }
 
-/* FOOTER */
+/* ENGAGEMENTS */
+.engagement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 32px;
+}
+.engagement {
+  border: 1px solid #eee;
+  background: #fff;
+}
+.engagement img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  filter: saturate(.75) contrast(1.05);
+}
+.engagement-content {
+  padding: 18px 22px 22px;
+}
+.engagement-content h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+.engagement-content p {
+  font-size: 14px;
+  color: #555;
+}
+
 footer {
   border-top: 1px solid #eee;
   padding: 32px;
@@ -152,55 +154,83 @@ footer {
 
 <header class="hero">
   <div class="hero-inner">
-    <h1>Services</h1>
+    <h1>Global Strategy. Rigorous Capital Allocation. Transformative Places.</h1>
     <p>
-      Partner-led advisory across strategy, transactions, technology,
-      and transformative development initiatives.
+      Independent advisory to boards, investment committees, and public-sector leaders
+      on strategy, transactions, and innovation districts across Asia, Europe, and North America.
     </p>
   </div>
 </header>
 
+<!-- WHAT WE DO -->
 <section>
-
-  <div class="services-intro">
-    We deliver unconflicted, evidence-based advice across strategy,
-    capital allocation, transactions, technology, and place-making.
-  </div>
-
-  <div class="services-grid">
-
-    <a href="individual.html#strategy" class="service-card">
+  <h2>What We Do</h2>
+  <div class="info-grid">
+    <div class="info-box">
       <h3>Strategy & Market Expansion</h3>
-      <p>Corporate strategy, growth sequencing, and competitive positioning across global markets.</p>
-    </a>
-
-    <a href="individual.html#investment" class="service-card">
+      <p>Corporate strategy, growth sequencing, competitive positioning, and execution across developed and emerging markets.</p>
+    </div>
+    <div class="info-box">
       <h3>Investment & Transaction Advisory</h3>
-      <p>Commercial diligence, valuation, and investment committee–grade decision support.</p>
-    </a>
+      <p>Commercial due diligence, valuation, transaction structuring, and investment committee support.</p>
+    </div>
+    <div class="info-box">
+      <h3>Innovation & Place-Making</h3>
+      <p>AI and technology strategy, innovation ecosystems, urban regeneration, and cross-border programs.</p>
+    </div>
+  </div>
+</section>
 
-    <a href="individual.html#ma" class="service-card">
-      <h3>M&A and Deal Structuring</h3>
-      <p>Target identification, synergy logic, and transaction structuring for complex deals.</p>
-    </a>
+<!-- WHY TK NET -->
+<section>
+  <h2>Why TK Net</h2>
+  <div class="why-grid">
+    <div class="why-box"><strong>True Independence</strong>No audit, lending, or product conflicts</div>
+    <div class="why-box"><strong>Asia Depth + Global Standards</strong>Active across three continents since 2007</div>
+    <div class="why-box"><strong>End-to-End Delivery</strong>From boardroom strategy to built districts</div>
+    <div class="why-box"><strong>Trusted by Leaders</strong>Multinationals, sovereign investors, city governments</div>
+  </div>
+</section>
 
-    <a href="individual.html#ai" class="service-card">
-      <h3>AI & Technology Strategy</h3>
-      <p>Enterprise AI strategy, use-case prioritisation, and scalable innovation roadmaps.</p>
-    </a>
+<!-- SELECTED ENGAGEMENTS -->
+<section>
+  <h2>Selected Engagements</h2>
 
-    <a href="individual.html#urban" class="service-card">
-      <h3>Urban & Innovation Development</h3>
-      <p>Master planning, economic modelling, and operator strategy for innovation districts.</p>
-    </a>
+  <div class="engagement-grid">
 
-    <a href="individual.html#crossborder" class="service-card">
-      <h3>Cross-Border Programs</h3>
-      <p>Design and execution of cross-border market entry and institutional partnerships.</p>
-    </a>
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80">
+      <div class="engagement-content"><h4>Hyundai Group</h4><p>AI unicorn investment advisory</p></div>
+    </div>
+
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1508964942454-1a56651d54ac?auto=format&fit=crop&w=1200&q=80">
+      <div class="engagement-content"><h4>Singapore IMC Group</h4><p>Multi-asset real estate strategy</p></div>
+    </div>
+
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80">
+      <div class="engagement-content"><h4>ABL Life & Tongyang Life</h4><p>M&A strategy</p></div>
+    </div>
+
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=80">
+      <div class="engagement-content"><h4>Suzhou Design Town</h4><p>Masterplan & operator model</p></div>
+    </div>
+
+    <!-- ✅ Beijing Tech Transfer Park（全球夜景） -->
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80">
+      <div class="engagement-content"><h4>Beijing Tech Transfer Park</h4><p>Global innovation district strategy</p></div>
+    </div>
+
+    <!-- ✅ China National Policy Study（都市夜景） -->
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80">
+      <div class="engagement-content"><h4>China National Policy Study</h4><p>National urban & economic policy research</p></div>
+    </div>
 
   </div>
-
 </section>
 
 <footer>
