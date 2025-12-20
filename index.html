@@ -15,7 +15,7 @@ body {
   line-height: 1.65;
 }
 
-/* ---------- NAV ---------- */
+/* NAV */
 nav {
   position: fixed;
   top: 0;
@@ -33,18 +33,12 @@ nav .nav-inner {
   align-items: center;
   font-size: 14px;
 }
-nav .nav-left {
-  display: flex;
-  gap: 28px;
-}
-nav a {
-  text-decoration: none;
-  color: #111;
-}
+nav .nav-left { display: flex; gap: 28px; }
+nav a { text-decoration: none; color: #111; }
 nav a:hover { text-decoration: underline; }
 .brand { font-weight: 600; }
 
-/* ---------- HERO（保持不变） ---------- */
+/* HERO (unchanged) */
 .hero {
   margin-top: 72px;
   height: 420px;
@@ -62,43 +56,18 @@ nav a:hover { text-decoration: underline; }
   padding: 0 24px;
   color: #fff;
 }
-.hero h1 {
-  font-size: 42px;
-  max-width: 760px;
-}
-.hero p {
-  font-size: 18px;
-  max-width: 760px;
-  opacity: .95;
-}
+.hero h1 { font-size: 42px; max-width: 760px; }
+.hero p { font-size: 18px; max-width: 760px; opacity: .95; }
 
-/* ---------- SECTIONS ---------- */
+/* SECTIONS */
 section {
   max-width: 1200px;
   margin: auto;
   padding: 80px 24px;
 }
-h2 {
-  font-size: 28px;
-  margin-bottom: 40px;
-}
+h2 { font-size: 28px; margin-bottom: 40px; }
 
-/* ---------- WHAT / WHY ---------- */
-.grid-3, .grid-4 {
-  display: grid;
-  gap: 32px;
-}
-.grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); }
-.grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
-
-.box {
-  border: 1px solid #eee;
-  padding: 28px;
-}
-.box h3 { font-size: 18px; margin-bottom: 10px; }
-.box p { font-size: 15px; color: #555; }
-
-/* ---------- ENGAGEMENTS ---------- */
+/* ENGAGEMENTS */
 .engagement-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
@@ -162,47 +131,16 @@ footer {
   </div>
 </header>
 
-<!-- WHAT WE DO -->
-<section>
-  <h2>What We Do</h2>
-  <div class="grid-3">
-    <div class="box">
-      <h3>Strategy & Market Expansion</h3>
-      <p>Corporate strategy, growth sequencing, competitive positioning, and execution across developed and emerging markets.</p>
-    </div>
-    <div class="box">
-      <h3>Investment & Transaction Advisory</h3>
-      <p>Commercial due diligence, valuation, transaction structuring, and investment committee support.</p>
-    </div>
-    <div class="box">
-      <h3>Innovation & Place-Making</h3>
-      <p>AI and technology strategy, innovation ecosystems, urban regeneration, and cross-border programs.</p>
-    </div>
-  </div>
-</section>
-
-<!-- WHY TK NET -->
-<section>
-  <h2>Why TK Net</h2>
-  <div class="grid-4">
-    <div class="box"><h3>True Independence</h3><p>No audit, lending, or product conflicts.</p></div>
-    <div class="box"><h3>Asia Depth + Global Standards</h3><p>Active across three continents since 2007.</p></div>
-    <div class="box"><h3>End-to-End Delivery</h3><p>From boardroom strategy to built districts.</p></div>
-    <div class="box"><h3>Trusted by Leaders</h3><p>Multinationals, sovereign investors, city governments.</p></div>
-  </div>
-</section>
-
-<!-- SELECTED ENGAGEMENTS -->
 <section>
   <h2>Selected Engagements</h2>
 
   <div class="engagement-grid">
+
     <div class="engagement">
       <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80">
       <div class="engagement-content"><h4>Hyundai Group</h4><p>AI unicorn investment advisory</p></div>
     </div>
 
-    <!-- ✅ Singapore IMC Group（已更换） -->
     <div class="engagement">
       <img src="https://images.unsplash.com/photo-1508964942454-1a56651d54ac?auto=format&fit=crop&w=1200&q=80">
       <div class="engagement-content"><h4>Singapore IMC Group</h4><p>Multi-asset real estate strategy</p></div>
@@ -223,20 +161,16 @@ footer {
       <div class="engagement-content"><h4>European Luxury House</h4><p>Greater China entry</p></div>
     </div>
 
+    <!-- ✅ Beijing Tech Transfer Park（已更换） -->
     <div class="engagement">
-      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80">
-      <div class="engagement-content"><h4>Incheon AI Tower</h4><p>Feasibility & ecosystem design</p></div>
-    </div>
-
-    <!-- ✅ China National Policy Study（已修复） -->
-    <div class="engagement">
-      <img src="https://images.unsplash.com/photo-1465446751832-9f10e89f9a23?auto=format&fit=crop&w=1200&q=80">
-      <div class="engagement-content"><h4>China National Policy Study</h4><p>Urban & national development strategy</p></div>
-    </div>
-
-    <div class="engagement">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80">
+      <img src="https://images.unsplash.com/photo-1581093588401-22b4c88d4c3c?auto=format&fit=crop&w=1200&q=80">
       <div class="engagement-content"><h4>Beijing Tech Transfer Park</h4><p>Innovation district strategy</p></div>
+    </div>
+
+    <!-- ✅ China National Policy Study（最终稳定方案） -->
+    <div class="engagement">
+      <img src="https://images.unsplash.com/photo-1486304873000-235643847519?auto=format&fit=crop&w=1200&q=80">
+      <div class="engagement-content"><h4>China National Policy Study</h4><p>National urban & economic policy research</p></div>
     </div>
 
     <div class="engagement">
@@ -248,6 +182,7 @@ footer {
       <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1200&q=80">
       <div class="engagement-content"><h4>National Maritime Strategy</h4><p>Industrial policy & infrastructure planning</p></div>
     </div>
+
   </div>
 </section>
 
