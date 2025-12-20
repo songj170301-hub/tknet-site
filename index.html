@@ -48,7 +48,7 @@ nav a:hover {
   font-weight: 600;
 }
 
-/* HERO — 保持不改 */
+/* HERO（保持不改） */
 .hero {
   margin-top: 72px;
   height: 380px;
@@ -98,9 +98,12 @@ section {
   gap: 44px;
 }
 
+/* Card */
 .service-card {
   padding-top: 24px;
   border-top: 1px solid #e5e5e5;
+  transition: border-color .25s ease,
+              transform .25s ease;
 }
 
 .service-card h3 {
@@ -108,12 +111,23 @@ section {
   font-weight: 600;
   margin: 0 0 10px 0;
   letter-spacing: .2px;
+  transition: color .25s ease;
 }
 
 .service-card p {
   font-size: 15px;
   margin: 0;
   color: #333;
+}
+
+/* ⭐ McKinsey-style hover（极轻） */
+.service-card:hover {
+  border-top-color: #111;
+  transform: translateY(-2px);
+}
+
+.service-card:hover h3 {
+  color: #000;
 }
 
 /* FOOTER */
@@ -143,7 +157,6 @@ footer {
   </div>
 </nav>
 
-<!-- HERO（不改） -->
 <header class="hero">
   <div class="hero-inner">
     <h1>Services</h1>
@@ -154,7 +167,6 @@ footer {
   </div>
 </header>
 
-<!-- SERVICES -->
 <section>
 
   <div class="services-intro">
