@@ -1,196 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>TK Net | Independent Strategic Advisory</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<title>TK Net | Independent Strategic Advisory</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
-      color: #111;
-      line-height: 1.65;
-      background: #fff;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+  color: #111;
+  background: #fff;
+  line-height: 1.65;
+}
 
-    /* ---------- NAV ---------- */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #fff;
-      border-bottom: 1px solid #eee;
-      z-index: 1000;
-    }
+/* ---------- NAV ---------- */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+nav .nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+nav .nav-left {
+  display: flex;
+  gap: 28px;
+}
+nav a {
+  text-decoration: none;
+  color: #111;
+}
+nav a:hover { text-decoration: underline; }
+.brand { font-weight: 600; }
 
-    nav .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 14px;
-    }
+/* ---------- HERO（不改） ---------- */
+.hero {
+  margin-top: 72px;
+  height: 420px;
+  background-image:
+    linear-gradient(120deg, rgba(0,60,140,.75), rgba(0,120,200,.65)),
+    url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=2000&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+.hero-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+  color: #fff;
+}
+.hero h1 {
+  font-size: 42px;
+  max-width: 760px;
+}
+.hero p {
+  font-size: 18px;
+  max-width: 760px;
+  opacity: .95;
+}
 
-    nav .nav-left {
-      display: flex;
-      gap: 28px;
-    }
+/* ---------- SECTIONS ---------- */
+section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 24px;
+}
+h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #111;
-    }
+/* ---------- WHAT / WHY ---------- */
+.grid-3, .grid-4 {
+  display: grid;
+  gap: 32px;
+}
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+.box {
+  border: 1px solid #eee;
+  padding: 28px;
+}
+.box h3 { font-size: 18px; margin-bottom: 10px; }
+.box p { font-size: 15px; color: #555; }
 
-    nav .brand {
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
+/* ---------- ENGAGEMENTS ---------- */
+.engagement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 32px;
+}
+.engagement {
+  border: 1px solid #eee;
+  background: #fff;
+}
+.engagement img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  filter: saturate(.75) contrast(1.05);
+}
+.engagement-content {
+  padding: 18px 22px 22px;
+}
+.engagement-content h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+.engagement-content p {
+  font-size: 14px;
+  color: #555;
+}
 
-    /* ---------- HERO (不改) ---------- */
-    .hero {
-      margin-top: 72px;
-      height: 420px;
-      background-image:
-        linear-gradient(
-          120deg,
-          rgba(0, 60, 140, 0.75),
-          rgba(0, 120, 200, 0.65)
-        ),
-        url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=2000&q=80");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      color: #fff;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      line-height: 1.25;
-      max-width: 760px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 760px;
-      opacity: 0.95;
-    }
-
-    /* ---------- SECTIONS ---------- */
-    section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
-
-    h2 {
-      font-size: 28px;
-      margin-bottom: 48px;
-    }
-
-    .grid-3,
-    .grid-4 {
-      display: grid;
-      gap: 32px;
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    .grid-4 {
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
-
-    .box {
-      border: 1px solid #eee;
-      padding: 28px;
-      background: #fff;
-    }
-
-    .box h3 {
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-
-    .box p {
-      font-size: 15px;
-      color: #555;
-    }
-
-    /* ---------- SELECTED ENGAGEMENTS ---------- */
-    .engagement-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 32px;
-    }
-
-    .engagement {
-      border: 1px solid #eee;
-      background: #fff;
-      overflow: hidden;
-    }
-
-    /* ✅ 冷色咨询系统一调色 */
-    .engagement img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      filter: saturate(0.75) contrast(1.05);
-    }
-
-    /* 冷色 overlay */
-    .engagement::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(10, 30, 60, 0.08);
-      pointer-events: none;
-    }
-
-    .engagement {
-      position: relative;
-    }
-
-    .engagement-content {
-      padding: 18px 22px 22px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .engagement-content h4 {
-      font-size: 16px;
-      margin-bottom: 6px;
-    }
-
-    .engagement-content p {
-      font-size: 14px;
-      color: #555;
-    }
-
-    footer {
-      border-top: 1px solid #eee;
-      padding: 32px 24px;
-      text-align: center;
-      font-size: 13px;
-      color: #666;
-    }
-  </style>
+footer {
+  border-top: 1px solid #eee;
+  padding: 32px;
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+}
+</style>
 </head>
 
 <body>
@@ -213,54 +156,73 @@
   <div class="hero-inner">
     <h1>Global Strategy. Rigorous Capital Allocation. Transformative Places.</h1>
     <p>
-      Independent advisory to boards, investment committees, and public-sector
-      leaders on strategy, transactions, and innovation districts across Asia,
-      Europe, and North America.
+      Independent advisory to boards, investment committees, and public-sector leaders
+      on strategy, transactions, and innovation districts across Asia, Europe, and North America.
     </p>
   </div>
 </header>
 
+<!-- WHAT WE DO -->
+<section>
+  <h2>What We Do</h2>
+  <div class="grid-3">
+    <div class="box">
+      <h3>Strategy & Market Expansion</h3>
+      <p>Corporate strategy, growth sequencing, competitive positioning, and execution across developed and emerging markets.</p>
+    </div>
+    <div class="box">
+      <h3>Investment & Transaction Advisory</h3>
+      <p>Commercial due diligence, valuation, transaction structuring, and investment committee support.</p>
+    </div>
+    <div class="box">
+      <h3>Innovation & Place-Making</h3>
+      <p>AI and technology strategy, innovation ecosystems, urban regeneration, and cross-border programs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY TK NET -->
+<section>
+  <h2>Why TK Net</h2>
+  <div class="grid-4">
+    <div class="box"><h3>True Independence</h3><p>No audit, lending, or product conflicts.</p></div>
+    <div class="box"><h3>Asia Depth + Global Standards</h3><p>Active across three continents since 2007.</p></div>
+    <div class="box"><h3>End-to-End Delivery</h3><p>From boardroom strategy to built districts.</p></div>
+    <div class="box"><h3>Trusted by Leaders</h3><p>Multinationals, sovereign investors, city governments.</p></div>
+  </div>
+</section>
+
+<!-- SELECTED ENGAGEMENTS -->
 <section>
   <h2>Selected Engagements</h2>
 
   <div class="engagement-grid">
+    <div class="engagement"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"><div class="engagement-content"><h4>Hyundai Group</h4><p>AI unicorn investment advisory</p></div></div>
 
+    <div class="engagement"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"><div class="engagement-content"><h4>CKT Group</h4><p>Incheon AI Tower ecosystem</p></div></div>
+
+    <div class="engagement"><img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80"><div class="engagement-content"><h4>ABL Life & Tongyang Life</h4><p>M&A strategy</p></div></div>
+
+    <div class="engagement"><img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=80"><div class="engagement-content"><h4>Suzhou Design Town</h4><p>Masterplan & operator model</p></div></div>
+
+    <div class="engagement"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80"><div class="engagement-content"><h4>European Luxury House</h4><p>Greater China entry</p></div></div>
+
+    <div class="engagement"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80"><div class="engagement-content"><h4>Incheon AI Tower</h4><p>Feasibility & ecosystem design</p></div></div>
+
+    <div class="engagement"><img src="https://images.unsplash.com/photo-1505842465776-3d90f616310d?auto=format&fit=crop&w=1200&q=80"><div class="engagement-content"><h4>China National Policy Study</h4><p>Urban & national development strategy</p></div></div>
+
+    <div class="engagement"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"><div class="engagement-content"><h4>Singapore IMC Group</h4><p>Multi-asset real estate strategy</p></div></div>
+
+    <div class="engagement"><img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&w=1200&q=80"><div class="engagement-content"><h4>Beijing Tech Transfer Park</h4><p>Innovation district strategy</p></div></div>
+
+    <!-- ✅ 最后一张：已换成稳定图源 -->
     <div class="engagement">
-      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80">
-      <div class="engagement-content"><h4>Hyundai Group</h4><p>AI unicorn investment advisory</p></div>
+      <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1200&q=80">
+      <div class="engagement-content">
+        <h4>National Maritime Strategy</h4>
+        <p>Industrial policy & infrastructure planning</p>
+      </div>
     </div>
-
-    <div class="engagement">
-      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80">
-      <div class="engagement-content"><h4>CKT Group</h4><p>Incheon AI Tower ecosystem</p></div>
-    </div>
-
-    <div class="engagement">
-      <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80">
-      <div class="engagement-content"><h4>ABL Life & Tongyang Life</h4><p>M&A strategy</p></div>
-    </div>
-
-    <div class="engagement">
-      <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=80">
-      <div class="engagement-content"><h4>Suzhou Design Town</h4><p>Masterplan & operator model</p></div>
-    </div>
-
-    <div class="engagement">
-      <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80">
-      <div class="engagement-content"><h4>European Luxury House</h4><p>Greater China entry</p></div>
-    </div>
-
-    <div class="engagement">
-      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80">
-      <div class="engagement-content"><h4>Incheon AI Tower</h4><p>Feasibility & ecosystem design</p></div>
-    </div>
-
-    <!-- ✅ 已修复：China National Policy Study -->
-    <div class="engagement">
-      <img src="https://images.unsplash.com/photo-1505842465776-3d90f616310d?auto=format&fit=crop&w=1200&q=80">
-      <div class="engagement-content"><h4>China National Policy Study</h4><p>Urban & national development strategy</p></div>
-    </div>
-
   </div>
 </section>
 
