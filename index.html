@@ -1,42 +1,244 @@
-<main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TK Net | Independent Strategic Advisory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Firm Positioning -->
-  <section style="max-width:920px;margin-bottom:120px;">
-    <p style="font-size:20px;font-weight:500;margin-bottom:24px;">
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      color: #111;
+      line-height: 1.6;
+      background: #fff;
+    }
+
+    /* ========== NAV ========== */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      z-index: 1000;
+    }
+
+    nav .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    nav .nav-left {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    nav .brand {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      margin-top: 72px;
+      height: 420px;
+      background-image:
+        linear-gradient(
+          120deg,
+          rgba(0, 60, 140, 0.75),
+          rgba(0, 120, 200, 0.65)
+        ),
+        url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=2000&q=80");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      line-height: 1.25;
+      max-width: 720px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 720px;
+      opacity: 0.95;
+    }
+
+    /* ========== SECTIONS ========== */
+    section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    /* Firm positioning */
+    .firm-positioning .lead {
+      font-size: 26px;
+      font-weight: 500;
+      max-width: 720px;
+      margin-bottom: 24px;
+    }
+
+    .firm-positioning .supporting {
+      max-width: 720px;
+      color: #444;
+      font-size: 16px;
+    }
+
+    /* What We Do */
+    .what-we-do h2 {
+      font-size: 28px;
+      margin-bottom: 48px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 48px;
+    }
+
+    .service h3 {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .service .tagline {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #777;
+      margin-bottom: 12px;
+    }
+
+    .service p {
+      font-size: 15px;
+      color: #333;
+    }
+
+    /* How We Work */
+    .how-we-work h2 {
+      font-size: 28px;
+      margin-bottom: 48px;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+    }
+
+    .principles h4 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .principles p {
+      font-size: 15px;
+      color: #444;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid #eee;
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="individual.html">Individual Service</a>
+        <a href="engagements.html">Selected Engagements</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="brand">TK Net</div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>
+        Global Strategy. Rigorous Capital Allocation.
+        Transformative Places.
+      </h1>
+      <p>
+        Independent advisory to boards, investment committees, and public-sector
+        leaders on strategy, transactions, and innovation districts across Asia,
+        Europe, and North America.
+      </p>
+    </div>
+  </header>
+
+  <!-- FIRM POSITIONING -->
+  <section class="firm-positioning">
+    <p class="lead">
       TK Net is an independent global advisory firm supporting leaders on
       high-stakes strategy, investment, and development decisions.
     </p>
-    <p style="font-size:16px;color:#333;">
+    <p class="supporting">
       We advise boards, investment committees, and public-sector institutions
       where capital allocation, competitive positioning, and long-term value
-      creation intersect — often across borders, regulatory regimes, and
-      complex stakeholder environments.
+      creation intersect — often across borders, regulatory regimes, and complex
+      stakeholder environments.
     </p>
   </section>
 
-  <!-- What We Do -->
-  <section style="margin-bottom:140px;">
-    <div class="section-title">What We Do</div>
+  <!-- WHAT WE DO -->
+  <section class="what-we-do">
+    <h2>What We Do</h2>
 
-    <div class="columns-3">
-
-      <div class="service-block">
+    <div class="services-grid">
+      <div class="service">
         <h3>Strategy & Market Expansion</h3>
-        <p style="font-size:13px;color:#666;margin-bottom:10px;">
-          Corporate direction and growth under uncertainty
-        </p>
+        <p class="tagline">Corporate direction and growth under uncertainty</p>
         <p>
           We help leadership teams define corporate and portfolio strategy,
-          prioritise markets, sequence expansion, and translate ambition
-          into executable plans across developed and emerging economies.
+          prioritise markets, sequence expansion, and translate ambition into
+          executable plans across developed and emerging economies.
         </p>
       </div>
 
-      <div class="service-block">
+      <div class="service">
         <h3>Investment & Transaction Advisory</h3>
-        <p style="font-size:13px;color:#666;margin-bottom:10px;">
-          Independent judgment for critical capital decisions
-        </p>
+        <p class="tagline">Independent judgment for critical capital decisions</p>
         <p>
           We provide commercial due diligence, valuation, downside analysis,
           and transaction support for private equity, corporates, and
@@ -44,81 +246,54 @@
         </p>
       </div>
 
-      <div class="service-block">
+      <div class="service">
         <h3>Innovation & Place-Making</h3>
-        <p style="font-size:13px;color:#666;margin-bottom:10px;">
-          Technology, ecosystems, and large-scale transformation
-        </p>
+        <p class="tagline">Technology, ecosystems, and large-scale transformation</p>
         <p>
-          We design AI strategies, innovation districts, science parks,
-          and urban regeneration programs that integrate economic logic,
+          We design AI strategies, innovation districts, science parks, and
+          urban regeneration programs that integrate economic logic,
           governance, and long-term sustainability.
         </p>
       </div>
-
     </div>
   </section>
 
-  <!-- How We Work -->
-  <section style="margin-bottom:140px;">
-    <div class="section-title">How We Work</div>
+  <!-- HOW WE WORK -->
+  <section class="how-we-work">
+    <h2>How We Work</h2>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1000px;">
-
+    <div class="principles">
       <div>
-        <h4 style="font-size:14px;font-weight:600;margin-bottom:8px;">
-          Senior-led, hypothesis-driven
-        </h4>
-        <p style="font-size:14px;color:#333;">
-          Every engagement is designed and led by senior advisors with direct
+        <h4>Partner-led engagement</h4>
+        <p>
+          Each engagement is designed and led by senior advisors with direct
           accountability for analytical rigor, strategic judgment, and
-          decision relevance.
+          execution relevance.
         </p>
       </div>
 
       <div>
-        <h4 style="font-size:14px;font-weight:600;margin-bottom:8px;">
-          Global perspective, local execution
-        </h4>
-        <p style="font-size:14px;color:#333;">
-          Our work spans Asia, Europe, and North America, combining global
-          benchmarks with on-the-ground market, regulatory, and stakeholder insight.
-        </p>
-      </div>
-
-      <div>
-        <h4 style="font-size:14px;font-weight:600;margin-bottom:8px;">
-          Independent by design
-        </h4>
-        <p style="font-size:14px;color:#333;">
+        <h4>Independent by design</h4>
+        <p>
           We do not audit, lend, invest, or sell products — enabling objective
           advice aligned solely with client outcomes.
         </p>
       </div>
 
       <div>
-        <h4 style="font-size:14px;font-weight:600;margin-bottom:8px;">
-          From decision to delivery
-        </h4>
-        <p style="font-size:14px;color:#333;">
-          We support clients from board-level decisions through execution
-          frameworks, operator models, and long-term implementation roadmaps.
+        <h4>Global perspective, local execution</h4>
+        <p>
+          Active across Asia, Europe, and North America, combining global
+          benchmarks with local regulatory and market insight.
         </p>
       </div>
-
     </div>
   </section>
 
-  <!-- Selected Engagements (keep existing style) -->
-  <section>
-    <div class="section-title">Selected Engagements</div>
-    <div class="engagements-grid">
-      <div class="engagement"><strong>Hyundai Group</strong>AI unicorn investment</div>
-      <div class="engagement"><strong>CKT Group</strong>Incheon AI Tower ecosystem</div>
-      <div class="engagement"><strong>ABL Life & Tongyang Life</strong>M&A strategy</div>
-      <div class="engagement"><strong>Suzhou Design Town</strong>Masterplan and operator model</div>
-      <div class="engagement"><strong>European luxury house</strong>Greater China entry</div>
-    </div>
-  </section>
+  <!-- FOOTER -->
+  <footer>
+    TK Net — Global Advisory in Strategy, Investment, and Innovation
+  </footer>
 
-</main>
+</body>
+</html>
