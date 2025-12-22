@@ -15,7 +15,7 @@ body {
   line-height: 1.65;
 }
 
-/* NAV */
+/* ================= NAV ================= */
 nav {
   position: fixed;
   top: 0;
@@ -24,7 +24,7 @@ nav {
   border-bottom: 1px solid #eee;
   z-index: 1000;
 }
-nav .nav-inner {
+.nav-inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 16px 24px;
@@ -33,7 +33,7 @@ nav .nav-inner {
   align-items: center;
   font-size: 14px;
 }
-nav .nav-left {
+.nav-left {
   display: flex;
   gap: 28px;
 }
@@ -48,34 +48,55 @@ nav a:hover {
   font-weight: 600;
 }
 
-/* HERO（保持不改） */
+/* ================= HERO ================= */
 .hero {
+  position: relative;
   margin-top: 72px;
   height: 380px;
-  background-image:
-    linear-gradient(120deg, rgba(0,0,0,.45), rgba(0,0,0,.25)),
-    url("<!-- 保持你当前 services hero 图片 -->");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
+  overflow: hidden;
+  background: #0b1c2d; /* 兜底色 */
 }
+
+/* 实体图片，100% 可显示 */
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 深色遮罩（咨询公司风格） */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(8, 24, 45, 0.55),
+    rgba(8, 24, 45, 0.55)
+  );
+}
+
 .hero-inner {
+  position: relative;
+  z-index: 2;
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
   color: #fff;
 }
+
 .hero h1 {
   font-size: 40px;
+  margin-bottom: 12px;
 }
+
 .hero p {
   font-size: 18px;
   max-width: 760px;
-  opacity: .95;
+  opacity: 0.95;
 }
 
-/* CONTENT */
+/* ================= CONTENT ================= */
 section {
   max-width: 1200px;
   margin: auto;
@@ -89,19 +110,16 @@ section {
   color: #222;
 }
 
-/* GRID */
+/* ================= SERVICES GRID ================= */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 44px;
 }
 
-/* CARD (clickable) */
 .service-card {
   padding-top: 24px;
   border-top: 1px solid #e5e5e5;
-  text-decoration: none;
-  color: inherit;
   transition: border-color .25s ease, transform .25s ease;
 }
 
@@ -117,13 +135,13 @@ section {
   color: #333;
 }
 
-/* Hover */
+/* Hover（极轻，麦肯锡式） */
 .service-card:hover {
   border-top-color: #111;
   transform: translateY(-2px);
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer {
   border-top: 1px solid #eee;
   padding: 32px;
@@ -136,6 +154,7 @@ footer {
 
 <body>
 
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <div class="nav-left">
@@ -150,7 +169,14 @@ footer {
   </div>
 </nav>
 
+<!-- HERO -->
 <header class="hero">
+  <img
+    class="hero-img"
+    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=80"
+    alt="Global city night view"
+  >
+  <div class="hero-overlay"></div>
   <div class="hero-inner">
     <h1>Services</h1>
     <p>
@@ -160,6 +186,7 @@ footer {
   </div>
 </header>
 
+<!-- SERVICES -->
 <section>
 
   <div class="services-intro">
@@ -169,35 +196,35 @@ footer {
 
   <div class="services-grid">
 
-    <a href="individual.html#strategy" class="service-card">
+    <div class="service-card">
       <h3>Strategy & Market Expansion</h3>
       <p>Corporate strategy, growth sequencing, and competitive positioning across global markets.</p>
-    </a>
+    </div>
 
-    <a href="individual.html#investment" class="service-card">
+    <div class="service-card">
       <h3>Investment & Transaction Advisory</h3>
       <p>Commercial diligence, valuation, and investment committee–grade decision support.</p>
-    </a>
+    </div>
 
-    <a href="individual.html#ma" class="service-card">
+    <div class="service-card">
       <h3>M&A and Deal Structuring</h3>
       <p>Target identification, synergy logic, and transaction structuring for complex deals.</p>
-    </a>
+    </div>
 
-    <a href="individual.html#ai" class="service-card">
+    <div class="service-card">
       <h3>AI & Technology Strategy</h3>
       <p>Enterprise AI strategy, use-case prioritisation, and scalable innovation roadmaps.</p>
-    </a>
+    </div>
 
-    <a href="individual.html#urban" class="service-card">
+    <div class="service-card">
       <h3>Urban & Innovation Development</h3>
       <p>Master planning, economic modelling, and operator strategy for innovation districts.</p>
-    </a>
+    </div>
 
-    <a href="individual.html#crossborder" class="service-card">
+    <div class="service-card">
       <h3>Cross-Border Programs</h3>
       <p>Design and execution of cross-border market entry and institutional partnerships.</p>
-    </a>
+    </div>
 
   </div>
 
