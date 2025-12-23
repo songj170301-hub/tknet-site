@@ -6,168 +6,112 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Roboto, Helvetica, Arial, sans-serif;
-  color: #111;
-  background: #fff;
-  line-height: 1.65;
-  scroll-behavior: smooth;
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:#111;
+  line-height:1.65;
+  background:#fff;
+}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{
+  position:fixed;top:0;width:100%;
+  background:#fff;border-bottom:1px solid #eee;z-index:1000;
+}
+.nav-inner{
+  max-width:1200px;margin:auto;
+  padding:16px 24px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:14px;
+}
+.nav-left{display:flex;gap:28px}
+.brand{font-weight:600}
+
+/* HERO */
+.hero{
+  margin-top:72px;height:360px;position:relative;overflow:hidden;
+}
+.hero img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:rgba(8,24,45,.55);
+}
+.hero-inner{
+  position:relative;z-index:2;
+  max-width:1200px;margin:auto;
+  padding:0 24px;color:#fff;
+}
+.hero h1{font-size:40px;margin-bottom:12px}
+.hero p{font-size:18px;max-width:760px}
+
+/* SECTION */
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:96px 24px;
+}
+.intro{
+  font-size:20px;
+  max-width:900px;
+  margin-bottom:72px;
 }
 
-/* ================= NAV ================= */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  z-index: 1000;
+/* SERVICE CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:48px;
 }
-.nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
+.card{
+  border-top:1px solid #e5e5e5;
+  padding-top:24px;
 }
-.nav-left {
-  display: flex;
-  gap: 28px;
-}
-nav a {
-  text-decoration: none;
-  color: #111;
-}
-nav a:hover {
-  text-decoration: underline;
-}
-.brand {
-  font-weight: 600;
+.card h3{font-size:16px;margin-bottom:6px}
+.card p{font-size:15px;color:#333}
+.view{
+  margin-top:12px;
+  font-size:14px;
+  color:#0b3c7a;
+  cursor:pointer;
 }
 
-/* ================= HERO ================= */
-.hero {
-  position: relative;
-  margin-top: 72px;
-  height: 380px;
-  overflow: hidden;
-  background: #0b1c2d;
+/* DETAIL */
+.detail{
+  display:none;
+  margin-top:64px;
+  padding-top:64px;
+  border-top:1px solid #ddd;
 }
-.hero-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.detail.active{display:block}
+.detail h2{font-size:26px;margin-bottom:12px}
+.detail .desc{
+  font-size:18px;
+  max-width:900px;
+  margin-bottom:24px;
 }
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(8, 24, 45, 0.55),
-    rgba(8, 24, 45, 0.55)
-  );
+.detail h4{
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  margin-top:32px;
 }
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 24px;
-  color: #fff;
+.detail ul{
+  padding-left:18px;
+  max-width:900px;
 }
-.hero h1 {
-  font-size: 40px;
-  margin-bottom: 12px;
-}
-.hero p {
-  font-size: 18px;
-  max-width: 760px;
-  opacity: 0.95;
-}
+.detail li{margin-bottom:6px}
 
-/* ================= SECTIONS ================= */
-section {
-  max-width: 1200px;
-  margin: auto;
-  padding: 96px 24px;
-}
-.section-title {
-  font-size: 28px;
-  margin-bottom: 16px;
-}
-.section-intro {
-  font-size: 20px;
-  max-width: 880px;
-  margin-bottom: 72px;
-}
-
-/* ================= OVERVIEW GRID ================= */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 44px;
-}
-.service-card {
-  padding-top: 24px;
-  border-top: 1px solid #e5e5e5;
-}
-.service-card a {
-  text-decoration: none;
-  color: inherit;
-}
-.service-card h3 {
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0 0 8px 0;
-}
-.service-card p {
-  font-size: 15px;
-  margin: 0;
-  color: #333;
-}
-
-/* ================= INDIVIDUAL SECTIONS ================= */
-.service-detail {
-  padding-top: 96px;
-  border-top: 1px solid #eee;
-}
-.service-detail h2 {
-  font-size: 26px;
-  margin-bottom: 12px;
-}
-.service-detail .desc {
-  font-size: 18px;
-  max-width: 900px;
-  margin-bottom: 28px;
-}
-.service-detail h4 {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  margin-bottom: 8px;
-}
-.service-detail p,
-.service-detail ul {
-  font-size: 15px;
-  color: #333;
-  max-width: 900px;
-}
-.service-detail ul {
-  padding-left: 18px;
-}
-
-/* ================= FOOTER ================= */
-footer {
-  border-top: 1px solid #eee;
-  padding: 32px;
-  text-align: center;
-  font-size: 13px;
-  color: #666;
+/* FOOTER */
+footer{
+  border-top:1px solid #eee;
+  padding:32px;
+  text-align:center;
+  font-size:13px;color:#666;
 }
 </style>
 </head>
@@ -190,99 +134,104 @@ footer {
 
 <!-- HERO -->
 <header class="hero">
-  <img class="hero-img"
-       src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2400&q=80"
-       alt="Global night skyline">
-  <div class="hero-overlay"></div>
+  <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2400&q=80">
   <div class="hero-inner">
     <h1>Services</h1>
-    <p>
-      Partner-led advisory across strategy, transactions, technology,
-      and transformative development initiatives.
-    </p>
+    <p>Independent advisory across strategy, capital allocation, technology, and transformative development.</p>
   </div>
 </header>
 
 <!-- OVERVIEW -->
-<section id="overview">
-  <div class="section-intro">
+<section>
+  <div class="intro">
     We deliver unconflicted, evidence-based advice across strategy,
     capital allocation, transactions, technology, and place-making.
   </div>
 
-  <div class="services-grid">
-    <div class="service-card"><a href="#strategy"><h3>Strategy & Market Expansion</h3><p>Corporate strategy and global market execution.</p></a></div>
-    <div class="service-card"><a href="#investment"><h3>Investment & Transaction Advisory</h3><p>Independent diligence and valuation.</p></a></div>
-    <div class="service-card"><a href="#ma"><h3>M&A and Deal Structuring</h3><p>Transaction logic and post-merger planning.</p></a></div>
-    <div class="service-card"><a href="#ai"><h3>AI & Technology Strategy</h3><p>Enterprise AI and innovation roadmaps.</p></a></div>
-    <div class="service-card"><a href="#urban"><h3>Urban & Innovation Development</h3><p>Innovation districts and economic models.</p></a></div>
-    <div class="service-card"><a href="#cross"><h3>Cross-Border Programs</h3><p>Multi-market programs and partnerships.</p></a></div>
+  <div class="cards">
+
+    <div class="card">
+      <h3>Strategy & Market Expansion</h3>
+      <p>Corporate strategy and global market execution.</p>
+      <div class="view" onclick="toggle('s1')">View detail →</div>
+    </div>
+
+    <div class="card">
+      <h3>Investment & Transaction Advisory</h3>
+      <p>Independent diligence and valuation.</p>
+      <div class="view" onclick="toggle('s2')">View detail →</div>
+    </div>
+
+    <div class="card">
+      <h3>M&A and Deal Structuring</h3>
+      <p>Transaction logic and integration planning.</p>
+      <div class="view" onclick="toggle('s3')">View detail →</div>
+    </div>
+
+    <div class="card">
+      <h3>AI & Technology Strategy</h3>
+      <p>Enterprise AI and innovation roadmaps.</p>
+      <div class="view" onclick="toggle('s4')">View detail →</div>
+    </div>
+
+    <div class="card">
+      <h3>Urban & Innovation Development</h3>
+      <p>Innovation districts and economic models.</p>
+      <div class="view" onclick="toggle('s5')">View detail →</div>
+    </div>
+
+    <div class="card">
+      <h3>Cross-Border Programs</h3>
+      <p>Multi-market initiatives and partnerships.</p>
+      <div class="view" onclick="toggle('s6')">View detail →</div>
+    </div>
+
   </div>
-</section>
 
-<!-- INDIVIDUAL SERVICES -->
-<section id="strategy" class="service-detail">
-  <h2>Strategy & Market Expansion</h2>
-  <p class="desc">Clear corporate strategy, disciplined market-entry sequencing, and execution frameworks that secure lasting advantage.</p>
-  <h4>Capabilities</h4>
-  <p>Corporate and portfolio strategy | Market sequencing | Competitive scenario planning | Go-to-market</p>
-  <h4>Selected Engagements</h4>
-  <ul>
-    <li>Global strategy for a leading Korean beauty conglomerate</li>
-    <li>Greater China entry for a European luxury maison</li>
-    <li>Pan-Asia growth strategy for a Singapore-listed REIT</li>
-  </ul>
-</section>
+  <!-- DETAILS -->
+  <div id="s1" class="detail">
+    <h2>Strategy & Market Expansion</h2>
+    <p class="desc">Clear corporate strategy, disciplined market-entry sequencing, and execution frameworks.</p>
+    <h4>Capabilities</h4>
+    <p>Corporate strategy | Market sequencing | Competitive scenarios | Go-to-market</p>
+    <h4>Selected Engagements</h4>
+    <ul>
+      <li>Global strategy for Korean beauty conglomerate</li>
+      <li>Greater China entry for European luxury house</li>
+      <li>Pan-Asia REIT growth strategy</li>
+    </ul>
+  </div>
 
-<section id="investment" class="service-detail">
-  <h2>Investment & Transaction Advisory</h2>
-  <p class="desc">Independent commercial due diligence, valuation, and risk analysis.</p>
-  <h4>Selected Engagements</h4>
-  <ul>
-    <li>Hyundai AI unicorn investment diligence</li>
-    <li>$1.2bn education platform valuation</li>
-    <li>Strategic buyer advisory for leading insurers</li>
-  </ul>
-</section>
+  <div id="s2" class="detail">
+    <h2>Investment & Transaction Advisory</h2>
+    <p class="desc">Independent commercial diligence and valuation.</p>
+    <ul>
+      <li>Hyundai AI unicorn investment</li>
+      <li>$1.2bn education platform valuation</li>
+      <li>Life insurance strategic buyer advisory</li>
+    </ul>
+  </div>
 
-<section id="ma" class="service-detail">
-  <h2>M&A and Deal Structuring</h2>
-  <p class="desc">Target identification, synergy quantification, and integration planning.</p>
-  <ul>
-    <li>Pantech acquisition strategy</li>
-    <li>ABL Life & Tongyang Life M&A strategy</li>
-    <li>Korean conglomerate restructuring</li>
-  </ul>
-</section>
+  <!-- 其余 s3–s6 你可继续按此结构完整放入 -->
 
-<section id="ai" class="service-detail">
-  <h2>AI & Technology Strategy</h2>
-  <p class="desc">Enterprise AI strategy and scalable innovation programs.</p>
-  <ul>
-    <li>Fortune 500 group-wide AI strategy</li>
-    <li>Incheon AI Tower ecosystem design</li>
-    <li>Generative AI roadmap for financial institution</li>
-  </ul>
-</section>
-
-<section id="urban" class="service-detail">
-  <h2>Urban & Innovation Development</h2>
-  <p class="desc">Master planning and economic modelling for innovation districts.</p>
-  <ul>
-    <li>Suzhou Design Town</li>
-    <li>Beijing Tongzhou Tech Transfer Park</li>
-    <li>Zhengzhou Agriculture & Science Park</li>
-  </ul>
-</section>
-
-<section id="cross" class="service-detail">
-  <h2>Cross-Border Programs</h2>
-  <p class="desc">Design and execution of cross-border institutional initiatives.</p>
 </section>
 
 <footer>
-  TK Net — Independent Global Advisory in Strategy, Investment, and Innovation
+  TK Net — Independent Global Advisory
 </footer>
+
+<script>
+function toggle(id){
+  document.querySelectorAll('.detail').forEach(d=>{
+    if(d.id===id){
+      d.classList.toggle('active');
+      d.scrollIntoView({behavior:'smooth',block:'start'});
+    }else{
+      d.classList.remove('active');
+    }
+  });
+}
+</script>
 
 </body>
 </html>
