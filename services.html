@@ -1,220 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Services | TK Net</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Services | TK Net</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  color:#111;
-  line-height:1.65;
-  background:#fff;
-}
-a{text-decoration:none;color:inherit}
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+    }
 
-/* NAV */
-nav{
-  position:fixed;top:0;width:100%;
-  background:#fff;border-bottom:1px solid #eee;z-index:1000;
-}
-.nav-inner{
-  max-width:1200px;margin:auto;
-  padding:16px 24px;
-  display:flex;justify-content:space-between;align-items:center;
-  font-size:14px;
-}
-.nav-left{display:flex;gap:28px}
-.brand{font-weight:600}
+    /* ===== Hero ===== */
+    .hero {
+      height: 70vh;
+      background: url("images/global-night.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+    }
 
-/* HERO */
-.hero{
-  margin-top:72px;height:360px;position:relative;overflow:hidden;
-}
-.hero img{
-  position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;
-}
-.hero::after{
-  content:"";position:absolute;inset:0;
-  background:rgba(8,24,45,.55);
-}
-.hero-inner{
-  position:relative;z-index:2;
-  max-width:1200px;margin:auto;
-  padding:0 24px;color:#fff;
-}
-.hero h1{font-size:40px;margin-bottom:12px}
-.hero p{font-size:18px;max-width:760px}
+    .hero h1 {
+      font-size: 48px;
+      max-width: 900px;
+      line-height: 1.2;
+    }
 
-/* SECTION */
-section{
-  max-width:1200px;
-  margin:auto;
-  padding:96px 24px;
-}
-.intro{
-  font-size:20px;
-  max-width:900px;
-  margin-bottom:72px;
-}
+    .hero p {
+      margin-top: 20px;
+      font-size: 18px;
+      max-width: 800px;
+      opacity: 0.95;
+    }
 
-/* SERVICE CARDS */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:48px;
-}
-.card{
-  border-top:1px solid #e5e5e5;
-  padding-top:24px;
-}
-.card h3{font-size:16px;margin-bottom:6px}
-.card p{font-size:15px;color:#333}
-.read{
-  margin-top:12px;
-  font-size:14px;
-  color:#0b3c7a;
-  cursor:pointer;
-}
+    /* ===== Intro ===== */
+    .intro {
+      max-width: 1100px;
+      margin: 80px auto 40px;
+      padding: 0 24px;
+      font-size: 18px;
+      color: #334155;
+    }
 
-/* DETAIL */
-.detail{
-  display:none;
-  margin-top:64px;
-  padding-top:64px;
-  border-top:1px solid #ddd;
-  opacity:0;
-  transform:translateY(16px);
-}
-.detail.active{
-  display:block;
-  animation:fadeUp .35s ease-out forwards;
-}
-@keyframes fadeUp{
-  to{opacity:1;transform:translateY(0);}
-}
-.detail h2{font-size:26px;margin-bottom:12px}
-.detail .desc{
-  font-size:18px;
-  max-width:900px;
-  margin-bottom:24px;
-}
-.detail h4{
-  font-size:14px;
-  text-transform:uppercase;
-  letter-spacing:.05em;
-  margin-top:32px;
-}
-.detail ul{
-  padding-left:18px;
-  max-width:900px;
-}
-.detail li{margin-bottom:6px}
+    /* ===== Services Grid ===== */
+    .services {
+      max-width: 1200px;
+      margin: 40px auto 120px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
 
-/* FOOTER */
-footer{
-  border-top:1px solid #eee;
-  padding:32px;
-  text-align:center;
-  font-size:13px;color:#666;
-}
-</style>
+    .service-card {
+      border: 1px solid #e5e7eb;
+      padding: 28px;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+      position: relative;
+      background: #fff;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+
+    .service-card h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    .service-card .one-line {
+      color: #475569;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .read-more {
+      margin-top: 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #2563eb;
+      letter-spacing: 0.04em;
+    }
+
+    /* ===== Expanded Content ===== */
+    .service-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease, opacity 0.4s ease;
+      opacity: 0;
+    }
+
+    .service-card.active .service-detail {
+      margin-top: 20px;
+      max-height: 600px;
+      opacity: 1;
+    }
+
+    .service-detail p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #334155;
+    }
+
+    /* ===== Reminder ===== */
+    .hint {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 34px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <div class="nav-left">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="engagements.html">Selected Engagements</a>
-      <a href="contact.html">Contact</a>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div>
+      <h1>Global Strategy. Rigorous Capital Allocation. Transformative Places.</h1>
+      <p>
+        Independent advisory to boards, investment committees, and public-sector leaders
+        on strategy, transactions, and innovation districts across Asia, Europe, and North America.
+      </p>
     </div>
-    <div class="brand">TK Net</div>
-  </div>
-</nav>
+  </section>
 
-<!-- HERO (全球夜景图，已替换) -->
-<header class="hero">
-  <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2400&q=80">
-  <div class="hero-inner">
-    <h1>Services</h1>
-    <p>Independent advisory across strategy, capital allocation, technology, and transformative development.</p>
-  </div>
-</header>
+  <!-- ===== INTRO ===== -->
+  <section class="intro">
+    We deliver unconflicted, evidence-based advice across strategy, capital allocation,
+    transactions, technology, and place-making.
+  </section>
 
-<section>
-  <div class="intro">
-    We deliver unconflicted, evidence-based advice across strategy,
-    capital allocation, transactions, technology, and place-making.
-  </div>
+  <!-- ===== SERVICES ===== -->
+  <section class="services">
 
-  <!-- CARDS -->
-  <div class="cards">
-    <div class="card">
+    <div class="service-card" id="strategy">
       <h3>Strategy & Market Expansion</h3>
-      <p>Corporate strategy and global market execution.</p>
-      <div class="read" onclick="toggle('s1')">Read more →</div>
+      <div class="one-line">
+        Corporate strategy, growth sequencing, and competitive positioning in global markets.
+      </div>
+      <div class="read-more">READ MORE ↓</div>
+      <div class="service-detail">
+        <p>
+          Clear corporate strategy, disciplined market-entry sequencing, and execution
+          frameworks that secure lasting advantage in complex geographies.
+        </p>
+      </div>
     </div>
 
-    <div class="card">
+    <div class="service-card" id="investment">
       <h3>Investment & Transaction Advisory</h3>
-      <p>Independent diligence and valuation.</p>
-      <div class="read" onclick="toggle('s2')">Read more →</div>
+      <div class="one-line">
+        Commercial due diligence, valuation, and investment committee support.
+      </div>
+      <div class="read-more">READ MORE ↓</div>
+      <div class="service-detail">
+        <p>
+          Independent commercial diligence, valuation modelling, downside analysis,
+          and decision-grade materials for private equity and corporate investors.
+        </p>
+      </div>
     </div>
 
-    <div class="card">
+    <div class="service-card" id="ma">
       <h3>M&A and Deal Structuring</h3>
-      <p>Transaction logic and integration planning.</p>
-      <div class="read" onclick="toggle('s3')">Read more →</div>
+      <div class="one-line">
+        Target identification, synergy assessment, and transaction structuring.
+      </div>
+      <div class="read-more">READ MORE ↓</div>
+      <div class="service-detail">
+        <p>
+          End-to-end M&A advisory including acquisition strategy, synergy quantification,
+          transaction structuring, and post-merger integration planning.
+        </p>
+      </div>
     </div>
 
-    <div class="card">
+    <div class="service-card" id="ai">
       <h3>AI & Technology Strategy</h3>
-      <p>Enterprise AI and innovation roadmaps.</p>
-      <div class="read" onclick="toggle('s4')">Read more →</div>
+      <div class="one-line">
+        Enterprise AI strategy, use-case prioritisation, and innovation design.
+      </div>
+      <div class="read-more">READ MORE ↓</div>
+      <div class="service-detail">
+        <p>
+          Enterprise-wide AI strategy, technology feasibility assessment,
+          and design of scalable innovation programs.
+        </p>
+      </div>
     </div>
 
-    <div class="card">
+    <div class="service-card" id="urban">
       <h3>Urban & Innovation Development</h3>
-      <p>Innovation districts and economic models.</p>
-      <div class="read" onclick="toggle('s5')">Read more →</div>
+      <div class="one-line">
+        Innovation districts, science parks, and economic master planning.
+      </div>
+      <div class="read-more">READ MORE ↓</div>
+      <div class="service-detail">
+        <p>
+          Master planning, economic modelling, operator strategies,
+          and development frameworks for innovation-led districts.
+        </p>
+      </div>
     </div>
 
-    <div class="card">
+    <div class="service-card" id="crossborder">
       <h3>Cross-Border Programs</h3>
-      <p>Multi-market initiatives and partnerships.</p>
-      <div class="read" onclick="toggle('s6')">Read more →</div>
+      <div class="one-line">
+        Cross-border initiatives, institutional partnerships, and regional platforms.
+      </div>
+      <div class="read-more">READ MORE ↓</div>
+      <div class="service-detail">
+        <p>
+          Design and execution of cross-border customer journeys,
+          institutional partnerships, and multi-market initiatives.
+        </p>
+      </div>
     </div>
+
+  </section>
+
+  <div class="hint">
+    Tip: Click “Read more” to explore each service in detail.
   </div>
 
-  <!-- DETAILS（保持不变） -->
-  <!-- 这里以下内容与你确认的版本完全一致，未做任何改动 -->
+  <!-- ===== JS: EXPAND + DEEP LINK ===== -->
+  <script>
+    const cards = document.querySelectorAll('.service-card');
 
-</section>
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        cards.forEach(c => {
+          if (c !== card) c.classList.remove('active');
+        });
+        card.classList.toggle('active');
+      });
+    });
 
-<footer>
-  TK Net — Independent Global Advisory
-</footer>
+    // Deep link support
+    window.addEventListener('load', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (!hash) return;
 
-<script>
-function toggle(id){
-  document.querySelectorAll('.detail').forEach(d=>{
-    if(d.id===id){
-      d.classList.toggle('active');
-      d.scrollIntoView({behavior:'smooth',block:'start'});
-    }else{
-      d.classList.remove('active');
-    }
-  });
-}
-</script>
+      const target = document.getElementById(hash);
+      if (target) {
+        target.classList.add('active');
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  </script>
 
 </body>
 </html>
