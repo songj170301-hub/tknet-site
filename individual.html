@@ -1,280 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <title>Individual Service | TK Net</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #0f172a;
+    background: #ffffff;
+  }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Helvetica, Arial, sans-serif;
-  color: #111;
-  background: #fff;
-  line-height: 1.65;
-  opacity: 0;
-  animation: fadeIn .45s ease forwards;
-}
-@keyframes fadeIn { to { opacity: 1; } }
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    z-index: 1000;
+  }
 
-/* ===== Navigation ===== */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  z-index: 1000;
-}
-.nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px 24px;
-  display: flex;
-  gap: 28px;
-  font-size: 14px;
-}
-nav a {
-  text-decoration: none;
-  color: #111;
-  font-weight: 500;
-}
-nav a:hover { text-decoration: underline; }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
 
-/* ===== Hero ===== */
-.hero {
-  margin-top: 72px;
-  height: 320px;
-  background-image:
-    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-    url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=80");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-}
-.hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  color: #fff;
-}
-.hero h1 {
-  font-size: 38px;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-.hero p {
-  font-size: 17px;
-  max-width: 900px;
-  opacity: .95;
-}
+  .nav-left a {
+    margin-right: 26px;
+    text-decoration: none;
+    color: #111827;
+  }
 
-/* ===== Main ===== */
-main {
-  max-width: 920px;
-  margin: 96px auto;
-  padding: 0 24px;
-}
+  .nav-left a:hover {
+    text-decoration: underline;
+  }
 
-.service {
-  margin-bottom: 80px;
-}
-.service h2 {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-.service p {
-  font-size: 15px;
-  color: #333;
-  margin-bottom: 14px;
-}
+  .brand {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
 
-.label {
-  font-size: 13px;
-  font-weight: 600;
-  margin-top: 18px;
-  margin-bottom: 6px;
-  color: #111;
-}
+  /* ===== HERO ===== */
+  .hero {
+    height: 65vh;
+    background: url("images/global-night.jpg") center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 24px;
+    margin-top: 64px;
+  }
 
-.capabilities,
-.engagements {
-  font-size: 14px;
-  color: #333;
-}
+  .hero h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    max-width: 900px;
+  }
 
-.engagements ul {
-  margin-left: 18px;
-}
-.engagements li {
-  margin-bottom: 6px;
-}
+  .hero p {
+    margin-top: 20px;
+    font-size: 18px;
+    max-width: 820px;
+    opacity: 0.95;
+  }
 
-/* ===== Footer ===== */
-footer {
-  border-top: 1px solid #eee;
-  padding: 48px 24px;
-  font-size: 13px;
-  color: #666;
-}
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  /* ===== CONTENT ===== */
+  .container {
+    max-width: 900px;
+    margin: 120px auto;
+    padding: 0 24px;
+  }
+
+  .service {
+    margin-bottom: 120px;
+  }
+
+  .service h2 {
+    font-size: 30px;
+    margin-bottom: 16px;
+  }
+
+  .service p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #334155;
+    margin-bottom: 20px;
+  }
+
+  .capabilities {
+    font-size: 14px;
+    color: #475569;
+    border-left: 3px solid #e5e7eb;
+    padding-left: 16px;
+    line-height: 1.7;
+  }
+
+  .selected {
+    margin-top: 28px;
+    font-size: 14px;
+    color: #475569;
+  }
+
+  .selected strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #0f172a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 32px;
+    }
+  }
 </style>
 </head>
 
 <body>
 
-<!-- Navigation -->
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="individual.html">Individual Service</a>
-    <a href="engagements.html">Selected engagements</a>
-    <a href="contact.html">Contact</a>
+    <div class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="engagements.html">Selected Engagements</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="brand">TK Net</div>
   </div>
 </nav>
 
-<!-- Hero -->
-<header class="hero">
-  <div class="hero-inner">
-    <h1>Individual Service Pages</h1>
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>INDIVIDUAL SERVICE PAGES</h1>
     <p>
       Deep, focused advisory support for critical strategic, investment,
-      and transformation decisions.<br>
-      Each engagement is designed and led by senior partners, with direct
-      accountability for analytical rigor, strategic judgment, and execution relevance.
+      and transformation decisions — designed and led by senior partners.
     </p>
   </div>
-</header>
+</section>
 
-<!-- Main -->
-<main>
+<!-- CONTENT -->
+<div class="container">
 
-  <!-- 1 -->
-  <section class="service">
+  <!-- Strategy -->
+  <section class="service" id="strategy">
     <h2>Strategy & Market Expansion</h2>
     <p>
-      Clear corporate strategy, disciplined market-entry sequencing, and execution
-      frameworks that secure lasting advantage in complex geographies.
+      Clear corporate strategy, disciplined market-entry sequencing,
+      and execution frameworks that secure lasting advantage in complex geographies.
     </p>
-
-    <div class="label">Capabilities</div>
     <div class="capabilities">
-      Corporate and portfolio strategy | Market sequencing and attractiveness | Competitive scenario planning | Go-to-market and localization | Regulatory and partnership strategy
+      Corporate and portfolio strategy · Market sequencing and attractiveness ·
+      Competitive scenario planning · Go-to-market and localization ·
+      Regulatory and partnership strategy
     </div>
-
-    <div class="label">Selected Engagements</div>
-    <div class="engagements">
-      <ul>
-        <li>Global strategy for a leading Korean beauty conglomerate</li>
-        <li>Greater China entry for a European luxury maison</li>
-        <li>Pan-Asia growth strategy for a Singapore-listed REIT</li>
-      </ul>
-    </div.types
+    <div class="selected">
+      <strong>Selected Engagements</strong>
+      Global strategy for a leading Korean beauty conglomerate<br>
+      Greater China entry for a European luxury maison<br>
+      Pan-Asia growth strategy for a Singapore-listed REIT
+    </div>
   </section>
 
-  <!-- 2 -->
-  <section class="service">
+  <!-- Investment -->
+  <section class="service" id="investment">
     <h2>Investment & Transaction Advisory</h2>
     <p>
-      Independent commercial due diligence, valuation, and risk analysis for
-      private equity, corporate development, and investment committees.
+      Independent commercial due diligence, valuation, and risk analysis
+      for private equity, corporate development, and investment committees.
     </p>
-
-    <div class="label">Capabilities</div>
     <div class="capabilities">
-      Commercial due diligence | Market and technology assessment | DCF, multiples, and LBO modelling | Downside and sensitivity analysis | Investment committee materials
+      Commercial due diligence · Market and technology assessment ·
+      DCF, multiples, and LBO modelling ·
+      Downside and sensitivity analysis · Investment committee materials
     </div>
-
-    <div class="label">Selected Engagements</div>
-    <div class="engagements">
-      <ul>
-        <li>Buy-side diligence – Hyundai’s investment in an Asian AI unicorn</li>
-        <li>Valuation and risk assessment – $1.2 bn education platform</li>
-        <li>Strategic buyer advisory – two of Korea’s largest life insurers</li>
-      </ul>
+    <div class="selected">
+      <strong>Selected Engagements</strong>
+      Buy-side diligence – Hyundai’s investment in an Asian AI unicorn<br>
+      Valuation and risk assessment – $1.2 bn education platform<br>
+      Strategic buyer advisory – two of Korea’s largest life insurers
     </div>
   </section>
 
-  <!-- 3 -->
-  <section class="service">
+  <!-- M&A -->
+  <section class="service" id="ma">
     <h2>M&A and Deal Structuring</h2>
     <p>
-      Target identification, synergy quantification, transaction structuring,
-      and post-merger integration planning.
+      Target identification, synergy quantification,
+      transaction structuring, and post-merger integration planning.
     </p>
-
-    <div class="label">Selected Engagements</div>
-    <div class="engagements">
-      <ul>
-        <li>Acquisition strategy – Pantech</li>
-        <li>M&A strategy – ABL Life Insurance and Tongyang Life Insurance</li>
-        <li>Cross-border restructuring – Korean chaebol subsidiary</li>
-      </ul>
+    <div class="capabilities">
+      Acquisition strategy · Synergy modelling · Deal structuring ·
+      Cross-border transactions · PMI planning
+    </div>
+    <div class="selected">
+      <strong>Selected Engagements</strong>
+      Acquisition strategy – Pantech<br>
+      M&A strategy – ABL Life Insurance and Tongyang Life Insurance<br>
+      Cross-border restructuring – Korean chaebol subsidiary
     </div>
   </section>
 
-  <!-- 4 -->
-  <section class="service">
+  <!-- AI -->
+  <section class="service" id="ai">
     <h2>AI & Technology Strategy</h2>
     <p>
-      Enterprise AI strategy, use-case prioritisation, technology feasibility,
-      and innovation programme design.
+      Enterprise AI strategy, use-case prioritisation,
+      technology feasibility, and innovation programme design.
     </p>
-
-    <div class="label">Selected Engagements</div>
-    <div class="engagements">
-      <ul>
-        <li>Group-wide AI strategy – Fortune 500 conglomerate</li>
-        <li>Incheon AI Tower ecosystem – CKT Group</li>
-        <li>Generative AI roadmap – listed financial institution</li>
-      </ul>
+    <div class="capabilities">
+      AI roadmap · Use-case prioritisation · Technology feasibility ·
+      Operating model · Innovation governance
+    </div>
+    <div class="selected">
+      <strong>Selected Engagements</strong>
+      Group-wide AI strategy – Fortune 500 conglomerate<br>
+      Incheon AI Tower ecosystem – CKT Group<br>
+      Generative AI roadmap – listed financial institution
     </div>
   </section>
 
-  <!-- 5 -->
-  <section class="service">
+  <!-- Urban -->
+  <section class="service" id="urban">
     <h2>Urban & Innovation Development</h2>
     <p>
-      Master planning, economic modelling, and operator strategies for innovation
-      districts, science parks, and cultural destinations.
+      Master planning, economic modelling, and operator strategies
+      for innovation districts, science parks, and cultural destinations.
     </p>
-
-    <div class="label">Selected Engagements</div>
-    <div class="engagements">
-      <ul>
-        <li>Suzhou Design Town</li>
-        <li>Incheon AI Tower</li>
-        <li>Beijing Tongzhou Tech Transfer Park</li>
-        <li>Zhengzhou Agriculture & Science Park</li>
-      </ul>
+    <div class="capabilities">
+      Innovation district planning · Economic modelling ·
+      Operator strategy · Governance frameworks
+    </div>
+    <div class="selected">
+      <strong>Selected Engagements</strong>
+      Suzhou Design Town<br>
+      Beijing Tongzhou Tech Transfer Park<br>
+      Zhengzhou Agriculture & Science Park
     </div>
   </section>
 
-  <!-- 6 -->
-  <section class="service">
+  <!-- Cross-border -->
+  <section class="service" id="cross">
     <h2>Cross-Border Programs</h2>
     <p>
-      Design and execution of cross-border customer journeys, institutional
-      partnerships, and regional initiatives.
+      Design and execution of cross-border customer journeys,
+      institutional partnerships, and regional initiatives.
     </p>
+    <div class="capabilities">
+      Cross-border strategy · Institutional partnerships ·
+      Regional program execution
+    </div>
   </section>
 
-</main>
-
-<footer>
-  <div class="footer-inner">
-    TK Net — Global Advisory in Strategy, Investment, and Innovation
-  </div>
-</footer>
+</div>
 
 </body>
 </html>
