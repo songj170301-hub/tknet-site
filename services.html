@@ -13,22 +13,58 @@
     background: #ffffff;
   }
 
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    z-index: 1000;
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .nav-left a {
+    margin-right: 26px;
+    text-decoration: none;
+    color: #111827;
+  }
+
+  .nav-left a:hover {
+    text-decoration: underline;
+  }
+
+  .brand {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
   /* ===== HERO ===== */
   .hero {
-    height: 70vh;
-    background: url("images/global-night.jpg") center / cover no-repeat;
+    height: 65vh;
+    background: url("images/global-night-services.jpg") center / cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: #ffffff;
     padding: 0 24px;
+    margin-top: 64px;
   }
 
   .hero h1 {
-    font-size: 44px;
-    max-width: 900px;
+    font-size: 42px;
     line-height: 1.2;
+    max-width: 900px;
   }
 
   .hero p {
@@ -40,258 +76,127 @@
 
   /* ===== INTRO ===== */
   .intro {
-    max-width: 1100px;
-    margin: 80px auto 40px;
+    max-width: 900px;
+    margin: 120px auto 80px;
     padding: 0 24px;
     font-size: 18px;
+    line-height: 1.7;
     color: #334155;
   }
 
-  /* ===== SERVICE OVERVIEW CARDS ===== */
-  .services-grid {
+  /* ===== CARDS ===== */
+  .cards {
     max-width: 1200px;
-    margin: 40px auto 120px;
+    margin: 0 auto 160px;
     padding: 0 24px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 28px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
   }
 
-  .service-card {
+  .card {
     border: 1px solid #e5e7eb;
-    padding: 28px;
+    padding: 32px;
+    transition: border 0.2s ease, transform 0.2s ease;
     background: #ffffff;
-    transition: box-shadow .3s ease, transform .2s ease;
   }
 
-  .service-card:hover {
-    box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+  .card:hover {
+    border-color: #94a3b8;
     transform: translateY(-2px);
   }
 
-  .service-card h3 {
-    margin: 0 0 12px;
-    font-size: 20px;
+  .card h3 {
+    margin: 0 0 16px;
+    font-size: 18px;
   }
 
-  .service-card p {
-    font-size: 15px;
-    color: #475569;
-    line-height: 1.6;
-  }
-
-  .read-more {
-    margin-top: 18px;
-    display: inline-block;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    color: #2563eb;
-    cursor: pointer;
-  }
-
-  /* ===== DETAIL SECTION ===== */
-  .details {
-    max-width: 900px;
-    margin: 0 auto 140px;
-    padding: 0 24px;
-  }
-
-  .detail {
-    display: none;
-    animation: fadeInUp .35s ease;
-  }
-
-  .detail.active {
-    display: block;
-  }
-
-  .detail h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-  }
-
-  .detail p {
-    font-size: 16px;
-    line-height: 1.75;
-    color: #334155;
-    margin-bottom: 18px;
-  }
-
-  .capabilities {
+  .card a {
     font-size: 14px;
-    color: #475569;
-    border-left: 3px solid #e5e7eb;
-    padding-left: 16px;
+    color: #0f172a;
+    text-decoration: none;
+    font-weight: 500;
   }
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(12px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .card a:hover {
+    text-decoration: underline;
   }
 
-  @media (max-width: 768px) {
-    .hero h1 { font-size: 32px; }
+  @media (max-width: 900px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="engagements.html">Selected Engagements</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="brand">TK Net</div>
+  </div>
+</nav>
+
 <!-- HERO -->
 <section class="hero">
   <div>
-    <h1>Global Strategy. Rigorous Capital Allocation. Transformative Places.</h1>
+    <h1>Our Services</h1>
     <p>
-      Independent advisory to boards, investment committees, and public-sector leaders
-      on strategy, transactions, and innovation districts across Asia, Europe, and North America.
+      We deliver unconflicted, evidence-based advice across strategy,
+      capital allocation, transactions, technology, and place-making.
     </p>
   </div>
 </section>
 
 <!-- INTRO -->
 <section class="intro">
-  We deliver unconflicted, evidence-based advice across strategy, capital allocation,
-  transactions, technology, and place-making.
+  Our work supports boards, investment committees, and public-sector leaders
+  navigating complex strategic choices across Asia, Europe, and North America.
 </section>
 
-<!-- SERVICE OVERVIEW -->
-<section class="services-grid">
+<!-- CARDS -->
+<section class="cards">
 
-  <div class="service-card">
+  <div class="card">
     <h3>Strategy & Market Expansion</h3>
-    <p>Corporate strategy and disciplined market-entry sequencing.</p>
-    <span class="read-more" data-target="strategy">READ MORE →</span>
+    <a href="individual.html#strategy">Read more →</a>
   </div>
 
-  <div class="service-card">
+  <div class="card">
     <h3>Investment & Transaction Advisory</h3>
-    <p>Commercial diligence, valuation, and investment decision support.</p>
-    <span class="read-more" data-target="investment">READ MORE →</span>
+    <a href="individual.html#investment">Read more →</a>
   </div>
 
-  <div class="service-card">
+  <div class="card">
     <h3>M&A and Deal Structuring</h3>
-    <p>Acquisition strategy, synergies, and transaction design.</p>
-    <span class="read-more" data-target="ma">READ MORE →</span>
+    <a href="individual.html#ma">Read more →</a>
   </div>
 
-  <div class="service-card">
+  <div class="card">
     <h3>AI & Technology Strategy</h3>
-    <p>Enterprise AI strategy and innovation roadmap design.</p>
-    <span class="read-more" data-target="ai">READ MORE →</span>
+    <a href="individual.html#ai">Read more →</a>
   </div>
 
-  <div class="service-card">
+  <div class="card">
     <h3>Urban & Innovation Development</h3>
-    <p>Innovation districts, science parks, and economic master planning.</p>
-    <span class="read-more" data-target="urban">READ MORE →</span>
+    <a href="individual.html#urban">Read more →</a>
   </div>
 
-  <div class="service-card">
+  <div class="card">
     <h3>Cross-Border Programs</h3>
-    <p>Institutional partnerships and regional program execution.</p>
-    <span class="read-more" data-target="cross">READ MORE →</span>
+    <a href="individual.html#cross">Read more →</a>
   </div>
 
 </section>
-
-<!-- DETAIL CONTENT (HIDDEN BY DEFAULT) -->
-<section class="details" id="detailSection">
-
-  <div class="detail" id="strategy">
-    <h2>Strategy & Market Expansion</h2>
-    <p>
-      Clear corporate strategy, disciplined market-entry sequencing, and execution frameworks
-      that secure lasting advantage in complex geographies.
-    </p>
-    <div class="capabilities">
-      Corporate & portfolio strategy · Market sequencing · Competitive scenario planning ·
-      Go-to-market & localization · Regulatory & partnership strategy
-    </div>
-  </div>
-
-  <div class="detail" id="investment">
-    <h2>Investment & Transaction Advisory</h2>
-    <p>
-      Independent commercial due diligence, valuation, and risk analysis for private equity,
-      corporate development, and investment committees.
-    </p>
-    <div class="capabilities">
-      Commercial due diligence · Market & technology assessment ·
-      DCF / multiples / LBO modelling · Downside & sensitivity analysis
-    </div>
-  </div>
-
-  <div class="detail" id="ma">
-    <h2>M&A and Deal Structuring</h2>
-    <p>
-      Target identification, synergy quantification, transaction structuring,
-      and post-merger integration planning.
-    </p>
-    <div class="capabilities">
-      Acquisition strategy · Synergy modelling · Deal structuring · PMI planning
-    </div>
-  </div>
-
-  <div class="detail" id="ai">
-    <h2>AI & Technology Strategy</h2>
-    <p>
-      Enterprise AI strategy, use-case prioritisation, technology feasibility,
-      and innovation programme design.
-    </p>
-    <div class="capabilities">
-      AI roadmap · Use-case prioritisation · Technology feasibility · Governance design
-    </div>
-  </div>
-
-  <div class="detail" id="urban">
-    <h2>Urban & Innovation Development</h2>
-    <p>
-      Master planning, economic modelling, and operator strategies for innovation districts,
-      science parks, and cultural destinations.
-    </p>
-    <div class="capabilities">
-      Master planning · Economic modelling · Operator strategy · Governance frameworks
-    </div>
-  </div>
-
-  <div class="detail" id="cross">
-    <h2>Cross-Border Programs</h2>
-    <p>
-      Design and execution of cross-border customer journeys, institutional partnerships,
-      and regional initiatives.
-    </p>
-    <div class="capabilities">
-      Cross-border strategy · Institutional partnerships · Regional programme execution
-    </div>
-  </div>
-
-</section>
-
-<script>
-  const buttons = document.querySelectorAll('.read-more');
-  const details = document.querySelectorAll('.detail');
-
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      const targetId = button.dataset.target;
-
-      details.forEach(d => d.classList.remove('active'));
-
-      const target = document.getElementById(targetId);
-      target.classList.add('active');
-
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-</script>
 
 </body>
 </html>
