@@ -1,141 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Services | TK Net</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<title>Services | TK Net</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      color: #0f172a;
-      background: #ffffff;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #0f172a;
+    background: #ffffff;
+  }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+  /* ===== HERO ===== */
+  .hero {
+    height: 70vh;
+    background: url("images/global-night.jpg") center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 24px;
+  }
 
-    /* ===== HERO ===== */
-    .hero {
-      height: 70vh;
-      background: url("images/global-night.jpg") center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 0 20px;
-    }
+  .hero h1 {
+    font-size: 44px;
+    max-width: 900px;
+    line-height: 1.2;
+  }
 
-    .hero h1 {
-      font-size: 48px;
-      max-width: 900px;
-      line-height: 1.2;
-    }
+  .hero p {
+    margin-top: 20px;
+    font-size: 18px;
+    max-width: 820px;
+    opacity: 0.95;
+  }
 
-    .hero p {
-      margin-top: 20px;
-      font-size: 18px;
-      max-width: 820px;
-      opacity: 0.95;
-    }
+  /* ===== INTRO ===== */
+  .intro {
+    max-width: 1100px;
+    margin: 80px auto 40px;
+    padding: 0 24px;
+    font-size: 18px;
+    color: #334155;
+  }
 
-    /* ===== INTRO ===== */
-    .intro {
-      max-width: 1100px;
-      margin: 80px auto 40px;
-      padding: 0 24px;
-      font-size: 18px;
-      color: #334155;
-    }
+  /* ===== SERVICE OVERVIEW CARDS ===== */
+  .services-grid {
+    max-width: 1200px;
+    margin: 40px auto 120px;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+  }
 
-    /* ===== SERVICE CARDS ===== */
-    .services-grid {
-      max-width: 1200px;
-      margin: 40px auto 120px;
-      padding: 0 24px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 28px;
-    }
+  .service-card {
+    border: 1px solid #e5e7eb;
+    padding: 28px;
+    background: #ffffff;
+    transition: box-shadow .3s ease, transform .2s ease;
+  }
 
-    .service-card {
-      border: 1px solid #e5e7eb;
-      padding: 28px;
-      transition: box-shadow 0.3s ease, transform 0.2s ease;
-      background: #fff;
-    }
+  .service-card:hover {
+    box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
 
-    .service-card:hover {
-      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
-      transform: translateY(-2px);
-    }
+  .service-card h3 {
+    margin: 0 0 12px;
+    font-size: 20px;
+  }
 
-    .service-card h3 {
-      margin: 0 0 12px;
-      font-size: 20px;
-    }
+  .service-card p {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+  }
 
-    .service-card p {
-      font-size: 15px;
-      color: #475569;
-      line-height: 1.6;
-    }
+  .read-more {
+    margin-top: 18px;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #2563eb;
+    cursor: pointer;
+  }
 
-    .read-more {
-      margin-top: 18px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #2563eb;
-      letter-spacing: 0.04em;
-      display: inline-block;
-    }
+  /* ===== DETAIL SECTION ===== */
+  .details {
+    max-width: 900px;
+    margin: 0 auto 140px;
+    padding: 0 24px;
+  }
 
-    /* ===== DETAILS ===== */
-    .details {
-      max-width: 900px;
-      margin: 0 auto 140px;
-      padding: 0 24px;
-    }
+  .detail {
+    display: none;
+    animation: fadeInUp .35s ease;
+  }
 
-    .detail {
-      margin-bottom: 100px;
-      scroll-margin-top: 120px;
-    }
+  .detail.active {
+    display: block;
+  }
 
-    .detail h2 {
-      font-size: 30px;
-      margin-bottom: 20px;
-    }
+  .detail h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
 
-    .detail p {
-      font-size: 16px;
-      line-height: 1.75;
-      color: #334155;
-      margin-bottom: 20px;
-    }
+  .detail p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #334155;
+    margin-bottom: 18px;
+  }
 
-    .capabilities {
-      font-size: 14px;
-      color: #475569;
-      border-left: 3px solid #e5e7eb;
-      padding-left: 16px;
-    }
+  .capabilities {
+    font-size: 14px;
+    color: #475569;
+    border-left: 3px solid #e5e7eb;
+    padding-left: 16px;
+  }
 
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 34px;
-      }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
     }
-  </style>
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 32px; }
+  }
+</style>
 </head>
 
 <body>
 
-<!-- ===== HERO ===== -->
+<!-- HERO -->
 <section class="hero">
   <div>
     <h1>Global Strategy. Rigorous Capital Allocation. Transformative Places.</h1>
@@ -146,76 +155,77 @@
   </div>
 </section>
 
-<!-- ===== INTRO ===== -->
+<!-- INTRO -->
 <section class="intro">
   We deliver unconflicted, evidence-based advice across strategy, capital allocation,
   transactions, technology, and place-making.
 </section>
 
-<!-- ===== OVERVIEW CARDS ===== -->
+<!-- SERVICE OVERVIEW -->
 <section class="services-grid">
 
   <div class="service-card">
     <h3>Strategy & Market Expansion</h3>
-    <p>Corporate strategy, growth sequencing, and competitive positioning in global markets.</p>
-    <a href="#strategy" class="read-more">READ MORE →</a>
+    <p>Corporate strategy and disciplined market-entry sequencing.</p>
+    <span class="read-more" data-target="strategy">READ MORE →</span>
   </div>
 
   <div class="service-card">
     <h3>Investment & Transaction Advisory</h3>
-    <p>Commercial due diligence, valuation, and investment committee support.</p>
-    <a href="#investment" class="read-more">READ MORE →</a>
+    <p>Commercial diligence, valuation, and investment decision support.</p>
+    <span class="read-more" data-target="investment">READ MORE →</span>
   </div>
 
   <div class="service-card">
     <h3>M&A and Deal Structuring</h3>
-    <p>Target identification, synergy assessment, and transaction structuring.</p>
-    <a href="#ma" class="read-more">READ MORE →</a>
+    <p>Acquisition strategy, synergies, and transaction design.</p>
+    <span class="read-more" data-target="ma">READ MORE →</span>
   </div>
 
   <div class="service-card">
     <h3>AI & Technology Strategy</h3>
-    <p>Enterprise AI strategy, use-case prioritisation, and innovation design.</p>
-    <a href="#ai" class="read-more">READ MORE →</a>
+    <p>Enterprise AI strategy and innovation roadmap design.</p>
+    <span class="read-more" data-target="ai">READ MORE →</span>
   </div>
 
   <div class="service-card">
     <h3>Urban & Innovation Development</h3>
     <p>Innovation districts, science parks, and economic master planning.</p>
-    <a href="#urban" class="read-more">READ MORE →</a>
+    <span class="read-more" data-target="urban">READ MORE →</span>
   </div>
 
   <div class="service-card">
     <h3>Cross-Border Programs</h3>
-    <p>Regional initiatives, institutional partnerships, and global programs.</p>
-    <a href="#crossborder" class="read-more">READ MORE →</a>
+    <p>Institutional partnerships and regional program execution.</p>
+    <span class="read-more" data-target="cross">READ MORE →</span>
   </div>
 
 </section>
 
-<!-- ===== DETAILED CONTENT ===== -->
-<section class="details">
+<!-- DETAIL CONTENT (HIDDEN BY DEFAULT) -->
+<section class="details" id="detailSection">
 
   <div class="detail" id="strategy">
     <h2>Strategy & Market Expansion</h2>
     <p>
-      We help boards and executive teams define clear corporate strategy,
-      disciplined market-entry sequencing, and execution frameworks that
-      secure lasting advantage in complex geographies.
+      Clear corporate strategy, disciplined market-entry sequencing, and execution frameworks
+      that secure lasting advantage in complex geographies.
     </p>
     <div class="capabilities">
-      Corporate & portfolio strategy · Market attractiveness · Competitive scenarios · Go-to-market · Regulatory strategy
+      Corporate & portfolio strategy · Market sequencing · Competitive scenario planning ·
+      Go-to-market & localization · Regulatory & partnership strategy
     </div>
   </div>
 
   <div class="detail" id="investment">
     <h2>Investment & Transaction Advisory</h2>
     <p>
-      Independent commercial due diligence, valuation, and risk analysis
-      supporting private equity, sovereign funds, and corporate development teams.
+      Independent commercial due diligence, valuation, and risk analysis for private equity,
+      corporate development, and investment committees.
     </p>
     <div class="capabilities">
-      Commercial DD · Market & tech assessment · DCF & LBO · Sensitivity analysis · IC materials
+      Commercial due diligence · Market & technology assessment ·
+      DCF / multiples / LBO modelling · Downside & sensitivity analysis
     </div>
   </div>
 
@@ -223,7 +233,7 @@
     <h2>M&A and Deal Structuring</h2>
     <p>
       Target identification, synergy quantification, transaction structuring,
-      and post-merger integration planning across domestic and cross-border deals.
+      and post-merger integration planning.
     </p>
     <div class="capabilities">
       Acquisition strategy · Synergy modelling · Deal structuring · PMI planning
@@ -233,37 +243,55 @@
   <div class="detail" id="ai">
     <h2>AI & Technology Strategy</h2>
     <p>
-      Enterprise AI strategy, use-case prioritisation, and innovation program
-      design grounded in feasibility and commercial impact.
+      Enterprise AI strategy, use-case prioritisation, technology feasibility,
+      and innovation programme design.
     </p>
     <div class="capabilities">
-      AI strategy · Use-case prioritisation · Tech feasibility · Innovation governance
+      AI roadmap · Use-case prioritisation · Technology feasibility · Governance design
     </div>
   </div>
 
   <div class="detail" id="urban">
     <h2>Urban & Innovation Development</h2>
     <p>
-      Master planning, economic modelling, and operator strategies
-      for innovation districts, science parks, and cultural destinations.
+      Master planning, economic modelling, and operator strategies for innovation districts,
+      science parks, and cultural destinations.
     </p>
     <div class="capabilities">
-      Master planning · Economic modelling · Operator strategy · Phasing & governance
+      Master planning · Economic modelling · Operator strategy · Governance frameworks
     </div>
   </div>
 
-  <div class="detail" id="crossborder">
+  <div class="detail" id="cross">
     <h2>Cross-Border Programs</h2>
     <p>
-      Design and execution of cross-border customer journeys,
-      institutional partnerships, and regional initiatives.
+      Design and execution of cross-border customer journeys, institutional partnerships,
+      and regional initiatives.
     </p>
     <div class="capabilities">
-      Cross-border design · Partnerships · Regional platforms · Execution frameworks
+      Cross-border strategy · Institutional partnerships · Regional programme execution
     </div>
   </div>
 
 </section>
+
+<script>
+  const buttons = document.querySelectorAll('.read-more');
+  const details = document.querySelectorAll('.detail');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetId = button.dataset.target;
+
+      details.forEach(d => d.classList.remove('active'));
+
+      const target = document.getElementById(targetId);
+      target.classList.add('active');
+
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
 
 </body>
 </html>
