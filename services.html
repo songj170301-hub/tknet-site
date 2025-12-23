@@ -13,6 +13,7 @@ body {
   color: #111;
   background: #fff;
   line-height: 1.65;
+  scroll-behavior: smooth;
 }
 
 /* ================= NAV ================= */
@@ -56,7 +57,6 @@ nav a:hover {
   overflow: hidden;
   background: #0b1c2d;
 }
-
 .hero-img {
   position: absolute;
   inset: 0;
@@ -64,7 +64,6 @@ nav a:hover {
   height: 100%;
   object-fit: cover;
 }
-
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -73,7 +72,6 @@ nav a:hover {
     rgba(8, 24, 45, 0.55)
   );
 }
-
 .hero-inner {
   position: relative;
   z-index: 2;
@@ -82,60 +80,85 @@ nav a:hover {
   padding: 0 24px;
   color: #fff;
 }
-
 .hero h1 {
   font-size: 40px;
   margin-bottom: 12px;
 }
-
 .hero p {
   font-size: 18px;
   max-width: 760px;
   opacity: 0.95;
 }
 
-/* ================= CONTENT ================= */
+/* ================= SECTIONS ================= */
 section {
   max-width: 1200px;
   margin: auto;
-  padding: 88px 24px;
+  padding: 96px 24px;
 }
-
-.services-intro {
+.section-title {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+.section-intro {
   font-size: 20px;
   max-width: 880px;
   margin-bottom: 72px;
-  color: #222;
 }
 
-/* ================= SERVICES GRID ================= */
+/* ================= OVERVIEW GRID ================= */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 44px;
 }
-
 .service-card {
   padding-top: 24px;
   border-top: 1px solid #e5e5e5;
-  transition: border-color .25s ease, transform .25s ease;
 }
-
+.service-card a {
+  text-decoration: none;
+  color: inherit;
+}
 .service-card h3 {
   font-size: 16px;
   font-weight: 600;
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
 }
-
 .service-card p {
   font-size: 15px;
   margin: 0;
   color: #333;
 }
 
-.service-card:hover {
-  border-top-color: #111;
-  transform: translateY(-2px);
+/* ================= INDIVIDUAL SECTIONS ================= */
+.service-detail {
+  padding-top: 96px;
+  border-top: 1px solid #eee;
+}
+.service-detail h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+.service-detail .desc {
+  font-size: 18px;
+  max-width: 900px;
+  margin-bottom: 28px;
+}
+.service-detail h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: 8px;
+}
+.service-detail p,
+.service-detail ul {
+  font-size: 15px;
+  color: #333;
+  max-width: 900px;
+}
+.service-detail ul {
+  padding-left: 18px;
 }
 
 /* ================= FOOTER ================= */
@@ -158,7 +181,6 @@ footer {
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
-      <a href="individual.html">Individual Service</a>
       <a href="engagements.html">Selected Engagements</a>
       <a href="contact.html">Contact</a>
     </div>
@@ -168,11 +190,9 @@ footer {
 
 <!-- HERO -->
 <header class="hero">
-  <img
-    class="hero-img"
-    src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2400&q=80"
-    alt="Global night skyline"
-  >
+  <img class="hero-img"
+       src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2400&q=80"
+       alt="Global night skyline">
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <h1>Services</h1>
@@ -183,48 +203,81 @@ footer {
   </div>
 </header>
 
-<!-- SERVICES -->
-<section>
-
-  <div class="services-intro">
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="section-intro">
     We deliver unconflicted, evidence-based advice across strategy,
     capital allocation, transactions, technology, and place-making.
   </div>
 
   <div class="services-grid">
-
-    <div class="service-card">
-      <h3>Strategy & Market Expansion</h3>
-      <p>Corporate strategy, growth sequencing, and competitive positioning across global markets.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>Investment & Transaction Advisory</h3>
-      <p>Commercial diligence, valuation, and investment committee–grade decision support.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>M&A and Deal Structuring</h3>
-      <p>Target identification, synergy logic, and transaction structuring for complex deals.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>AI & Technology Strategy</h3>
-      <p>Enterprise AI strategy, use-case prioritisation, and scalable innovation roadmaps.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>Urban & Innovation Development</h3>
-      <p>Master planning, economic modelling, and operator strategy for innovation districts.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>Cross-Border Programs</h3>
-      <p>Design and execution of cross-border market entry and institutional partnerships.</p>
-    </div>
-
+    <div class="service-card"><a href="#strategy"><h3>Strategy & Market Expansion</h3><p>Corporate strategy and global market execution.</p></a></div>
+    <div class="service-card"><a href="#investment"><h3>Investment & Transaction Advisory</h3><p>Independent diligence and valuation.</p></a></div>
+    <div class="service-card"><a href="#ma"><h3>M&A and Deal Structuring</h3><p>Transaction logic and post-merger planning.</p></a></div>
+    <div class="service-card"><a href="#ai"><h3>AI & Technology Strategy</h3><p>Enterprise AI and innovation roadmaps.</p></a></div>
+    <div class="service-card"><a href="#urban"><h3>Urban & Innovation Development</h3><p>Innovation districts and economic models.</p></a></div>
+    <div class="service-card"><a href="#cross"><h3>Cross-Border Programs</h3><p>Multi-market programs and partnerships.</p></a></div>
   </div>
+</section>
 
+<!-- INDIVIDUAL SERVICES -->
+<section id="strategy" class="service-detail">
+  <h2>Strategy & Market Expansion</h2>
+  <p class="desc">Clear corporate strategy, disciplined market-entry sequencing, and execution frameworks that secure lasting advantage.</p>
+  <h4>Capabilities</h4>
+  <p>Corporate and portfolio strategy | Market sequencing | Competitive scenario planning | Go-to-market</p>
+  <h4>Selected Engagements</h4>
+  <ul>
+    <li>Global strategy for a leading Korean beauty conglomerate</li>
+    <li>Greater China entry for a European luxury maison</li>
+    <li>Pan-Asia growth strategy for a Singapore-listed REIT</li>
+  </ul>
+</section>
+
+<section id="investment" class="service-detail">
+  <h2>Investment & Transaction Advisory</h2>
+  <p class="desc">Independent commercial due diligence, valuation, and risk analysis.</p>
+  <h4>Selected Engagements</h4>
+  <ul>
+    <li>Hyundai AI unicorn investment diligence</li>
+    <li>$1.2bn education platform valuation</li>
+    <li>Strategic buyer advisory for leading insurers</li>
+  </ul>
+</section>
+
+<section id="ma" class="service-detail">
+  <h2>M&A and Deal Structuring</h2>
+  <p class="desc">Target identification, synergy quantification, and integration planning.</p>
+  <ul>
+    <li>Pantech acquisition strategy</li>
+    <li>ABL Life & Tongyang Life M&A strategy</li>
+    <li>Korean conglomerate restructuring</li>
+  </ul>
+</section>
+
+<section id="ai" class="service-detail">
+  <h2>AI & Technology Strategy</h2>
+  <p class="desc">Enterprise AI strategy and scalable innovation programs.</p>
+  <ul>
+    <li>Fortune 500 group-wide AI strategy</li>
+    <li>Incheon AI Tower ecosystem design</li>
+    <li>Generative AI roadmap for financial institution</li>
+  </ul>
+</section>
+
+<section id="urban" class="service-detail">
+  <h2>Urban & Innovation Development</h2>
+  <p class="desc">Master planning and economic modelling for innovation districts.</p>
+  <ul>
+    <li>Suzhou Design Town</li>
+    <li>Beijing Tongzhou Tech Transfer Park</li>
+    <li>Zhengzhou Agriculture & Science Park</li>
+  </ul>
+</section>
+
+<section id="cross" class="service-detail">
+  <h2>Cross-Border Programs</h2>
+  <p class="desc">Design and execution of cross-border institutional initiatives.</p>
 </section>
 
 <footer>
