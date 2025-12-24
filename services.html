@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    /* ========= RESET ========= */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -53,13 +52,11 @@
       margin-top: 64px;
       height: 75vh;
 
-      /* 🔴 兜底方案：不用图片文件，直接渐变 */
-      background: linear-gradient(
-        135deg,
-        #0b1e39 0%,
-        #102a4d 40%,
-        #0e7490 100%
-      );
+      /* ✅ 关键：绝对路径 + 背景图 */
+      background-image: url("/tknet-site/assets/images/hero-global-night.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
 
       position: relative;
     }
@@ -68,7 +65,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.35);
+      background: rgba(0, 0, 0, 0.45);
     }
 
     .hero-content {
