@@ -52,25 +52,18 @@
       margin-top: 64px;
       height: 75vh;
 
-      /* ✅ 关键：绝对路径 + 背景图 */
-      background-image: url("/tknet-site/assets/images/hero-global-night.jpg");
+      /* ✅ 关键：远程图片 + 渐变兜底 */
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=80");
+
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
     }
 
     .hero-content {
       position: relative;
-      z-index: 2;
       top: 50%;
       transform: translateY(-50%);
       margin-left: 8%;
@@ -116,6 +109,7 @@
       border: 1px solid #e5e7eb;
       padding: 32px;
       transition: box-shadow 0.25s ease;
+      background: #ffffff;
     }
 
     .service-card:hover {
