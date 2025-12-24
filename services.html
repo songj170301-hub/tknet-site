@@ -6,44 +6,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    body {
+    /* ========= RESET ========= */
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       color: #0f172a;
       background: #ffffff;
     }
 
-    /* =====================
-       HERO (背景图方式)
-       ===================== */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ========= NAV ========= */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      align-items: center;
+    }
+
+    .nav-inner a:hover {
+      text-decoration: underline;
+    }
+
+    /* ========= HERO ========= */
     .hero {
+      margin-top: 64px;
+      height: 75vh;
+
+      /* 🔴 兜底方案：不用图片文件，直接渐变 */
+      background: linear-gradient(
+        135deg,
+        #0b1e39 0%,
+        #102a4d 40%,
+        #0e7490 100%
+      );
+
       position: relative;
-      height: 78vh;
-      background-image: url("assets/images/hero-services-night.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
     }
 
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.35);
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
       top: 50%;
-      left: 8%;
       transform: translateY(-50%);
+      margin-left: 8%;
       max-width: 760px;
       color: #ffffff;
     }
 
     .hero-content h1 {
-      font-size: 46px;
+      font-size: 44px;
       font-weight: 600;
       line-height: 1.25;
       margin-bottom: 18px;
@@ -52,13 +91,11 @@
     .hero-content p {
       font-size: 18px;
       line-height: 1.6;
-      opacity: 0.95;
       max-width: 640px;
+      opacity: 0.95;
     }
 
-    /* =====================
-       SERVICES SECTION
-       ===================== */
+    /* ========= SERVICES ========= */
     .services {
       max-width: 1200px;
       margin: 120px auto;
@@ -81,7 +118,6 @@
     .service-card {
       border: 1px solid #e5e7eb;
       padding: 32px;
-      background: #ffffff;
       transition: box-shadow 0.25s ease;
     }
 
@@ -91,14 +127,11 @@
 
     .service-card h3 {
       font-size: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       font-weight: 500;
-      color: #111827;
     }
 
-    /* Read more（非蓝色，咨询公司风格） */
     .service-card a {
-      text-decoration: none;
       font-size: 14px;
       font-weight: 500;
       color: #374151;
@@ -110,10 +143,6 @@
     .service-card a::after {
       content: "→";
       transition: transform 0.2s ease;
-    }
-
-    .service-card a:hover {
-      color: #111827;
     }
 
     .service-card a:hover::after {
@@ -130,6 +159,17 @@
 </head>
 
 <body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="engagements.html">Selected Engagements</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
 
   <!-- HERO -->
   <section class="hero">
