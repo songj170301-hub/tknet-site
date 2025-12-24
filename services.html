@@ -12,7 +12,7 @@ body {
   color: #111;
 }
 
-/* ---------- NAV ---------- */
+/* ========== NAV ========== */
 nav {
   position: fixed;
   top: 0;
@@ -47,13 +47,13 @@ nav a:hover {
 
 .nav-right {
   font-weight: 600;
-  letter-spacing: .5px;
+  letter-spacing: .4px;
 }
 
-/* ---------- HERO ---------- */
+/* ========== HERO ========== */
 .hero {
   position: relative;
-  height: 65vh;
+  height: 62vh;
   margin-top: 64px;
   overflow: hidden;
 }
@@ -99,7 +99,7 @@ nav a:hover {
   opacity: .95;
 }
 
-/* ---------- CONTENT ---------- */
+/* ========== CONTENT ========== */
 section {
   max-width: 1100px;
   margin: 0 auto;
@@ -108,15 +108,16 @@ section {
 
 .section-intro {
   font-size: 20px;
-  max-width: 720px;
-  margin-bottom: 48px;
+  max-width: 760px;
+  margin-bottom: 56px;
+  color: #222;
 }
 
-/* ---------- SERVICE GRID ---------- */
+/* ========== SERVICE GRID ========== */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 40px;
 }
 
 .service-card {
@@ -127,15 +128,16 @@ section {
 .service-card h3 {
   font-size: 18px;
   font-weight: 500;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .service-card a {
   font-size: 14px;
   color: #555;
+  cursor: pointer;
 }
 
-/* ---------- DETAILS ---------- */
+/* ========== DETAILS ========== */
 .service-detail {
   display: none;
   padding-top: 96px;
@@ -153,7 +155,7 @@ section {
 }
 
 .service-detail p {
-  max-width: 800px;
+  max-width: 820px;
   margin-bottom: 24px;
 }
 
@@ -162,7 +164,7 @@ section {
   color: #444;
 }
 
-/* ---------- FOOTER ---------- */
+/* ========== FOOTER ========== */
 footer {
   border-top: 1px solid #eee;
   padding: 32px;
@@ -171,7 +173,7 @@ footer {
   color: #666;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 900px) {
   .services-grid {
     grid-template-columns: 1fr;
@@ -206,12 +208,12 @@ function showService(id) {
 
 <!-- HERO -->
 <div class="hero">
-  <img src="services-hero.jpg" alt="Global advisory services">
+  <img src="assets/images/hero-services.jpg" alt="Global advisory services">
   <div class="hero-content">
     <h1>Independent advisory across strategy, capital, technology, and place-making</h1>
     <p>
-      We deliver unconflicted, evidence-based advice to boards, investors,
-      and public-sector leaders across Asia, Europe, and North America.
+      We deliver unconflicted, evidence-based advice to boards, investment
+      committees, and public-sector leaders across Asia, Europe, and North America.
     </p>
   </div>
 </div>
@@ -220,33 +222,33 @@ function showService(id) {
 <section>
   <p class="section-intro">
     We work at critical decision points — where strategy, capital allocation,
-    and long-term value creation intersect.
+    transactions, and long-term value creation intersect.
   </p>
 
   <div class="services-grid">
     <div class="service-card">
       <h3>Strategy & Market Expansion</h3>
-      <a href="javascript:void(0)" onclick="showService('s1')">Read more</a>
+      <a onclick="showService('s1')">Read more</a>
     </div>
     <div class="service-card">
       <h3>Investment & Transaction Advisory</h3>
-      <a href="javascript:void(0)" onclick="showService('s2')">Read more</a>
+      <a onclick="showService('s2')">Read more</a>
     </div>
     <div class="service-card">
       <h3>M&A and Deal Structuring</h3>
-      <a href="javascript:void(0)" onclick="showService('s3')">Read more</a>
+      <a onclick="showService('s3')">Read more</a>
     </div>
     <div class="service-card">
       <h3>AI & Technology Strategy</h3>
-      <a href="javascript:void(0)" onclick="showService('s4')">Read more</a>
+      <a onclick="showService('s4')">Read more</a>
     </div>
     <div class="service-card">
       <h3>Urban & Innovation Development</h3>
-      <a href="javascript:void(0)" onclick="showService('s5')">Read more</a>
+      <a onclick="showService('s5')">Read more</a>
     </div>
     <div class="service-card">
       <h3>Cross-Border Programs</h3>
-      <a href="javascript:void(0)" onclick="showService('s6')">Read more</a>
+      <a onclick="showService('s6')">Read more</a>
     </div>
   </div>
 </section>
@@ -254,38 +256,38 @@ function showService(id) {
 <!-- DETAILS -->
 <section id="s1" class="service-detail">
   <h2>Strategy & Market Expansion</h2>
-  <p>Corporate strategy design, market-entry sequencing, and execution frameworks.</p>
-  <div class="capabilities">Corporate strategy · Market entry · Go-to-market</div>
+  <p>Clear corporate strategy, disciplined market-entry sequencing, and execution frameworks.</p>
+  <div class="capabilities">Corporate strategy · Market entry · Go-to-market · Regulatory strategy</div>
 </section>
 
 <section id="s2" class="service-detail">
   <h2>Investment & Transaction Advisory</h2>
-  <p>Independent diligence, valuation, and downside analysis.</p>
-  <div class="capabilities">Commercial DD · Valuation · IC support</div>
+  <p>Independent diligence, valuation, and downside analysis for investors and boards.</p>
+  <div class="capabilities">Commercial DD · Valuation · IC materials</div>
 </section>
 
 <section id="s3" class="service-detail">
   <h2>M&A and Deal Structuring</h2>
-  <p>Target screening, synergies, and post-merger planning.</p>
-  <div class="capabilities">Acquisition · Structuring · PMI</div>
+  <p>Target screening, synergy analysis, transaction structuring, and PMI planning.</p>
+  <div class="capabilities">Acquisitions · Structuring · Post-merger integration</div>
 </section>
 
 <section id="s4" class="service-detail">
   <h2>AI & Technology Strategy</h2>
-  <p>Enterprise AI roadmaps and innovation programs.</p>
-  <div class="capabilities">AI strategy · Use cases · Tech assessment</div>
+  <p>Enterprise AI roadmaps, use-case prioritization, and innovation program design.</p>
+  <div class="capabilities">AI strategy · Technology assessment · Roadmapping</div>
 </section>
 
 <section id="s5" class="service-detail">
   <h2>Urban & Innovation Development</h2>
-  <p>Master planning and innovation district economics.</p>
-  <div class="capabilities">Innovation districts · Feasibility · Operators</div>
+  <p>Innovation districts, science parks, and large-scale urban regeneration strategies.</p>
+  <div class="capabilities">Master planning · Feasibility · Operator models</div>
 </section>
 
 <section id="s6" class="service-detail">
   <h2>Cross-Border Programs</h2>
-  <p>Regional growth platforms and institutional partnerships.</p>
-  <div class="capabilities">Cross-border strategy · Partnerships</div>
+  <p>Design and execution of cross-border strategies and institutional partnerships.</p>
+  <div class="capabilities">Regional strategy · Partnerships · Market access</div>
 </section>
 
 <footer>© TK Net Advisory</footer>
