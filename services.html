@@ -13,18 +13,16 @@
       background: #ffffff;
     }
 
-    /* HERO */
+    /* =====================
+       HERO (背景图方式)
+       ===================== */
     .hero {
       position: relative;
       height: 78vh;
-      overflow: hidden;
-    }
-
-    .hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+      background-image: url("assets/images/hero-services-night.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .hero::after {
@@ -35,7 +33,7 @@
     }
 
     .hero-content {
-      position: absolute;
+      position: relative;
       z-index: 2;
       top: 50%;
       left: 8%;
@@ -58,7 +56,9 @@
       max-width: 640px;
     }
 
-    /* SERVICES */
+    /* =====================
+       SERVICES SECTION
+       ===================== */
     .services {
       max-width: 1200px;
       margin: 120px auto;
@@ -69,6 +69,7 @@
       font-size: 18px;
       max-width: 760px;
       margin-bottom: 64px;
+      color: #1f2937;
     }
 
     .services-grid {
@@ -81,15 +82,21 @@
       border: 1px solid #e5e7eb;
       padding: 32px;
       background: #ffffff;
+      transition: box-shadow 0.25s ease;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
     }
 
     .service-card h3 {
       font-size: 20px;
       margin-bottom: 20px;
       font-weight: 500;
+      color: #111827;
     }
 
-    /* Read more – 专业提示 */
+    /* Read more（非蓝色，咨询公司风格） */
     .service-card a {
       text-decoration: none;
       font-size: 14px;
@@ -126,8 +133,6 @@
 
   <!-- HERO -->
   <section class="hero">
-    <!-- ✅ 相对路径，GitHub Pages 稳定 -->
-    <img src="assets/images/hero-services.jpg" alt="Global night skyline">
     <div class="hero-content">
       <h1>Independent advisory across strategy, capital, technology, and place-making</h1>
       <p>
