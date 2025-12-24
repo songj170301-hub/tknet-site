@@ -7,10 +7,9 @@
 
   <style>
     :root {
-      --dark: #0f172a;
+      --ink: #0f172a;
       --muted: #475569;
-      --accent: #0b5cff;
-      --bg: #f8fafc;
+      --line: #e5e7eb;
     }
 
     * {
@@ -21,19 +20,19 @@
     }
 
     body {
-      background: var(--bg);
-      color: var(--dark);
+      background: #ffffff;
+      color: var(--ink);
       line-height: 1.6;
     }
 
-    /* ===== NAV ===== */
+    /* ===== NAV (WHITE, GLOBAL STYLE) ===== */
     header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(8px);
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
       z-index: 1000;
     }
 
@@ -42,36 +41,33 @@
       margin: auto;
       padding: 16px 24px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
 
     .nav-left a {
-      margin-right: 24px;
+      margin-right: 28px;
       text-decoration: none;
-      color: #fff;
-      font-weight: 500;
+      color: var(--ink);
       font-size: 14px;
+      font-weight: 500;
     }
 
     .nav-right {
-      color: #fff;
       font-weight: 600;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
     }
 
-    /* ===== HERO ===== */
+    /* ===== HERO (GRADIENT ONLY – STABLE BASE) ===== */
     .hero {
       margin-top: 72px;
-      min-height: 70vh;
-      background:
-        linear-gradient(
-          rgba(15,23,42,0.55),
-          rgba(15,23,42,0.75)
-        ),
-        url("/tknet-site/images/hero-city-night.jpg");
-      background-size: cover;
-      background-position: center;
+      min-height: 68vh;
+      background: linear-gradient(
+        135deg,
+        #0f172a 0%,
+        #1e3a8a 45%,
+        #0b5cff 100%
+      );
       display: flex;
       align-items: center;
     }
@@ -79,18 +75,18 @@
     .hero-inner {
       max-width: 1200px;
       padding: 0 24px;
-      color: #fff;
+      color: #ffffff;
     }
 
     .hero h1 {
-      font-size: 48px;
+      font-size: 46px;
       font-weight: 600;
-      max-width: 700px;
+      max-width: 720px;
     }
 
     .hero p {
       margin-top: 20px;
-      max-width: 680px;
+      max-width: 700px;
       font-size: 18px;
       color: #e5e7eb;
     }
@@ -109,36 +105,30 @@
       margin-bottom: 48px;
     }
 
-    .services-grid {
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 32px;
     }
 
-    .service-card {
-      background: #fff;
-      border: 1px solid #e5e7eb;
+    .card {
+      border: 1px solid var(--line);
       padding: 28px;
-      transition: box-shadow 0.2s ease;
+      background: #ffffff;
     }
 
-    .service-card:hover {
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .service-card h3 {
+    .card h3 {
       font-size: 18px;
       margin-bottom: 12px;
     }
 
     .read-more {
-      display: inline-block;
       margin-top: 16px;
+      display: inline-block;
       font-size: 14px;
-      font-weight: 500;
-      color: var(--dark);
+      color: var(--ink);
       text-decoration: none;
-      border-bottom: 1px solid var(--dark);
+      border-bottom: 1px solid var(--ink);
     }
   </style>
 </head>
@@ -174,33 +164,33 @@
     in making high-stakes decisions across complex markets and regions.
   </p>
 
-  <div class="services-grid">
-    <div class="service-card">
+  <div class="grid">
+    <div class="card">
       <h3>Strategy & Market Expansion</h3>
       <a class="read-more" href="individual.html#strategy">Read more</a>
     </div>
 
-    <div class="service-card">
+    <div class="card">
       <h3>Investment & Transaction Advisory</h3>
       <a class="read-more" href="individual.html#investment">Read more</a>
     </div>
 
-    <div class="service-card">
+    <div class="card">
       <h3>M&A and Deal Structuring</h3>
       <a class="read-more" href="individual.html#ma">Read more</a>
     </div>
 
-    <div class="service-card">
+    <div class="card">
       <h3>AI & Technology Strategy</h3>
       <a class="read-more" href="individual.html#ai">Read more</a>
     </div>
 
-    <div class="service-card">
+    <div class="card">
       <h3>Urban & Innovation Development</h3>
       <a class="read-more" href="individual.html#urban">Read more</a>
     </div>
 
-    <div class="service-card">
+    <div class="card">
       <h3>Cross-Border Programs</h3>
       <a class="read-more" href="individual.html#cross">Read more</a>
     </div>
