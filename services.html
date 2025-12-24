@@ -25,7 +25,7 @@
       line-height: 1.6;
     }
 
-    /* ===== NAV (WHITE, GLOBAL STYLE) ===== */
+    /* ===== NAV (WHITE / GLOBAL) ===== */
     header {
       position: fixed;
       top: 0;
@@ -58,21 +58,41 @@
       letter-spacing: 0.4px;
     }
 
-    /* ===== HERO (GRADIENT ONLY – STABLE BASE) ===== */
+    /* ===== HERO (IMAGE SAFE MODE) ===== */
     .hero {
       margin-top: 72px;
       min-height: 68vh;
-      background: linear-gradient(
-        135deg,
-        #0f172a 0%,
-        #1e3a8a 45%,
-        #0b5cff 100%
-      );
+      position: relative;
+      overflow: hidden;
       display: flex;
       align-items: center;
     }
 
+    .hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    /* dark overlay for readability */
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(8,15,30,0.75),
+        rgba(8,15,30,0.65)
+      );
+      z-index: 1;
+    }
+
     .hero-inner {
+      position: relative;
+      z-index: 2;
       max-width: 1200px;
       padding: 0 24px;
       color: #ffffff;
@@ -86,7 +106,7 @@
 
     .hero p {
       margin-top: 20px;
-      max-width: 700px;
+      max-width: 720px;
       font-size: 18px;
       color: #e5e7eb;
     }
@@ -148,7 +168,14 @@
   </div>
 </header>
 
+<!-- ===== HERO ===== -->
 <section class="hero">
+  <!-- 都市夜景俯视图（稳定来源） -->
+  <img
+    src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2000&q=80"
+    alt="Global city night skyline"
+  />
+
   <div class="hero-inner">
     <h1>Advisory Services</h1>
     <p>
