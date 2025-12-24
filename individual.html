@@ -2,29 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Individual Services | TK Net</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <style>
     :root {
       --text-main: #0f172a;
       --text-sub: #475569;
       --text-light: #64748b;
-      --border-light: #e5e7eb;
-      --bg-light: #f8fafc;
-      --accent: #0b3a82;
+      --line: #e5e7eb;
+      --bg: #ffffff;
+      --accent: #0b1f3a;
     }
 
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, "Helvetica Neue", Arial, sans-serif;
+        Helvetica, Arial, sans-serif;
+      background: var(--bg);
       color: var(--text-main);
-      background: white;
+      line-height: 1.65;
       animation: fadeIn 0.35s ease-out;
     }
 
@@ -33,17 +39,19 @@
       to { opacity: 1; }
     }
 
-    /* ========== NAVIGATION ========== */
-    header {
+    /* =========================
+       NAV
+    ========================= */
+    nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(255,255,255,0.96);
-      border-bottom: 1px solid var(--border-light);
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
       z-index: 1000;
     }
 
-    .nav {
+    .nav-inner {
       max-width: 1200px;
       margin: auto;
       padding: 16px 24px;
@@ -52,236 +60,252 @@
       align-items: center;
     }
 
-    .nav a {
-      margin-left: 28px;
+    .nav-left a {
+      margin-right: 28px;
       text-decoration: none;
-      color: var(--text-main);
       font-size: 14px;
-      letter-spacing: 0.02em;
+      color: var(--text-sub);
     }
 
-    .nav a:hover {
-      color: var(--accent);
+    .nav-left a:hover {
+      color: var(--text-main);
     }
 
-    .logo {
+    .nav-right {
       font-weight: 600;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.4px;
     }
 
-    /* ========== HERO (不改文案 & 图片) ========== */
+    /* =========================
+       HERO
+    ========================= */
     .hero {
-      margin-top: 72px;
       height: 78vh;
-      background: 
+      background:
         linear-gradient(
-          rgba(10,20,40,0.55),
-          rgba(10,20,40,0.55)
+          rgba(5, 15, 30, 0.55),
+          rgba(5, 15, 30, 0.55)
         ),
-        url("images/hero-individual.jpg") center / cover no-repeat;
-      color: white;
+        url("assets/images/hero-global-night.jpg") center/cover no-repeat;
       display: flex;
       align-items: center;
+      padding-top: 80px;
     }
 
-    .hero-inner {
-      max-width: 1200px;
+    .hero-content {
+      max-width: 900px;
       padding: 0 24px;
-      margin: auto;
+      margin-left: 8%;
+      color: #ffffff;
     }
 
     .hero h1 {
-      font-size: 46px;
-      font-weight: 500;
+      font-size: 42px;
+      font-weight: 600;
       line-height: 1.25;
       margin-bottom: 20px;
-      max-width: 720px;
     }
 
     .hero p {
       font-size: 18px;
       max-width: 720px;
-      line-height: 1.7;
       color: #e5e7eb;
     }
 
-    /* ========== CONTENT ========== */
+    /* =========================
+       MAIN
+    ========================= */
     main {
       max-width: 960px;
       margin: auto;
-      padding: 96px 24px;
+      padding: 120px 24px 160px;
     }
 
     .exec-summary {
+      margin-bottom: 100px;
       font-size: 18px;
-      line-height: 1.8;
       color: var(--text-sub);
-      margin-bottom: 96px;
+      max-width: 760px;
     }
 
-    .section {
-      margin-bottom: 96px;
+    /* =========================
+       SECTION
+    ========================= */
+    section {
+      margin-bottom: 120px;
       opacity: 0;
       transform: translateY(8px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
-    .section.visible {
+    section.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    .section h2 {
-      font-size: 30px;
-      font-weight: 500;
+    section h2 {
+      font-size: 28px;
+      font-weight: 600;
       margin-bottom: 16px;
     }
 
     .capabilities {
       font-size: 14px;
       color: var(--text-light);
-      margin-bottom: 24px;
-      line-height: 1.7;
+      margin-bottom: 28px;
     }
 
     .engagements {
-      border-left: 2px solid var(--border-light);
+      border-left: 2px solid var(--line);
       padding-left: 20px;
-      font-size: 15px;
       color: var(--text-sub);
-      line-height: 1.8;
     }
 
-    /* ========== FOOTER ========== */
+    .engagements p {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
     footer {
-      border-top: 1px solid var(--border-light);
-      padding: 48px 24px;
-      font-size: 14px;
-      color: var(--text-light);
+      border-top: 1px solid var(--line);
+      padding: 40px 24px;
       text-align: center;
+      font-size: 13px;
+      color: var(--text-light);
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="nav">
-    <div class="logo">TK Net</div>
-    <div>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="engagements.html">Selected Engagements</a>
-      <a href="contact.html">Contact</a>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="engagements.html">Selected Engagements</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-right">TK Net</div>
     </div>
-  </div>
-</header>
+  </nav>
 
-<section class="hero">
-  <div class="hero-inner">
-    <h1>Individual Service Pages</h1>
-    <p>
-      Independent, senior-level advisory across strategy, capital allocation,
-      technology, and place-making — delivered with global standards and
-      regional depth.
-    </p>
-  </div>
-</section>
-
-<main>
-
-  <div class="exec-summary">
-    This page outlines TK Net’s core advisory capabilities and representative
-    engagements. Each service line reflects a disciplined consulting approach,
-    combining strategic clarity, analytical rigor, and execution relevance
-    across global markets.
-  </div>
-
-  <section class="section">
-    <h2>Strategy & Market Expansion</h2>
-    <div class="capabilities">
-      Corporate and portfolio strategy | Market sequencing and attractiveness |
-      Competitive scenario planning | Go-to-market and localization |
-      Regulatory and partnership strategy
-    </div>
-    <div class="engagements">
-      Global strategy for a leading Korean beauty conglomerate<br/>
-      Greater China entry for a European luxury maison<br/>
-      Pan-Asia growth strategy for a Singapore-listed REIT
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>
+        Global Strategy. Rigorous Capital Allocation.<br />
+        Transformative Places.
+      </h1>
+      <p>
+        Independent advisory to boards, investment committees, and public-sector
+        leaders on strategy, transactions, and innovation districts across Asia,
+        Europe, and North America.
+      </p>
     </div>
   </section>
 
-  <section class="section">
-    <h2>Investment & Transaction Advisory</h2>
-    <div class="capabilities">
-      Commercial due diligence | Market and technology assessment |
-      DCF, multiples, and LBO modelling |
-      Downside and sensitivity analysis |
-      Investment committee materials
+  <!-- MAIN -->
+  <main>
+
+    <div class="exec-summary">
+      Our individual service lines reflect the depth of our advisory work —
+      each grounded in rigorous analysis, global benchmarks, and execution
+      realities across markets and sectors.
     </div>
-    <div class="engagements">
-      Buy-side diligence – Hyundai’s investment in an Asian AI unicorn<br/>
-      Valuation and risk assessment – $1.2 bn education platform<br/>
-      Strategic buyer advisory – two of Korea’s largest life insurers
-    </div>
-  </section>
 
-  <section class="section">
-    <h2>M&A and Deal Structuring</h2>
-    <div class="engagements">
-      Acquisition strategy – Pantech<br/>
-      M&A strategy – ABL Life Insurance and Tongyang Life Insurance<br/>
-      Cross-border restructuring – Korean chaebol subsidiary
-    </div>
-  </section>
+    <section>
+      <h2>Strategy & Market Expansion</h2>
+      <div class="capabilities">
+        Corporate and portfolio strategy | Market sequencing and attractiveness | 
+        Competitive scenario planning | Go-to-market and localization | 
+        Regulatory and partnership strategy
+      </div>
+      <div class="engagements">
+        <p>Global strategy for a leading Korean beauty conglomerate</p>
+        <p>Greater China entry for a European luxury maison</p>
+        <p>Pan-Asia growth strategy for a Singapore-listed REIT</p>
+      </div>
+    </section>
 
-  <section class="section">
-    <h2>AI & Technology Strategy</h2>
-    <div class="engagements">
-      Group-wide AI strategy – Fortune 500 conglomerate<br/>
-      Incheon AI Tower ecosystem – CKT Group<br/>
-      Generative AI roadmap – listed financial institution
-    </div>
-  </section>
+    <section>
+      <h2>Investment & Transaction Advisory</h2>
+      <div class="capabilities">
+        Commercial due diligence | Market and technology assessment | 
+        DCF, multiples, and LBO modelling | Downside and sensitivity analysis | 
+        Investment committee materials
+      </div>
+      <div class="engagements">
+        <p>Buy-side diligence – Hyundai’s investment in an Asian AI unicorn</p>
+        <p>Valuation and risk assessment – $1.2 bn education platform</p>
+        <p>Strategic buyer advisory – two of Korea’s largest life insurers</p>
+      </div>
+    </section>
 
-  <section class="section">
-    <h2>Urban & Innovation Development</h2>
-    <div class="engagements">
-      Suzhou Design Town<br/>
-      Incheon AI Tower<br/>
-      Beijing Tongzhou Tech Transfer Park<br/>
-      Zhengzhou Agriculture & Science Park
-    </div>
-  </section>
+    <section>
+      <h2>M&A and Deal Structuring</h2>
+      <div class="engagements">
+        <p>Acquisition strategy – Pantech</p>
+        <p>M&A strategy – ABL Life Insurance and Tongyang Life Insurance</p>
+        <p>Cross-border restructuring – Korean chaebol subsidiary</p>
+      </div>
+    </section>
 
-  <section class="section">
-    <h2>Cross-Border Programs</h2>
-    <div class="engagements">
-      Design and execution of cross-border customer journeys<br/>
-      Institutional partnership platforms<br/>
-      Regional innovation and trade initiatives
-    </div>
-  </section>
+    <section>
+      <h2>AI & Technology Strategy</h2>
+      <div class="engagements">
+        <p>Group-wide AI strategy – Fortune 500 conglomerate</p>
+        <p>Incheon AI Tower ecosystem – CKT Group</p>
+        <p>Generative AI roadmap – listed financial institution</p>
+      </div>
+    </section>
 
-</main>
+    <section>
+      <h2>Urban & Innovation Development</h2>
+      <div class="engagements">
+        <p>Suzhou Design Town</p>
+        <p>Beijing Tongzhou Tech Transfer Park</p>
+        <p>Zhengzhou Agriculture & Science Park</p>
+      </div>
+    </section>
 
-<footer>
-  © TK Net — Independent Strategy & Advisory
-</footer>
+    <section>
+      <h2>Cross-Border Programs</h2>
+      <div class="engagements">
+        <p>Cross-border institutional partnerships</p>
+        <p>Regional investment promotion programs</p>
+        <p>International innovation exchange platforms</p>
+      </div>
+    </section>
 
-<script>
-  const sections = document.querySelectorAll('.section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.15 });
+  </main>
 
-  sections.forEach(sec => observer.observe(sec));
-</script>
+  <footer>
+    © TK Net Advisory. All rights reserved.
+  </footer>
+
+  <!-- Subtle reveal -->
+  <script>
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    sections.forEach(section => observer.observe(section));
+  </script>
 
 </body>
 </html>
