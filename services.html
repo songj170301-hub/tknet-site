@@ -2,145 +2,143 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Services | TK Net</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      color: #0f1f3a;
-      background: #ffffff;
+    :root {
+      --dark: #0f172a;
+      --muted: #475569;
+      --accent: #0b5cff;
+      --bg: #f8fafc;
     }
 
-    /* ================= NAV ================= */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* ===== NAV ===== */
     header {
       position: fixed;
       top: 0;
-      width: 100%;
-      background: #fff;
-      border-bottom: 1px solid #e6e8ec;
+      left: 0;
+      right: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
       z-index: 1000;
     }
 
     .nav {
       max-width: 1200px;
       margin: auto;
-      padding: 18px 24px;
+      padding: 16px 24px;
       display: flex;
       align-items: center;
-      gap: 28px;
+      justify-content: space-between;
     }
 
-    .brand {
-      font-weight: 700;
+    .nav-left a {
+      margin-right: 24px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .nav-right {
+      color: #fff;
+      font-weight: 600;
       letter-spacing: 0.5px;
     }
 
-    .nav a {
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      color: #0f1f3a;
-    }
-
-    .nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* ================= HERO ================= */
+    /* ===== HERO ===== */
     .hero {
       margin-top: 72px;
-      padding: 120px 24px 110px;
+      min-height: 70vh;
       background:
-        linear-gradient(rgba(10,20,45,0.72), rgba(10,20,45,0.72)),
-        url("https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=2000&q=80");
+        linear-gradient(
+          rgba(15,23,42,0.55),
+          rgba(15,23,42,0.75)
+        ),
+        url("/tknet-site/images/hero-city-night.jpg");
       background-size: cover;
       background-position: center;
-      color: #ffffff;
+      display: flex;
+      align-items: center;
     }
 
     .hero-inner {
-      max-width: 1100px;
-      margin: auto;
+      max-width: 1200px;
+      padding: 0 24px;
+      color: #fff;
     }
 
     .hero h1 {
-      font-size: 42px;
+      font-size: 48px;
       font-weight: 600;
-      margin-bottom: 18px;
-      letter-spacing: 0.2px;
+      max-width: 700px;
     }
 
     .hero p {
-      max-width: 820px;
+      margin-top: 20px;
+      max-width: 680px;
       font-size: 18px;
-      line-height: 1.6;
-      opacity: 0.95;
+      color: #e5e7eb;
     }
 
-    /* ================= MAIN ================= */
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 90px 24px 130px;
+    /* ===== CONTENT ===== */
+    .section {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 24px;
     }
 
     .intro {
-      max-width: 820px;
-      margin-bottom: 70px;
       font-size: 18px;
-      color: #2c3e5e;
-      line-height: 1.7;
+      color: var(--muted);
+      max-width: 820px;
+      margin-bottom: 48px;
     }
 
-    /* ================= GRID ================= */
-    .grid {
+    .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 48px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
     }
 
-    .card h3 {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 10px;
+    .service-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      padding: 28px;
+      transition: box-shadow 0.2s ease;
     }
 
-    .card p {
-      font-size: 15px;
-      color: #2c3e5e;
-      line-height: 1.6;
+    .service-card:hover {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .service-card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
     }
 
     .read-more {
       display: inline-block;
-      margin-top: 14px;
+      margin-top: 16px;
       font-size: 14px;
       font-weight: 500;
-      color: #0f1f3a;
+      color: var(--dark);
       text-decoration: none;
-      border-bottom: 1px solid #0f1f3a;
-    }
-
-    .read-more:hover {
-      opacity: 0.7;
-    }
-
-    /* ================= FOOTER ================= */
-    footer {
-      border-top: 1px solid #e6e8ec;
-      padding: 40px 24px;
-      font-size: 13px;
-      color: #6b778c;
-    }
-
-    @media (max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+      border-bottom: 1px solid var(--dark);
     }
   </style>
 </head>
@@ -149,81 +147,65 @@
 
 <header>
   <div class="nav">
-    <div class="brand">TK Net</div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="engagements.html">Selected Engagements</a>
-    <a href="contact.html">Contact</a>
+    <div class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="engagements.html">Selected Engagements</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-right">TK Net</div>
   </div>
 </header>
 
-<!-- ================= HERO ================= -->
 <section class="hero">
   <div class="hero-inner">
-    <h1>Services</h1>
+    <h1>Advisory Services</h1>
     <p>
-      We deliver unconflicted, evidence-based advisory across strategy,
-      capital allocation, transactions, technology, and place-making —
-      supporting boards, investors, and public-sector leaders globally.
+      We deliver unconflicted, evidence-based advice across strategy,
+      capital allocation, transactions, technology, and place-making.
     </p>
   </div>
 </section>
 
-<!-- ================= CONTENT ================= -->
-<main>
+<section class="section">
+  <p class="intro">
+    Our services support boards, investors, and public-sector leaders
+    in making high-stakes decisions across complex markets and regions.
+  </p>
 
-  <div class="intro">
-    Our work spans corporate strategy, investment decision-making,
-    complex transactions, emerging technologies, and large-scale
-    urban and innovation developments — combining global standards
-    with deep Asia insight.
-  </div>
-
-  <div class="grid">
-
-    <div class="card">
+  <div class="services-grid">
+    <div class="service-card">
       <h3>Strategy & Market Expansion</h3>
-      <p>Corporate strategy, growth sequencing, competitive positioning, and execution.</p>
       <a class="read-more" href="individual.html#strategy">Read more</a>
     </div>
 
-    <div class="card">
+    <div class="service-card">
       <h3>Investment & Transaction Advisory</h3>
-      <p>Commercial diligence, valuation, and investment committee support.</p>
       <a class="read-more" href="individual.html#investment">Read more</a>
     </div>
 
-    <div class="card">
+    <div class="service-card">
       <h3>M&A and Deal Structuring</h3>
-      <p>Acquisition strategy, deal structuring, and post-merger integration planning.</p>
       <a class="read-more" href="individual.html#ma">Read more</a>
     </div>
 
-    <div class="card">
+    <div class="service-card">
       <h3>AI & Technology Strategy</h3>
-      <p>Enterprise AI strategy, use-case prioritization, and innovation programs.</p>
       <a class="read-more" href="individual.html#ai">Read more</a>
     </div>
 
-    <div class="card">
+    <div class="service-card">
       <h3>Urban & Innovation Development</h3>
-      <p>Innovation districts, science parks, and complex urban regeneration.</p>
       <a class="read-more" href="individual.html#urban">Read more</a>
     </div>
 
-    <div class="card">
+    <div class="service-card">
       <h3>Cross-Border Programs</h3>
-      <p>Cross-border growth platforms, institutional partnerships, and regional initiatives.</p>
-      <a class="read-more" href="individual.html#crossborder">Read more</a>
+      <a class="read-more" href="individual.html#cross">Read more</a>
     </div>
-
   </div>
-</main>
-
-<footer>
-  © TK Net Advisory
-</footer>
+</section>
 
 </body>
 </html>
