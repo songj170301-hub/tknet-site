@@ -2,220 +2,179 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Services | TK Net</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      color: #0f172a;
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: #0f1f3a;
       background: #ffffff;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ========= NAV ========= */
-    nav {
+    header {
       position: fixed;
       top: 0;
       width: 100%;
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
+      background: #fff;
+      border-bottom: 1px solid #e6e8ec;
       z-index: 1000;
     }
 
-    .nav-inner {
+    .nav {
       max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px 24px;
+      margin: auto;
+      padding: 18px 24px;
       display: flex;
-      gap: 28px;
-      font-size: 14px;
+      justify-content: space-between;
       align-items: center;
     }
 
-    .nav-inner a:hover {
-      text-decoration: underline;
+    .nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: #0f1f3a;
     }
 
-    /* ========= HERO ========= */
     .hero {
-      margin-top: 64px;
-      height: 75vh;
-
-      /* ✅ 关键：远程图片 + 渐变兜底 */
+      margin-top: 72px;
+      padding: 110px 24px;
       background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=80");
-
+        linear-gradient(rgba(10,25,60,0.65), rgba(10,25,60,0.65)),
+        url("https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=2000&q=80");
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
+      color: #fff;
     }
 
-    .hero-content {
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      margin-left: 8%;
-      max-width: 760px;
-      color: #ffffff;
+    .hero-inner {
+      max-width: 1000px;
+      margin: auto;
     }
 
-    .hero-content h1 {
-      font-size: 44px;
+    .hero h1 {
+      font-size: 42px;
       font-weight: 600;
-      line-height: 1.25;
-      margin-bottom: 18px;
     }
 
-    .hero-content p {
-      font-size: 18px;
-      line-height: 1.6;
-      max-width: 640px;
-      opacity: 0.95;
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 24px 120px;
     }
 
-    /* ========= SERVICES ========= */
-    .services {
-      max-width: 1200px;
-      margin: 120px auto;
-      padding: 0 24px;
-    }
-
-    .services-intro {
-      font-size: 18px;
-      max-width: 760px;
-      margin-bottom: 64px;
-      color: #1f2937;
-    }
-
-    .services-grid {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 36px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
     }
 
-    .service-card {
-      border: 1px solid #e5e7eb;
-      padding: 32px;
-      transition: box-shadow 0.25s ease;
-      background: #ffffff;
-    }
-
-    .service-card:hover {
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-    }
-
-    .service-card h3 {
+    .card h3 {
       font-size: 20px;
-      margin-bottom: 18px;
-      font-weight: 500;
+      margin-bottom: 10px;
     }
 
-    .service-card a {
+    .card p {
+      color: #2c3e5e;
+      font-size: 15px;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 12px;
       font-size: 14px;
       font-weight: 500;
-      color: #374151;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      color: #0f1f3a;
+      text-decoration: none;
+      border-bottom: 1px solid #0f1f3a;
     }
 
-    .service-card a::after {
-      content: "→";
-      transition: transform 0.2s ease;
-    }
-
-    .service-card a:hover::after {
-      transform: translateX(4px);
+    .read-more:hover {
+      opacity: 0.7;
     }
 
     footer {
+      border-top: 1px solid #e6e8ec;
       padding: 40px 24px;
-      text-align: center;
-      font-size: 14px;
-      color: #64748b;
+      font-size: 13px;
+      color: #6b778c;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
+<header>
+  <div class="nav">
+    <div class="brand">TK Net</div>
+    <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="engagements.html">Selected Engagements</a>
       <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Services</h1>
+  </div>
+</section>
+
+<main>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Strategy & Market Expansion</h3>
+      <p>Corporate strategy, growth sequencing, and competitive positioning.</p>
+      <a class="read-more" href="individual.html#strategy">Read more</a>
     </div>
-  </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Independent advisory across strategy, capital, technology, and place-making</h1>
-      <p>
-        We deliver unconflicted, evidence-based advice to boards, investment
-        committees, and public-sector leaders across Asia, Europe, and North America.
-      </p>
+    <div class="card">
+      <h3>Investment & Transaction Advisory</h3>
+      <p>Commercial diligence, valuation, and investment committee support.</p>
+      <a class="read-more" href="individual.html#investment">Read more</a>
     </div>
-  </section>
 
-  <!-- SERVICES -->
-  <section class="services">
-    <p class="services-intro">
-      We deliver unconflicted, evidence-based advice across strategy, capital
-      allocation, transactions, technology, and place-making.
-    </p>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Strategy & Market Expansion</h3>
-        <a href="individual.html#strategy">Read more</a>
-      </div>
-
-      <div class="service-card">
-        <h3>Investment & Transaction Advisory</h3>
-        <a href="individual.html#investment">Read more</a>
-      </div>
-
-      <div class="service-card">
-        <h3>M&A and Deal Structuring</h3>
-        <a href="individual.html#ma">Read more</a>
-      </div>
-
-      <div class="service-card">
-        <h3>AI & Technology Strategy</h3>
-        <a href="individual.html#ai">Read more</a>
-      </div>
-
-      <div class="service-card">
-        <h3>Urban & Innovation Development</h3>
-        <a href="individual.html#urban">Read more</a>
-      </div>
-
-      <div class="service-card">
-        <h3>Cross-Border Programs</h3>
-        <a href="individual.html#crossborder">Read more</a>
-      </div>
+    <div class="card">
+      <h3>M&A and Deal Structuring</h3>
+      <p>Acquisition strategy, deal structuring, and integration planning.</p>
+      <a class="read-more" href="individual.html#ma">Read more</a>
     </div>
-  </section>
 
-  <footer>
-    © TK Net Advisory
-  </footer>
+    <div class="card">
+      <h3>AI & Technology Strategy</h3>
+      <p>Enterprise AI roadmaps and technology-led transformation.</p>
+      <a class="read-more" href="individual.html#ai">Read more</a>
+    </div>
+
+    <div class="card">
+      <h3>Urban & Innovation Development</h3>
+      <p>Innovation districts, science parks, and urban regeneration.</p>
+      <a class="read-more" href="individual.html#urban">Read more</a>
+    </div>
+
+    <div class="card">
+      <h3>Cross-Border Programs</h3>
+      <p>Cross-border growth platforms and institutional partnerships.</p>
+      <a class="read-more" href="individual.html#crossborder">Read more</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  © TK Net Advisory
+</footer>
 
 </body>
 </html>
