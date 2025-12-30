@@ -124,14 +124,21 @@ main {
   color: #888;
 }
 
-/* ===== Expand ===== */
+/* ===== Expand / Collapse ===== */
 .case-detail {
-  display: none;
-  margin-top: 18px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .35s ease, opacity .25s ease;
   font-size: 14px;
   color: #333;
+  margin-top: 8px;
 }
-.case.open .case-detail { display: block; }
+
+.case.open .case-detail {
+  max-height: 600px;
+  opacity: 1;
+}
 
 .case-detail h4 {
   font-size: 13px;
@@ -220,90 +227,6 @@ const cases = [
     meta: "Urban / Cross-Border | China",
     teaser: "Developed a comprehensive feasibility study for a large-scale Koreatown redevelopment.",
     sub: "Integrated cultural positioning, commercial planning, and cross-border visitor dynamics."
-  },
-  {
-    title: "SJ International Education Group — Investment Feasibility",
-    meta: "Investment Advisory | China",
-    teaser: "Provided independent investment assessment for one of China’s leading vocational education groups.",
-    sub: "Evaluated growth potential, regulatory exposure, operational scalability, and valuation."
-  },
-  {
-    title: "Incheon AI Tower — Feasibility & Ecosystem Strategy",
-    meta: "AI & Urban Development | Korea",
-    teaser: "Defined positioning, ecosystem logic, and financial feasibility for a landmark AI innovation tower.",
-    sub: "Focused on tenant demand, global benchmarks, and operator model design."
-  },
-  {
-    title: "Global Beauty Business — Corporate Strategy",
-    meta: "Strategy | Global",
-    teaser: "Developed global and China market strategy for a leading international beauty group.",
-    sub: "Addressed competitive positioning, channel strategy, and regulatory considerations."
-  },
-  {
-    title: "New York Institute of Finance — Investment Advisory",
-    meta: "Investment Advisory | U.S.",
-    teaser: "Advised investors on the commercial viability of a globally recognized finance education brand.",
-    sub: "Assessed market demand, product economics, brand strength, and valuation benchmarks."
-  },
-  {
-    title: "Group-Level AI Business Strategy",
-    meta: "AI & Technology Strategy | Global",
-    teaser: "Created a multi-year AI business and capability roadmap for a diversified corporate group.",
-    sub: "Included use-case prioritization, organizational design, and investment sequencing."
-  },
-  {
-    title: "ABL & Tongyang Life — Acquisition Strategy",
-    meta: "M&A Strategy | Korea",
-    teaser: "Developed acquisition strategy and valuation guidance for two major Korean life insurers.",
-    sub: "Focused on regulatory constraints, synergy potential, and scenario-based valuation."
-  },
-  {
-    title: "Pantech — M&A Strategy",
-    meta: "M&A Strategy | Korea",
-    teaser: "Advised investors on acquisition feasibility and turnaround potential of a telecom manufacturer.",
-    sub: "Covered commercial diligence, technology assessment, and integration risks."
-  },
-  {
-    title: "Yangcheng Lake Peninsula — Tourism Strategy",
-    meta: "Tourism & Urban Development | China",
-    teaser: "Developed tourism positioning and investment strategy for a major resort destination.",
-    sub: "Included demand modeling, destination branding, and commercial planning."
-  },
-  {
-    title: "Beijing Tongzhou Tech Transfer Park",
-    meta: "Innovation & Urban Development | China",
-    teaser: "Designed development strategy for a large-scale technology transfer and innovation park.",
-    sub: "Focused on R&D ecosystem design, anchor tenant logic, and governance structure."
-  },
-  {
-    title: "Singapore IMC Group — Real Estate Strategy",
-    meta: "Strategy | Singapore",
-    teaser: "Advised on multi-asset real estate strategy and portfolio optimization across Southeast Asia.",
-    sub: "Provided long-term capital allocation and development phasing recommendations."
-  },
-  {
-    title: "Zhucheng Industry–University–Science Park",
-    meta: "Innovation District | China",
-    teaser: "Evaluated feasibility of an integrated industry–university–science innovation town.",
-    sub: "Addressed cluster selection, spatial planning, and financial sustainability."
-  },
-  {
-    title: "Zhengzhou Agriculture & Science Park",
-    meta: "Agri-Tech & Innovation | China",
-    teaser: "Developed strategic roadmap for an agriculture-focused science and innovation park.",
-    sub: "Focused on agri-tech trends, ecosystem partnerships, and investment logic."
-  },
-  {
-    title: "China Urban Development Model",
-    meta: "Government & Policy | China",
-    teaser: "Prepared a national-level policy study on China’s evolving urbanization model.",
-    sub: "Analyzed land, financial mechanisms, and sustainable development pathways."
-  },
-  {
-    title: "China Maritime Industry Strategy",
-    meta: "Industrial Strategy | China",
-    teaser: "Developed a comprehensive strategy for China’s maritime and port-related industries.",
-    sub: "Covered global competitiveness, industry value chains, and policy implications."
   }
 ];
 
@@ -317,7 +240,7 @@ cases.forEach(c => {
     <div class="case-meta">${c.meta}</div>
     <div class="case-teaser">${c.teaser}</div>
     <div class="case-subteaser">${c.sub}</div>
-    <div class="case-hint">Click to view details →</div>
+    <div class="case-hint">Click to view details</div>
     <div class="case-detail">
       <h4>Summary</h4>
       <p>Provided independent advisory support covering strategy definition, analytical assessment, and decision-making.</p>
@@ -333,10 +256,13 @@ cases.forEach(c => {
       <p>Enabled informed decision-making with clear risk–return visibility.</p>
     </div>
   `;
+
   el.onclick = () => {
+    const isOpen = el.classList.contains("open");
     document.querySelectorAll(".case").forEach(x => x.classList.remove("open"));
-    el.classList.add("open");
+    if (!isOpen) el.classList.add("open");
   };
+
   container.appendChild(el);
 });
 </script>
