@@ -25,7 +25,7 @@
       line-height: 1.6;
     }
 
-    /* ===== NAV (WHITE / GLOBAL) ===== */
+    /* ===== NAV ===== */
     header {
       position: fixed;
       top: 0;
@@ -58,7 +58,7 @@
       letter-spacing: 0.4px;
     }
 
-    /* ===== HERO (IMAGE SAFE MODE) ===== */
+    /* ===== HERO ===== */
     .hero {
       margin-top: 72px;
       min-height: 68vh;
@@ -77,7 +77,6 @@
       z-index: 0;
     }
 
-    /* dark overlay for readability */
     .hero::after {
       content: "";
       position: absolute;
@@ -168,14 +167,11 @@
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
 <section class="hero">
-  <!-- 都市夜景俯视图（稳定来源） -->
   <img
     src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2000&q=80"
     alt="Global city night skyline"
   />
-
   <div class="hero-inner">
     <h1>Advisory Services</h1>
     <p>
@@ -219,7 +215,8 @@
 
     <div class="card">
       <h3>Cross-Border Programs</h3>
-      <a class="read-more" href="individual.html#cross">Read more</a>
+      <!-- ✅ 修正点在这里 -->
+      <a class="read-more" href="individual.html#cross-border">Read more</a>
     </div>
   </div>
 </section>
