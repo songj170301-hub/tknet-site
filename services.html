@@ -6,6 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
+    .brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.brand img {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+}
+
     :root {
       --ink: #0f172a;
       --muted: #475569;
@@ -155,16 +168,22 @@
 <body>
 
 <header>
-  <div class="nav">
-    <div class="nav-left">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="engagements.html">Selected Engagements</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="nav-right">TK Net</div>
+ <div class="nav">
+  <div class="nav-left">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="engagements.html">Selected Engagements</a>
+    <a href="contact.html">Contact</a>
   </div>
+
+  <div class="nav-right">
+    <a href="index.html" class="logo">
+      <img src="assets/1.png" alt="TK Net logo">
+    </a>
+  </div>
+</div>
+
 </header>
 
 <section class="hero">
