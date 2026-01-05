@@ -37,14 +37,25 @@ nav {
   border-bottom: 1px solid #eee;
   z-index: 1000;
 }
-nav .nav-inner {
+.nav-inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 16px 24px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   font-size: 14px;
+}
+
+/* logo 和后面的菜单拉开距离 */
+.brand {
+  margin-right: 32px;
+  display: flex;
+  align-items: center;
+}
+
+/* 菜单之间的间距 */
+.nav-inner a:not(.brand) {
+  margin-right: 24px;
 }
 nav .nav-left { display: flex; gap: 28px; }
 nav a { text-decoration: none; color: #111; }
