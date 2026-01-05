@@ -33,8 +33,20 @@ nav {
   margin: 0 auto;
   padding: 16px 24px;
   display: flex;
-  gap: 28px;
+  align-items: center;
   font-size: 14px;
+}
+
+/* logo 和后面的菜单拉开距离 */
+.brand {
+  margin-right: 32px;
+  display: flex;
+  align-items: center;
+}
+
+/* 菜单之间的间距 */
+.nav-inner a:not(.brand) {
+  margin-right: 24px;
 }
 nav a {
   color: #111;
@@ -142,13 +154,19 @@ footer {
 <!-- ===== Nav ===== -->
 <nav>
   <div class="nav-inner">
-    <a href="index.html">Home</a>
+    
+    <!-- Logo + Brand -->
+    <a href="index.html" class="brand">
+      <img src="assets/1.png" alt="TK Net Logo">
+    </a>
+
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-    <a href="engagements.html">Selected Engagements</a>
+    <a href="selected-engagements.html">Selected Engagements</a>
     <a href="contact.html">Contact</a>
   </div>
 </nav>
+
 
 <!-- ===== Hero ===== -->
 <header class="hero">
