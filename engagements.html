@@ -42,6 +42,17 @@ nav a {
   font-weight: 500;
 }
 nav a:hover { text-decoration: underline; }
+  /* ===== Brand / Logo ===== */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo img {
+  height: 22px;   /* 如果还大，可以改成 18px */
+  width: auto;
+  display: block;
+}
 
 /* ===== Hero ===== */
 .hero {
@@ -169,11 +180,21 @@ footer {
 
 <nav>
   <div class="nav-inner">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="selected-engagements.html">Selected Engagements</a>
-    <a href="contact.html">Contact</a>
+    
+    <!-- 左侧：Logo -->
+    <a href="index.html" class="nav-logo">
+      <img src="assets/1.png" alt="TK Net Logo">
+    </a>
+
+    <!-- 导航链接 -->
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="engagements.html">Selected Engagements</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
   </div>
 </nav>
 
