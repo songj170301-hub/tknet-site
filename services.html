@@ -1,44 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Services | TK Net</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<title>Selected Engagements | TK Net</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <style>
-   .brand {
-  display: flex;
-  align-items: center;
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.brand img {
-  height: 22px !important;
-  width: auto !important;
-  display: block;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Helvetica, Arial, sans-serif;
+  color: #111;
+  background: #fff;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn .5s ease forwards;
 }
 
-    :root {
-      --ink: #0f172a;
-      --muted: #475569;
-      --line: #e5e7eb;
-    }
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    }
-
-    body {
-      background: #ffffff;
-      color: var(--ink);
-      line-height: 1.6;
-    }
-
-    /* ===== NAV ===== */
-    header {
-      .nav {
+/* ================= Navigation ================= */
+nav {
   position: fixed;
   top: 0;
   width: 100%;
@@ -51,142 +40,174 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 16px 24px;
-
   display: flex;
   align-items: center;
-  gap: 36px;   /* brand 与导航菜单之间 */
+  gap: 32px;
 }
 
+.brand img {
+  height: 22px;
+  width: auto;
+  display: block;
+}
 
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.nav-links {
+  display: flex;
+  gap: 22px;
+}
 
-    .nav-left a {
-      margin-right: 28px;
-      text-decoration: none;
-      color: var(--ink);
-      font-size: 14px;
-      font-weight: 500;
-    }
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  text-decoration: none;
+}
 
-    .nav-right {
-      font-weight: 600;
-      letter-spacing: 0.4px;
-    }
+.nav-links a:hover {
+  text-decoration: underline;
+}
 
-    /* ===== HERO ===== */
-    .hero {
-      margin-top: 72px;
-      min-height: 68vh;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-    }
+/* ================= Hero ================= */
+.hero {
+  margin-top: 72px;
+  height: 420px;
+  background-image:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
 
-    .hero img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  color: #fff;
+}
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(8,15,30,0.75),
-        rgba(8,15,30,0.65)
-      );
-      z-index: 1;
-    }
+.hero h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
 
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
-      padding: 0 24px;
-      color: #ffffff;
-    }
+.hero p {
+  max-width: 760px;
+  font-size: 18px;
+  opacity: .95;
+}
 
-    .hero h1 {
-      font-size: 46px;
-      font-weight: 600;
-      max-width: 720px;
-    }
+/* ================= Content ================= */
+main {
+  max-width: 1200px;
+  margin: 96px auto;
+  padding: 0 24px;
+}
 
-    .hero p {
-      margin-top: 20px;
-      max-width: 720px;
-      font-size: 18px;
-      color: #e5e7eb;
-    }
+.section-intro {
+  max-width: 760px;
+  margin-bottom: 48px;
+  color: #444;
+}
 
-    /* ===== CONTENT ===== */
-    .section {
-      max-width: 1200px;
-      margin: 80px auto;
-      padding: 0 24px;
-    }
+/* ================= Grid ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
 
-    .intro {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 820px;
-      margin-bottom: 48px;
-    }
+.case {
+  border: 1px solid #e6e6e6;
+  padding: 24px;
+  cursor: pointer;
+  transition: border .2s ease;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
-    }
+.case:hover {
+  border-color: #111;
+}
 
-    .card {
-      border: 1px solid var(--line);
-      padding: 28px;
-      background: #ffffff;
-    }
+.case h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
 
-    .card h3 {
-      font-size: 18px;
-      margin-bottom: 12px;
-    }
+.case-meta {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+}
 
-    .read-more {
-      margin-top: 16px;
-      display: inline-block;
-      font-size: 14px;
-      color: var(--ink);
-      text-decoration: none;
-      border-bottom: 1px solid var(--ink);
-    }
-  </style>
+.case-teaser {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.case-subteaser {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.case-hint {
+  font-size: 12px;
+  color: #888;
+}
+
+/* ================= Expand ================= */
+.case-detail {
+  display: none;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #333;
+}
+
+.case.open .case-detail {
+  display: block;
+}
+
+.case-detail h4 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 14px 0 6px;
+}
+
+.case-detail ul {
+  padding-left: 18px;
+}
+
+.case-detail li {
+  margin-bottom: 4px;
+}
+
+/* ================= Footer ================= */
+footer {
+  border-top: 1px solid #eee;
+  padding: 48px 24px;
+  font-size: 13px;
+  color: #666;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-<div class="nav">
+<!-- ===== Navigation ===== -->
+<nav>
   <div class="nav-inner">
-
-    <!-- Brand: Logo + Text -->
-    <a href="index.html" class="brand">
+    <div class="brand">
       <img src="assets/1.png" alt="TK Net Logo">
-      <span>TK Net</span>
-    </a>
-
-    <!-- Navigation links -->
+    </div>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -194,65 +215,90 @@
       <a href="engagements.html">Selected Engagements</a>
       <a href="contact.html">Contact</a>
     </div>
-
   </div>
-</div>
+</nav>
 
-
-</header>
-
-<section class="hero">
-  <img
-    src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2000&q=80"
-    alt="Global city night skyline"
-  />
+<!-- ===== Hero ===== -->
+<header class="hero">
   <div class="hero-inner">
-    <h1>Advisory Services</h1>
+    <h1>Selected Engagements</h1>
     <p>
-      We deliver unconflicted, evidence-based advice across strategy,
-      capital allocation, transactions, technology, and place-making.
+      Partner-led advisory engagements supporting complex strategic,
+      investment, and innovation-led decisions globally.
     </p>
   </div>
-</section>
+</header>
 
-<section class="section">
-  <p class="intro">
-    Our services support boards, investors, and public-sector leaders
-    in making high-stakes decisions across complex markets and regions.
+<!-- ===== Main ===== -->
+<main>
+  <p class="section-intro">
+    A representative selection of engagements across strategy,
+    investment advisory, M&A, AI, and innovation-led urban development.
+    Click each engagement to view full details.
   </p>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Strategy & Market Expansion</h3>
-      <a class="read-more" href="individual.html#strategy">Read more</a>
-    </div>
+  <div class="grid" id="cases"></div>
+</main>
 
-    <div class="card">
-      <h3>Investment & Transaction Advisory</h3>
-      <a class="read-more" href="individual.html#investment">Read more</a>
-    </div>
-
-    <div class="card">
-      <h3>M&A and Deal Structuring</h3>
-      <a class="read-more" href="individual.html#ma">Read more</a>
-    </div>
-
-    <div class="card">
-      <h3>AI & Technology Strategy</h3>
-      <a class="read-more" href="individual.html#ai">Read more</a>
-    </div>
-
-    <div class="card">
-      <h3>Urban & Innovation Development</h3>
-      <a class="read-more" href="individual.html#urban">Read more</a>
-    </div>
-
-    <div class="card">
-      <h3>Cross-Border Programs</h3>
-      <a class="read-more" href="individual.html#cross-border">Read more</a>
-    </div>
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="footer-inner">
+    TK Net — Global Advisory in Strategy, Investment, and Innovation
   </div>
-</section>
+</footer>
+
+<script>
+const cases = [
+  {
+    title: "Hyundai Group — AI Unicorn Investment Advisory",
+    meta: "Investment Advisory | Korea / Global",
+    teaser: "Advised Hyundai Group on a strategic minority investment into a high-growth AI company.",
+    sub: "Full commercial, market, and technical due diligence."
+  },
+  {
+    title: "Suzhou Design Town — Development Strategy",
+    meta: "Urban Development | China",
+    teaser: "Strategic and commercial framework for a flagship creative district.",
+    sub: "Positioning, phasing, and long-term sustainability."
+  },
+  {
+    title: "Incheon AI Tower — Ecosystem Strategy",
+    meta: "AI & Urban Development | Korea",
+    teaser: "Positioning and feasibility for a landmark AI innovation tower.",
+    sub: "Tenant logic, global benchmarks, operator model."
+  },
+  {
+    title: "ABL & Tongyang Life — M&A Strategy",
+    meta: "M&A Strategy | Korea",
+    teaser: "Acquisition strategy for two major life insurers.",
+    sub: "Regulatory constraints, synergies, valuation scenarios."
+  }
+];
+
+const container = document.getElementById("cases");
+
+cases.forEach(c => {
+  const el = document.createElement("div");
+  el.className = "case";
+  el.innerHTML = `
+    <h3>${c.title}</h3>
+    <div class="case-meta">${c.meta}</div>
+    <div class="case-teaser">${c.teaser}</div>
+    <div class="case-subteaser">${c.sub}</div>
+    <div class="case-hint">Click to view details →</div>
+    <div class="case-detail">
+      <p>
+        Independent advisory covering strategic framing, analytical assessment,
+        and decision support for senior leadership.
+      </p>
+    </div>
+  `;
+  el.onclick = () => {
+    el.classList.toggle("open");
+  };
+  container.appendChild(el);
+});
+</script>
 
 </body>
 </html>
