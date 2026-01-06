@@ -33,7 +33,7 @@ nav {
   margin: 0 auto;
   padding: 16px 24px;
   display: flex;
-  gap: 28px;
+  align-items: center;
   font-size: 14px;
 }
 nav a {
@@ -46,12 +46,17 @@ nav a:hover { text-decoration: underline; }
 .nav-logo {
   display: flex;
   align-items: center;
+  margin-right: 32px
 }
 
 .nav-logo img {
-  height: 22px;   /* 如果还大，可以改成 18px */
+  height: 22px;   
   width: auto;
   display: block;
+}
+  .nav-links {
+  display: flex;
+  gap: 28px;   
 }
 
 /* ===== Hero ===== */
@@ -180,13 +185,13 @@ footer {
 
 <nav>
   <div class="nav-inner">
-    
-    <!-- 左侧：Logo -->
-    <a href="index.html" class="nav-logo">
-      <img src="assets/1.png" alt="TK Net Logo">
-    </a>
 
-    <!-- 导航链接 -->
+    <!-- Logo -->
+    <div class="nav-logo">
+      <img src="assets/1.png" alt="TK Net Logo">
+    </div>
+
+    <!-- Navigation Links -->
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
