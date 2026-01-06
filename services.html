@@ -38,14 +38,41 @@
 
     /* ===== NAV ===== */
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: #ffffff;
-      border-bottom: 1px solid var(--line);
-      z-index: 1000;
-    }
+      .nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 36px;   /* brand 与导航菜单之间 */
+}
+
+      .nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
 
     .nav {
       max-width: 1200px;
@@ -169,9 +196,10 @@
 <div class="nav">
   <div class="nav-inner">
 
-    <!-- Logo -->
+    <!-- Brand: Logo + Text -->
     <a href="index.html" class="brand">
       <img src="assets/1.png" alt="TK Net Logo">
+      <span>TK Net</span>
     </a>
 
     <!-- Navigation links -->
