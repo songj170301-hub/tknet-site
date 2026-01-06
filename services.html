@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    /* ========== Reset ========== */
+    /* ===== Reset ===== */
     * {
       margin: 0;
       padding: 0;
@@ -24,25 +24,20 @@
       color: inherit;
     }
 
-    /* ========== Navigation (same as Home) ========== */
+    /* ===== Navigation (same as Home) ===== */
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 22px 56px;
       border-bottom: 1px solid #eee;
+      background: #fff;
     }
 
     .nav-left {
       display: flex;
       align-items: center;
       gap: 40px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
     .brand img {
@@ -65,11 +60,13 @@
       text-decoration: underline;
     }
 
-    /* ========== Hero ========== */
+    /* ===== Hero ===== */
     .hero {
-      padding: 120px 56px 100px;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      padding: 120px 56px 110px;
       color: #fff;
+      background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url("assets/city-aerial.jpg") center / cover no-repeat;
     }
 
     .hero h1 {
@@ -84,10 +81,10 @@
       font-size: 18px;
       max-width: 640px;
       line-height: 1.6;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
-    /* ========== Services Section ========== */
+    /* ===== Services Section ===== */
     .services {
       padding: 100px 56px;
     }
@@ -95,7 +92,7 @@
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
+      gap: 44px;
     }
 
     .service-card {
@@ -126,7 +123,7 @@
       padding-bottom: 2px;
     }
 
-    /* ========== Footer ========== */
+    /* ===== Footer ===== */
     footer {
       padding: 40px 56px;
       border-top: 1px solid #eee;
@@ -142,7 +139,7 @@
   <div class="nav">
     <div class="nav-left">
       <div class="brand">
-        <img src="assets/1.png" alt="TK Net Logo" />
+        <img src="assets/1.png" alt="TK Net Logo">
       </div>
 
       <div class="nav-links">
@@ -157,10 +154,10 @@
 
   <!-- Hero -->
   <section class="hero">
-    <h1>Services</h1>
+    <h1>Our Services</h1>
     <p>
-      We partner with organizations to navigate complexity, expand across borders,
-      and build durable competitive advantage through strategy, capital, and execution.
+      We deliver unconflicted, evidence-based advice across strategy, capital allocation,
+      transactions, technology, and place-making.
     </p>
   </section>
 
@@ -170,34 +167,38 @@
 
       <div class="service-card">
         <h3>Strategy & Market Expansion</h3>
-        <p>
-          Market entry, competitive positioning, and long-term growth strategy across Asia and global markets.
-        </p>
+        <p>Market entry, competitive positioning, and long-term growth strategy.</p>
         <a class="read-more" href="individual.html#strategy">Read More →</a>
       </div>
 
       <div class="service-card">
-        <h3>Cross-Border Programs</h3>
-        <p>
-          End-to-end support for cross-border initiatives, partnerships, and operational execution.
-        </p>
-        <a class="read-more" href="individual.html#crossborder">Read More →</a>
-      </div>
-
-      <div class="service-card">
-        <h3>Investment & Capital Advisory</h3>
-        <p>
-          Strategic capital planning, fundraising advisory, and investor alignment.
-        </p>
+        <h3>Investment & Transaction Advisory</h3>
+        <p>Capital strategy, fundraising advisory, and transaction execution support.</p>
         <a class="read-more" href="individual.html#investment">Read More →</a>
       </div>
 
       <div class="service-card">
-        <h3>AI & Digital Enablement</h3>
-        <p>
-          Applying AI and digital tools to enhance decision-making and operational efficiency.
-        </p>
+        <h3>M&A and Deal Structuring</h3>
+        <p>Buy-side and sell-side M&A advisory with complex deal structuring.</p>
+        <a class="read-more" href="individual.html#ma">Read More →</a>
+      </div>
+
+      <div class="service-card">
+        <h3>AI & Technology Strategy</h3>
+        <p>AI-driven transformation and technology-enabled operating models.</p>
         <a class="read-more" href="individual.html#ai">Read More →</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Urban & Innovation Development</h3>
+        <p>Innovation districts, tech parks, and urban economic development.</p>
+        <a class="read-more" href="individual.html#urban">Read More →</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Cross-Border Programs</h3>
+        <p>End-to-end support for cross-border initiatives and partnerships.</p>
+        <a class="read-more" href="individual.html#crossborder">Read More →</a>
       </div>
 
     </div>
